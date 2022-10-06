@@ -85,6 +85,8 @@ code {
   background-color: var(--tan-1);
   border: .1vmin solid var(--tan-3);
   border-radius: 1vmin;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 p.error-message {
@@ -125,7 +127,7 @@ a.button {
   margin: 1vmin;
   padding: 1vmin;
   color: var(--white);
-  background-color: var(--orange);
+  background-color: orange;
   font-size: 2vmin;
   font-weight: bold;
   text-decoration: none;
