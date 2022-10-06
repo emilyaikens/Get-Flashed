@@ -1,6 +1,5 @@
 import './App.css';
 import {useState} from 'react';
-// Import the following components
 import AuthPage from '../AuthPage/AuthPage';
 import NewOrderPage from '../NewOrderPage/NewOrderPage';
 import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
