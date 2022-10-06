@@ -14,7 +14,4 @@ router.post('/', usersCtrl.create);
 // POST : http://localhost:3001/api/users/login
 router.post('/login', usersCtrl.login);
 
-// GET : http://localhost:30001/api/products/all
-// router.GET('/api/products/all', ensureLoggedIn, productCtrl.getAll);
-
 module.exports = router;

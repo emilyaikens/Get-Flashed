@@ -14,16 +14,14 @@ function App() {
 
     return (
         < main className="App">
-            {user ?
                 <>
-                    <NavBar user={user} setUser={setUser}/>
+                <NavBar user={user} setUser={setUser}/>
                     <Routes>
                         <Route path="/orders/new" element={<NewOrderPage/>}/>
                         <Route path="/orders" element={<OrderHistoryPage/>}/>
+                        <Route path="/auth" element={<AuthPage/>}/>
                     </Routes>
                 </>
-                :
-                <AuthPage setUser={setUser}/>}
 
         </main>
     );
