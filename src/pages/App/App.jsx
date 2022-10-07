@@ -13,17 +13,16 @@ function App() {
 
     return (
         < main className="App">
-            {user ?
                 <>
-                    <NavBar user={user} setUser={setUser}/>
+                    {/* <NavBar user={user} setUser={setUser} /> */}
+                    <h1>hello</h1>
                     <Routes>
-                        <Route path="/deck/new" element={<NewDeckPage/>}/>
-                        <Route path="/mydecks" element={<DeckIndexPage/>}/>
+                        <Route path="/deck/new" element={<NewDeckPage user={user}/>}/>
+                        <Route path="/mydecks" element={<DeckIndexPage user={user}/>}/>
+                        <Route AuthPage path="/auth" element={<AuthPage setUser={setUser}/>}/>
                     </Routes>
+                    
                 </>
-                :
-                <AuthPage setUser={setUser}/>
-                }
         </main>
     );
 }
