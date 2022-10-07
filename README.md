@@ -29,6 +29,8 @@ A MERN stack flashcard app with a questionably appropriate theme.
 
 ## App Screenshots
 
+![Home Page](https://i.imgur.com/qKWVI3h.png)
+
 ## Project Hurdles
 
 ## Planning Charts
