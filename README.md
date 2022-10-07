@@ -27,11 +27,10 @@ A MERN stack flashcard app with a questionably appropriate theme.
 
 ## Getting Started
 
+Get started by clicking link below. You will need to sign up and log in in order to create your own decks.
 [Link To App](https://project-4-flashcards.herokuapp.com/)
 
 ## App Screenshots
-
-Get started by clicking link below. You will need to sign up and log in in order to create your own decks.
 
 ![Home Page](https://i.imgur.com/qKWVI3h.png)
 
