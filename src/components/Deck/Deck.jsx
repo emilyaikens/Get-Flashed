@@ -3,7 +3,8 @@
 
 export default function Deck () {
     return (
-        // this deck will need to be a link
+        // this deck will need to be a link to the DisplayDeck page.
+        //with deck id!!!
         <div>deck</div>
     )
 }
