@@ -6,6 +6,7 @@ import AuthPage from '../AuthPage/AuthPage';
 import NavBar from '../../components/NavBar/NavBar';
 import NewDeckPage from '../NewDeckPage/NewDeckPage';
 import DeckIndexPage from '../DeckIndexPage/DeckIndexPage';
+import DisplayDeckPage from '../DisplayDeckPage/DisplayDeckPage';
 
 function App() {
     // set the user by calling getUser function
@@ -19,6 +20,7 @@ function App() {
                     <Routes>
                         <Route path="/deck/new" element={<NewDeckPage/>}/>
                         <Route path="/mydecks" element={<DeckIndexPage/>}/>
+                        <Route path='/displaydeck' element={< DisplayDeckPage/>} />
                     </Routes>
                 </>
                 :
