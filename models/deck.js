@@ -1,17 +1,20 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const cardSchema = require('./card')
 
 const deckSchema = new Schema({
-    question: {
+    name: {
         type: String,
         required: true
     },
-    answer: {
-        type: String,
-        required: true
+    public: {
+        type: Boolean,
+        required: true,
+        default: false,
     },
-}, {
-    timestamps: true,
-});
+    cards: [cardSchema]
+    }, {
+        timestamps: true,
+    });
 
 module.exports = mongoose.model('Deck', deckSchema);

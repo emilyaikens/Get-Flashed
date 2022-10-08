@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const cardSchema = new Schema({
-    name: {
+    question: {
         type: String,
         required: true
     },
-    public: {
-        type: Boolean,
+    answer: {
+        type: String,
         required: true
     },
 }, {
