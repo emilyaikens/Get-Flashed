@@ -11,7 +11,7 @@ export default function DeckIndexPage() {
                 show all of the decks
                 else show the message "No decks yet" with
                 button the links to build deck page */}
-            <h1>Deck Index Page aka my decks</h1>
+            <h1>Deck Index Page</h1>
             <Deck />
         </>
     );
