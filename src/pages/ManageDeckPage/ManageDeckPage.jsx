@@ -9,6 +9,7 @@ export default function ManageDeckPage() {
         <>
         <h1>Manage Deck Page</h1>
         <NewCardForm />
+        <button>Delete Deck</button>
         </>
     )
 }
