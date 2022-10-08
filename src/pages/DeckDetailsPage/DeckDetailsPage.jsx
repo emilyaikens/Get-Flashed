@@ -8,6 +8,9 @@ export default function DeckDetailsPage() {
         <h1>Deck Details Page</h1>
         <button>Edit Deck</button>
         <Card />
+        <button>Back</button>
+        <button>Flip</button>
+        <button>Next</button>
         </>
     )
 }
