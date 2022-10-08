@@ -1,9 +1,9 @@
 import Card from '../../components/Card/Card';
 
-export default function DisplayDeckPage() {
+export default function DeckDetailsPage() {
     return (
         <>
-        <h1>Display Deck Page</h1>
+        <h1>Deck Details Page</h1>
         <Card />
         </>
     )

@@ -4,6 +4,6 @@ import { Link } from 'react-router-dom';
 export default function Deck () {
     return (
         // this link will need to be updated with id!!
-        <Link to='/displaydeck'>Deck</Link>
+        <Link to='/deckdetails'>Deck</Link>
     )
 }
