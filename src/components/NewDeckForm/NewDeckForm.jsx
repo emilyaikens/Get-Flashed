@@ -1,8 +1,10 @@
 import { useState } from "react";
 import * as ordersAPI from '../../utilities/decks-api';
+import { useNavigate } from 'react-router-dom';
 //import createDeck
 
 export default function NewDeckForm() {
+    const navigate = useNavigate();
     //create new deck that belongs to this user
     //once form is created, redirect to the "manage deck" page
     //so that user can add cards to the deck
@@ -18,12 +20,14 @@ export default function NewDeckForm() {
             const formData = { ...state };
             delete formData.error;
             // const deck = await createDeck(formData);
+            // setDeck(deck)
             alert("button clicked")
         } catch {
             setState({
-                error: "Sign Up Failed - Try Again",
+                error: "Deck Creation Failed - Try Again",
             });
         }
+        //navigate('/detail/_id')
     };
 
     const handleChange = (evt) => {
