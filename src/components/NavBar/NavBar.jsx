@@ -12,7 +12,7 @@ export default function NavBar({user, setUser}) {
         <nav>
             {user ?
             <>
-            <Link to="/mydecks">My Decks</Link>
+            <Link to="/">My Decks</Link>
             &nbsp; | &nbsp;
             <Link to="/deck/new">Create Deck</Link>
             &nbsp; | &nbsp;
