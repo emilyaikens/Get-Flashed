@@ -1,6 +1,7 @@
 const Deck = require('../../models/deck');
 
 async function create(req, res) {
+    console.log('controller create function');
     req.body.user = req.user._id;
     let newDeck = new Deck(req.body);
     await newDeck.save();
