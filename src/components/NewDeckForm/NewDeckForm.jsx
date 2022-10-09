@@ -1,41 +1,38 @@
 import { useState } from "react";
-import * as ordersAPI from '../../utilities/decks-api';
+import * as deckAPI from '../../utilities/decks-api';
 import { useNavigate } from 'react-router-dom';
 //import createDeck
 
-export default function NewDeckForm() {
+export default function NewDeckForm({setDeck}) {
     const navigate = useNavigate();
     //create new deck that belongs to this user
     //once form is created, redirect to the "manage deck" page
     //so that user can add cards to the deck
 
-    const [state, setState] = useState({
+    const [formData, setFormData] = useState({
         name: "",
         error: "",
     });
 
+    const handleChange = (evt) => {
+        setFormData({
+        ...formData,
+        [evt.target.name]: evt.target.value,
+        });
+    };
+
     const handleSubmit = async (evt) => {
         evt.preventDefault();
         try {
-            const formData = { ...state };
-            delete formData.error;
-            // const deck = await createDeck(formData);
-            // setDeck(deck)
-            alert("button clicked")
+            console.log("button clicked");
+            const deck = await deckAPI.createDeck(formData);
+            setDeck(deck);
         } catch {
-            setState({
+            setFormData({
                 error: "Deck Creation Failed - Try Again",
             });
         }
         //navigate('/detail/_id')
-    };
-
-    const handleChange = (evt) => {
-        setState({
-        ...state,
-        [evt.target.name]: evt.target.value,
-        error: "",
-        });
     };
 
     return (
@@ -45,7 +42,7 @@ export default function NewDeckForm() {
                 <input
                     type="text"
                     name="name"
-                    value={state.name}
+                    value={formData.name}
                     onChange={handleChange}
                 />
                 {/* add checkbox for public later */}
