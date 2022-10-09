@@ -10,8 +10,7 @@ export default function NewDeckForm({setDeck}) {
     //so that user can add cards to the deck
 
     const [formData, setFormData] = useState({
-        name: "",
-        error: "",
+        name: ""
     });
 
     const handleChange = (evt) => {
@@ -28,9 +27,7 @@ export default function NewDeckForm({setDeck}) {
             const deck = await deckAPI.createDeck(formData);
             setDeck(deck);
         } catch {
-            setFormData({
-                error: "Deck Creation Failed - Try Again",
-            });
+            console.log('create deck failed');
         }
         //navigate('/detail/_id')
     };
