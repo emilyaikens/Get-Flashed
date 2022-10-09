@@ -13,17 +13,17 @@ async function getAll(req, res) {
     res.json(website);
 };
 
-async function deleteDeck(req, res) {
-    await Deck.findOneAndDelete({
-        _id: req.params.id,
-        "deck.user": req.user._id
-    });
-    res.json("Deleted Deck")
-};
+// async function deleteDeck(req, res) {
+//     await Deck.findOneAndDelete({
+//         _id: req.params.id,
+//         "deck.user": req.user._id
+//     });
+//     res.json("Deleted Deck")
+// };
 
 module.exports = {
     create,
     getAll,
-    deleteDeck,
+    // deleteDeck,
 };
 
