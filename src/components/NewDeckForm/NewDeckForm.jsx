@@ -23,7 +23,6 @@ export default function NewDeckForm({setDeck}) {
     const handleSubmit = async (evt) => {
         evt.preventDefault();
         try {
-            console.log("button clicked");
             const deck = await deckAPI.createDeck(formData);
             setDeck(deck);
         } catch {
