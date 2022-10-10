@@ -3,13 +3,11 @@ import { Link } from 'react-router-dom';
 
 export default function Deck ({deck, key, index}) {
 
-    console.log(deck)
-
     return (
         <>
-            <div>{deck}</div>
             {/* // this link will need to be updated with id!! */}
-            <Link to='/deckdetails'>Fake Deck</Link>
+            <Link to='/deckdetails'>{deck}</Link>
+            <br/>
         </>
     )
 }
