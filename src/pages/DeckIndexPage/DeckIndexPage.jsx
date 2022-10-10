@@ -10,7 +10,6 @@ export default function DeckIndexPage() {
     useEffect(function () {
         async function getDecks() {
             const myDecks = await getAllDecks();
-            //console.log(myDecks[0].name);
             setDecks(myDecks);
         }
         getDecks()
