@@ -23,7 +23,7 @@ function App() {
                         <Route path="/" element={<DeckIndexPage />}/>
                         {/* below: WILL NEED ID ADDED TO PATH */}
                         <Route path='/deckdetails/:id' element={< DeckDetailsPage/>} />
-                        <Route path='/managedeck' element={< ManageDeckPage/>} />
+                        <Route path='/managedeck/:id' element={< ManageDeckPage/>} />
                     </Routes>
                 </>
                 :

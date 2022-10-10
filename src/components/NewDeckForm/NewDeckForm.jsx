@@ -24,11 +24,10 @@ export default function NewDeckForm() {
         evt.preventDefault();
         try {
             const newDeck = await deckAPI.createDeck(formData); //save deck to database
-            //addDeck(newDeck); //set use state
+            navigate(`/managedeck/${newDeck._id}`);
         } catch {
             console.log('create deck failed');
         }
-        //navigate('/detail/_id')
     };
 
     return (
