@@ -6,7 +6,10 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn');
 //POST /api/decks
 router.post('/', ensureLoggedIn, decksCtrl.create);
 //GET /api/decks
-router.get('/', decksCtrl.getAllDecks); 
+router.get('/', ensureLoggedIn, decksCtrl.getAllDecks); 
+//POST /api/decks/cards
+router.post('/cards', ensureLoggedIn, decksCtrl.createCard);
+
 //DELETE /api/decks/id
 //router.delete('/:id', ensureLoggedIn, decksCtrl.delete);
 
