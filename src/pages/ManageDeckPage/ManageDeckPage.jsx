@@ -8,11 +8,11 @@ import NewCardForm from '../../components/NewCardForm/NewCardForm';
 //Make new card form
 //List of existing cards
 
-export default function ManageDeckPage({deck}) {
+export default function ManageDeckPage({deckName}) {
 
     let id = useParams().id;
 
-    console.log(deck);
+    console.log(deckName);
 
     return (
         <>

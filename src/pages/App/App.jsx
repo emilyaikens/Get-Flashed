@@ -12,7 +12,7 @@ import ManageDeckPage from '../ManageDeckPage/ManageDeckPage';
 function App() {
     // set the user by calling getUser function
     const [user, setUser] = useState(getUser());
-    const [deck, setDeck] = useState([]);
+    const [deckName, setDeckName] = useState([]);
 
     return (
         < main className="App">
@@ -20,10 +20,10 @@ function App() {
                 <>
                     <NavBar user={user} setUser={setUser}/>
                     <Routes>
-                        <Route path="/deck/new" element={<NewDeckPage setDeck={setDeck} />}/>
+                        <Route path="/deck/new" element={<NewDeckPage setDeckName={setDeckName} />}/>
                         <Route path="/" element={<DeckIndexPage />}/>
                         <Route path='/deckdetails/:id' element={< DeckDetailsPage/>} />
-                        <Route path='/managedeck/:id' element={< ManageDeckPage deck={deck} />} />
+                        <Route path='/managedeck/:id' element={< ManageDeckPage deckName={deckName} />} />
                     </Routes>
                 </>
                 :

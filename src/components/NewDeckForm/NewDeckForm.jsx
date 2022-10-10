@@ -2,7 +2,7 @@ import { useState } from "react";
 import * as deckAPI from '../../utilities/decks-api';
 import { useNavigate } from 'react-router-dom';
 
-export default function NewDeckForm({setDeck}) {
+export default function NewDeckForm({setDeckName}) {
     const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
@@ -20,7 +20,7 @@ export default function NewDeckForm({setDeck}) {
         evt.preventDefault();
         try {
             const newDeck = await deckAPI.createDeck(formData); //save deck to database
-            setDeck(newDeck.name);
+            setDeckName(newDeck.name);
             navigate(`/managedeck/${newDeck._id}`);
         } catch {
             console.log('create deck failed');

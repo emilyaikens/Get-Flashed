@@ -1,11 +1,11 @@
 import NewDeckForm from '../../components/NewDeckForm/NewDeckForm';
 
-export default function NewDeckPage({setDeck}) {
+export default function NewDeckPage({setDeckName}) {
 
   return (
     <>
     <h1>New Deck Page</h1>
-    < NewDeckForm setDeck={setDeck}/>
+    < NewDeckForm setDeck={setDeckName}/>
     </>
   );
 }
