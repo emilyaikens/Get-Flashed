@@ -21,7 +21,7 @@ function App() {
                     <NavBar user={user} setUser={setUser}/>
                     <Routes>
                         <Route path="/deck/new" element={<NewDeckPage setDeck={setDeck}/>}/>
-                        <Route path="/" element={<DeckIndexPage/>}/>
+                        <Route path="/" element={<DeckIndexPage deck={deck}/>}/>
                         {/* below: WILL NEED ID ADDED TO PATH */}
                         <Route path='/deckdetails' element={< DeckDetailsPage/>} />
                         <Route path='/managedeck' element={< ManageDeckPage/>} />

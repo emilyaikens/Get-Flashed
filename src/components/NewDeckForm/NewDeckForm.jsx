@@ -23,8 +23,8 @@ export default function NewDeckForm({setDeck}) {
     const handleSubmit = async (evt) => {
         evt.preventDefault();
         try {
-            const deck = await deckAPI.createDeck(formData);
-            setDeck(deck);
+            const deck = await deckAPI.createDeck(formData); //save deck to database
+            setDeck(deck); //set use state
         } catch {
             console.log('create deck failed');
         }
