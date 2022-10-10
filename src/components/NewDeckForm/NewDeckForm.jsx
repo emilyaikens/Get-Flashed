@@ -3,7 +3,7 @@ import * as deckAPI from '../../utilities/decks-api';
 import { useNavigate } from 'react-router-dom';
 //import createDeck
 
-export default function NewDeckForm({setDeck}) {
+export default function NewDeckForm() {
     const navigate = useNavigate();
     //create new deck that belongs to this user
     //once form is created, redirect to the "manage deck" page
@@ -23,8 +23,8 @@ export default function NewDeckForm({setDeck}) {
     const handleSubmit = async (evt) => {
         evt.preventDefault();
         try {
-            const deck = await deckAPI.createDeck(formData);
-            setDeck(deck);
+            const newDeck = await deckAPI.createDeck(formData); //save deck to database
+            //addDeck(newDeck); //set use state
         } catch {
             console.log('create deck failed');
         }

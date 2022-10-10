@@ -1,18 +1,35 @@
-import Deck from '../../components/Deck/Deck';
+import {useState} from 'react';
+import { useEffect } from 'react';
+import { getAllDecks } from '../../utilities/decks-api';
+import { Link } from 'react-router-dom';
+import DeckList from '../../components/DeckList/DeckList';
 
 export default function DeckIndexPage() {
-//import my decks from the database
 
-//map those decks and send them to components/Deck
+    const [decks, setDecks] = useState([]);
+
+    useEffect(function () {
+        async function getDecks() {
+            const myDecks = await getAllDecks();
+            setDecks(myDecks);
+        }
+        getDecks();
+    }, []);
+
+    let noDecks = "You have no decks yet";
+        if (decks.length > 0) {
+            noDecks = null;
+        };
 
     return (
         <>
-            {/* if i have decks
-                show all of the decks
-                else show the message "No decks yet" with
-                button the links to build deck page */}
             <h1>Deck Index Page</h1>
-            <Deck />
+            <div>{noDecks}</div>
+            <Link to="/deck/new">
+                <button>New Deck</button>
+            </Link>
+            <br/>
+            <DeckList decks={decks}/>
         </>
     );
 }
