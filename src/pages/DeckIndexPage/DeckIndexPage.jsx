@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import { useEffect } from 'react';
-import { getAll } from '../../utilities/decks-api';
+import { getAllDecks } from '../../utilities/decks-api';
 import Deck from '../../components/Deck/Deck';
 
 export default function DeckIndexPage() {
@@ -9,8 +9,8 @@ export default function DeckIndexPage() {
 
     useEffect(function () {
         async function getDecks() {
-            const decks = await getAll();
-            console.log(decks);
+            const decks = await getAllDecks();
+            console.log(decks[0].name);
             setDecks(decks);
         }
         getDecks()

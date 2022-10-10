@@ -8,7 +8,7 @@ async function create(req, res) {
     res.json(newDeck);
 };
 
-async function getAll(req, res) {
+async function getAllDecks(req, res) {
     const decks = await Deck.find({user: req.user._id})
     res.json(decks);
 };
@@ -23,7 +23,7 @@ async function getAll(req, res) {
 
 module.exports = {
     create,
-    getAll,
+    getAllDecks,
     // deleteDeck,
 };
 
