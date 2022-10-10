@@ -10,6 +10,10 @@ const cardSchema = new Schema({
         type: String,
         required: true
     },
+    deckId: {
+        type: String,
+        required: true
+    },
     user: {
         type: Schema.Types.ObjectId, 
         ref: 'User'

@@ -1,4 +1,5 @@
 const Deck = require('../../models/deck');
+const Card = require('../../models/card');
 
 async function create(req, res) {
     req.body.user = req.user._id;
@@ -12,11 +13,11 @@ async function getAllDecks(req, res) {
     res.json(decks);
 };
 
-async function createCard(req,res) {
+async function createCard(req, res) {
     req.body.user = req.user._id;
-    let newCard = new Deck.card(req.body);
+    let newCard = new Card(req.body);
     await newCard.save();
-    res.json(newDeck);
+    res.json(newCard);
 };
 
 // async function deleteDeck(req, res) {
