@@ -12,8 +12,13 @@ export default function DeckIndexPage() {
             const myDecks = await getAllDecks();
             setDecks(myDecks);
         }
-        getDecks()
+        getDecks();
     }, []);
+
+    let noDecks = "You have no decks yet";
+        if (decks.length > 0) {
+            noDecks = null;
+        };
 
     return (
         <>
@@ -22,6 +27,9 @@ export default function DeckIndexPage() {
                 else show the message "No decks yet" with
                 button the links to build deck page */}
             <h1>Deck Index Page</h1>
+            <div>{noDecks}</div>
+            <button>New Deck</button>
+            <br/>
             <DeckList decks={decks}/>
         </>
     );
