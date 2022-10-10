@@ -6,7 +6,7 @@ export default function NewDeckForm({setDeckName}) {
     const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
-        name: ""
+        name: ''
     });
 
     const handleChange = (evt) => {
