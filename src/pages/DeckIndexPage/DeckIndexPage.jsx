@@ -1,8 +1,16 @@
+import { useEffect } from 'react';
 import Deck from '../../components/Deck/Deck';
+import { getAll } from '../../utilities/decks-api';
 
 export default function DeckIndexPage({deck}) {
-//import my decks from the database
 
+    async function getDecks() {
+        const decks = await getAll()
+    }
+
+    useEffect(() => {
+        getDecks();
+    }, []);
 
 
 //map those decks and send them to components/Deck
