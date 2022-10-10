@@ -1,5 +1,5 @@
 import Card from '../../components/Card/Card';
-import {useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 //button onclick, redirect to the ManageDeckPage route WITH ID
 
