@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import { useEffect } from 'react';
 import { getAllDecks } from '../../utilities/decks-api';
+import { Link } from 'react-router-dom';
 import DeckList from '../../components/DeckList/DeckList';
 
 export default function DeckIndexPage() {
@@ -22,13 +23,11 @@ export default function DeckIndexPage() {
 
     return (
         <>
-            {/* if i have decks
-                show all of the decks
-                else show the message "No decks yet" with
-                button the links to build deck page */}
             <h1>Deck Index Page</h1>
             <div>{noDecks}</div>
-            <button>New Deck</button>
+            <Link to="/deck/new">
+                <button>New Deck</button>
+            </Link>
             <br/>
             <DeckList decks={decks}/>
         </>
