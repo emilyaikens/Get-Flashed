@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 import NewCardForm from '../../components/NewCardForm/NewCardForm';
 
 // localhost:3000/managedeck
@@ -6,10 +8,17 @@ import NewCardForm from '../../components/NewCardForm/NewCardForm';
 //Make new card form
 //List of existing cards
 
-export default function ManageDeckPage() {
+export default function ManageDeckPage({deck}) {
+
+    let id = useParams().id;
+
+    console.log(deck);
+
     return (
         <>
-        <div>Link back to DeckDetailsPage says 'all done'</div>
+        {/* <Link to="/">
+                <button>back to deck</button>
+            </Link> */}
         <h1>Manage Deck Page</h1>
         <NewCardForm />
         <button>Delete Deck</button>
