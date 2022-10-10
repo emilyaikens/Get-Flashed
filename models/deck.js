@@ -34,10 +34,6 @@ const deckSchema = new Schema({
     //     default: false,
     // },
     cards: [cardSchema],
-    user: {
-        type: Schema.Types.ObjectId, 
-        ref:'User'
-    },
     }, {
         timestamps: true,
     });

@@ -9,6 +9,7 @@ export default function NewCardForm() {
     const [formData, setFormData] = useState({
         question: '',
         answer: '',
+        deckId: {id}, //sets this to the current deckid
     });
 
     const handleChange = (evt) => {
@@ -21,7 +22,6 @@ export default function NewCardForm() {
     const handleSubmit = async (evt) => {
         evt.preventDefault();
         try {
-            alert(formData.question)
             //const newCard = await deckAPI.createCard(formData);
         } catch {
             console.log('create card failed');
