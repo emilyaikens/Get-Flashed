@@ -1,19 +1,20 @@
+import {useState} from 'react';
 import { useEffect } from 'react';
-import Deck from '../../components/Deck/Deck';
 import { getAll } from '../../utilities/decks-api';
+import Deck from '../../components/Deck/Deck';
 
-export default function DeckIndexPage({deck}) {
+export default function DeckIndexPage() {
 
-    async function getDecks() {
-        const decks = await getAll()
-    }
+    const [decks, setDecks] = useState([]);
 
-    useEffect(() => {
-        getDecks();
+    useEffect(function () {
+        async function getDecks() {
+            const decks = await getAll();
+            console.log(decks);
+            setDecks(decks);
+        }
+        getDecks()
     }, []);
-
-
-//map those decks and send them to components/Deck
 
     return (
         <>
@@ -22,7 +23,7 @@ export default function DeckIndexPage({deck}) {
                 else show the message "No decks yet" with
                 button the links to build deck page */}
             <h1>Deck Index Page</h1>
-            <Deck />
+            <Deck decks={decks}/>
         </>
     );
 }

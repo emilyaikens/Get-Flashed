@@ -9,8 +9,8 @@ async function create(req, res) {
 };
 
 async function getAll(req, res) {
-    const deck = await Deck.find({user: req.user._id})
-    res.json(website);
+    const decks = await Deck.find({user: req.user._id})
+    res.json(decks);
 };
 
 // async function deleteDeck(req, res) {
