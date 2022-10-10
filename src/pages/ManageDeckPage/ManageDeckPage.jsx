@@ -12,14 +12,13 @@ export default function ManageDeckPage({deckName}) {
 
     let id = useParams().id;
 
-    console.log(deckName);
-
     return (
         <>
         {/* <Link to="/">
                 <button>back to deck</button>
             </Link> */}
         <h1>Manage Deck Page</h1>
+        <h2>{deckName}</h2>
         <NewCardForm />
         <button>Delete Deck</button>
         </>
