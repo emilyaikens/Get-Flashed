@@ -1,7 +1,9 @@
 import Deck from '../../components/Deck/Deck';
 
-export default function DeckIndexPage() {
+export default function DeckIndexPage({deck}) {
 //import my decks from the database
+
+
 
 //map those decks and send them to components/Deck
 
