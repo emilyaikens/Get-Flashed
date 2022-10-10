@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import { useEffect } from 'react';
 import { getAllDecks } from '../../utilities/decks-api';
-import Deck from '../../components/Deck/Deck';
+import DeckList from '../../components/DeckList/DeckList';
 
 export default function DeckIndexPage() {
 
@@ -10,7 +10,7 @@ export default function DeckIndexPage() {
     useEffect(function () {
         async function getDecks() {
             const decks = await getAllDecks();
-            console.log(decks[0].name);
+            //console.log(decks[0].name);
             setDecks(decks);
         }
         getDecks()
@@ -23,7 +23,7 @@ export default function DeckIndexPage() {
                 else show the message "No decks yet" with
                 button the links to build deck page */}
             <h1>Deck Index Page</h1>
-            <Deck decks={decks}/>
+            <DeckList decks={decks}/>
         </>
     );
 }
