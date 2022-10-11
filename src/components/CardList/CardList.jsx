@@ -8,6 +8,8 @@ export default function CardList({card, index}) {
     return (
         <>
         {card.question}
+        <br/>
+        <button>Flip</button>
         </>
     )
 }

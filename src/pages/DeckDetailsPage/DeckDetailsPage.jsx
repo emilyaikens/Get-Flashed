@@ -9,6 +9,7 @@ import CardList from '../../components/CardList/CardList';
 export default function DeckDetailsPage() {
 
     const [cards, setCards] = useState([]);
+    const [cardIndex, setCardIndex] = useState(0);
 
     let id = useParams().id;
 
@@ -29,10 +30,9 @@ export default function DeckDetailsPage() {
         <h1>Deck Details Page</h1>
         <button>Edit Deck</button>
         <div>
-            {theCards[0]}
+            {theCards[cardIndex]}
         </div>
         <button>Back</button>
-        <button>Flip</button>
         <button>Next</button>
         </>
     )
