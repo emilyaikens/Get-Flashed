@@ -26,6 +26,11 @@ export default function NewCardForm() {
         try {
             const newCard = await deckAPI.createCard(formData);
             setCards({...setCards, newCard});
+            setFormData({
+                question: '',
+                answer: '',
+                deckId: id
+            })
         } catch {
             console.log('create card failed');
         }
@@ -40,6 +45,7 @@ export default function NewCardForm() {
                     name="question"
                     value={formData.question}
                     onChange={handleChange}
+                    required
                 />
                 <label>Answer:</label>
                 <input
