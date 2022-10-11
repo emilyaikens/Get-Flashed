@@ -11,13 +11,12 @@ export function getAllDecks() {
 };
 
 export function createCard(cardData) {
-    console.log(cardData.deckId);
     return sendRequest(`${BASE_URL}/cards`, 'POST', cardData);
 };
 
-// export function getById(id) {
-//     return sendRequest(`${BASE_URL}/${id}`);
-// }
+export function getCards(id) {
+    return sendRequest(`${BASE_URL}/${id}`);
+}
 
 // export function deleteDeck(id) {
 //     return sendRequest(`${BASE_URL}/${id}`, 'DELETE' );

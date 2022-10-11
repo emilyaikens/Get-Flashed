@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { getAllCards } from '../../utilities/decks-api';
+import { getCards } from '../../utilities/decks-api';
 import Card from '../../components/Card/Card';
 
 //button onclick, redirect to the ManageDeckPage route WITH ID
@@ -13,11 +13,11 @@ export default function DeckDetailsPage() {
     const [cards, setCards] = useState([]);
 
     useEffect(function () {
-        async function getCards() {
-            const myCards = await getAllCards(id);
+        async function findCards() {
+            const myCards = await getCards(id);
             setCards(myCards);
         }
-        getCards();
+        findCards();
     }, []);
 
     return (
