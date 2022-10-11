@@ -6,11 +6,9 @@ import Card from '../../components/Card/Card';
 
 //button onclick, redirect to the ManageDeckPage route WITH ID
 
-export default function DeckDetailsPage() {
+export default function DeckDetailsPage({cards, setCards}) {
 
     let id = useParams().id;
-
-    const [cards, setCards] = useState([]);
 
     useEffect(function () {
         async function findCards() {
@@ -20,11 +18,15 @@ export default function DeckDetailsPage() {
         findCards();
     }, []);
 
+    //console.log(cards); 
+
+    const [currentCard, setCurrentCard] = useState("");
+
     return (
         <>
         <h1>Deck Details Page</h1>
         <button>Edit Deck</button>
-        <Card />
+        <Card cards={cards}/>
         <button>Back</button>
         <button>Flip</button>
         <button>Next</button>
