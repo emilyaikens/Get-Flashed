@@ -7,7 +7,7 @@ import CardList from '../../components/CardList/CardList';
 
 //button onclick, redirect to the ManageDeckPage route WITH ID
 
-export default function DeckDetailsPage() {
+export default function DeckDetailsPage({setDeckName, deckName}) {
 
     const [cards, setCards] = useState([]);
     const [cardIndex, setCardIndex] = useState(0);
@@ -28,13 +28,15 @@ export default function DeckDetailsPage() {
 
     return (
         <>
-        <h1>Deck Details Page</h1>
-        <Link to={`/managedeck/${id}`}><button>Edit Deck</button></Link>
-        <div>
-            {theCards[cardIndex]}
-        </div>
-        <button>Back</button>
-        <button>Next</button>
+            <h1>Deck Details Page</h1>
+            <Link to={`/managedeck/${id}`}>
+                <button onClick={()=>setDeckName(deckName)}>Edit Deck</button>
+            </Link>
+            <div>
+                {theCards[cardIndex]}
+            </div>
+            <button>Back</button>
+            <button>Next</button>
         </>
     )
 }
