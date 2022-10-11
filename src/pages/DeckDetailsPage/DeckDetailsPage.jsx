@@ -17,14 +17,11 @@ export default function DeckDetailsPage({cards, setCards}) {
         findCards()
     }, []);
 
-    const cardList = cards.map((value, index) => 
-        <CardList card={value} key={value._id} index={index}/>)
-
     return (
         <>
         <h1>Deck Details Page</h1>
         <button>Edit Deck</button>
-        <CardList />
+        <CardList cards={cards}/>
         </>
     )
 }
