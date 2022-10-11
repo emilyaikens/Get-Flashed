@@ -1,5 +1,4 @@
 const Deck = require('../../models/deck');
-const Card = require('../../models/card');
 
 async function create(req, res) {
     req.body.user = req.user._id;
@@ -14,10 +13,11 @@ async function getAllDecks(req, res) {
 };
 
 async function createCard(req, res) {
-    req.body.user = req.user._id;
-    let newCard = new Card(req.body);
-    await newCard.save();
-    res.json(newCard);
+    //find Deck based on ID and push this card to that deck's cards array
+    const deck = await Deck.findById(req.body.deckId);
+    deck.cards.push(req.body);
+    await deck.save();
+    res.json(deck);
 };
 
 // async function deleteDeck(req, res) {

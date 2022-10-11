@@ -9,7 +9,7 @@ export default function NewCardForm() {
     const [formData, setFormData] = useState({
         question: '',
         answer: '',
-        deckId: {id}, //sets this to the current deckid
+        deckId: id, //sets this to the current deckid
     });
 
     const [cards, setCards] = useState([]);

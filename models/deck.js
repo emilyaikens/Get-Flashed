@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const cardSchema = require('./card');
 
 const cardSchema = new Schema({
     question: {
@@ -8,6 +7,10 @@ const cardSchema = new Schema({
         required: true
     },
     answer: {
+        type: String,
+        required: true
+    },
+    deckId: {
         type: String,
         required: true
     },

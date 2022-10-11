@@ -11,6 +11,7 @@ export function getAllDecks() {
 };
 
 export function createCard(cardData) {
+    console.log(cardData.deckId);
     return sendRequest(`${BASE_URL}/cards`, 'POST', cardData);
 };
 
