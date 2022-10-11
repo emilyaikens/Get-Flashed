@@ -9,6 +9,8 @@ router.post('/', ensureLoggedIn, decksCtrl.create);
 router.get('/', ensureLoggedIn, decksCtrl.getAllDecks); 
 //POST /api/decks/cards
 router.post('/cards', ensureLoggedIn, decksCtrl.createCard);
+//GET /api/decks/id
+router.get('/:id', ensureLoggedIn, decksCtrl.getCards);
 
 //DELETE /api/decks/id
 //router.delete('/:id', ensureLoggedIn, decksCtrl.delete);
