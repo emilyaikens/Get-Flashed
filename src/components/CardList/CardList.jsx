@@ -1,5 +1,3 @@
-import { useState } from 'react';
-import Card from '../Card/Card';
 
 export default function CardList({card, index}) {
 

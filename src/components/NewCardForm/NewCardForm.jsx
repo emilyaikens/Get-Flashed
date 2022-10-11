@@ -45,7 +45,6 @@ export default function NewCardForm() {
                     name="question"
                     value={formData.question}
                     onChange={handleChange}
-                    required
                 />
                 <label>Answer:</label>
                 <input
