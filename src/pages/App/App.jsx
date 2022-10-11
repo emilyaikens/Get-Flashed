@@ -13,7 +13,7 @@ function App() {
     // set the user by calling getUser function
     const [user, setUser] = useState(getUser());
     const [deckName, setDeckName] = useState([]);
-    const [cards, setCards] = useState([]);
+    // const [cards, setCards] = useState([]);
 
     return (
         < main className="App">
@@ -23,7 +23,7 @@ function App() {
                     <Routes>
                         <Route path="/deck/new" element={<NewDeckPage setDeckName={setDeckName} />}/>
                         <Route path="/" element={<DeckIndexPage />}/>
-                        <Route path='/deckdetails/:id' element={< DeckDetailsPage cards={cards} setCards={setCards} />} />
+                        <Route path='/deckdetails/:id' element={< DeckDetailsPage />} />
                         <Route path='/managedeck/:id' element={< ManageDeckPage deckName={deckName} />} />
                     </Routes>
                 </>

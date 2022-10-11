@@ -1,8 +1,12 @@
 
-export default function Card({card, index}) {
+
+export default function Card({card}) {
+
+    
+
     return (
         <>
-        <div>{card.question}</div>
+        <div></div>
         </>
     )
 }

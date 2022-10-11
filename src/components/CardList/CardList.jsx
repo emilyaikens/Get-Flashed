@@ -1,19 +1,13 @@
 import { useState } from 'react';
 import Card from '../Card/Card';
 
-export default function CardList({cards, index}) {
+export default function CardList({card, index}) {
 
-const [currentCard, setCurrentCard] = useState("");
-
-const myCards = cards.map((value, index) => 
-        <Card card={value} key={value._id} index={index}/>)
+//const [index, setIndex] = useState(0);
 
     return (
         <>
-        {myCards}
-        <button>Back</button>
-        <button>Flip</button>
-        <button>Next</button>
+        {card.question}
         </>
     )
 }
