@@ -10,6 +10,10 @@ const cardSchema = new Schema({
         type: String,
         required: true
     },
+    deckId: {
+        type: String,
+        required: true
+    },
     user: {
         type: Schema.Types.ObjectId, 
         ref: 'User'
@@ -34,10 +38,6 @@ const deckSchema = new Schema({
     //     default: false,
     // },
     cards: [cardSchema],
-    user: {
-        type: Schema.Types.ObjectId, 
-        ref:'User'
-    },
     }, {
         timestamps: true,
     });
