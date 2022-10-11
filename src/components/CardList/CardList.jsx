@@ -1,13 +1,13 @@
 
 export default function CardList({card, index}) {
 
-//const [index, setIndex] = useState(0);
-
     return (
         <>
-        {card.question}
+        <div>Question:</div>
+        <div>{card.question}</div>
+        <div>Answer:</div>
+        <div>{card.answer}</div>
         <br/>
-        <button>Flip</button>
         </>
     )
 }

@@ -3,13 +3,12 @@ import { useEffect } from 'react';
 import { getCards } from '../../utilities/decks-api';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import CardList from '../../components/CardList/CardList';
+import Card from '../../components/Card/Card';
 
 //button onclick, redirect to the ManageDeckPage route WITH ID
 
-export default function DeckDetailsPage({setDeckName, deckName}) {
+export default function DeckDetailsPage({setDeckName, deckName, cards, setCards}) {
 
-    const [cards, setCards] = useState([]);
     const [cardIndex, setCardIndex] = useState(0);
 
     let id = useParams().id;
@@ -23,7 +22,7 @@ export default function DeckDetailsPage({setDeckName, deckName}) {
     }, []);
 
     let theCards= cards.map((card, index) => {
-        return <CardList card={card} index={index} key={card._id} />
+        return <Card card={card} index={index} key={card._id} />
     })
 
     return (
