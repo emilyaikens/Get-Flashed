@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect } from 'react';
 import { getCards } from '../../utilities/decks-api';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import CardList from '../../components/CardList/CardList';
 
 //button onclick, redirect to the ManageDeckPage route WITH ID
@@ -28,7 +29,7 @@ export default function DeckDetailsPage() {
     return (
         <>
         <h1>Deck Details Page</h1>
-        <button>Edit Deck</button>
+        <Link to={`/managedeck/${id}`}><button>Edit Deck</button></Link>
         <div>
             {theCards[cardIndex]}
         </div>
