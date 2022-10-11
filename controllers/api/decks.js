@@ -20,6 +20,12 @@ async function createCard(req, res) {
     res.json(deck);
 };
 
+async function getCards(req, res) {
+    const deck = await Deck.findById(req.params.id);
+    const findCards = deck.cards;
+    res.json(findCards);
+};
+
 // async function deleteDeck(req, res) {
 //     await Deck.findOneAndDelete({
 //         _id: req.params.id,
@@ -32,6 +38,7 @@ module.exports = {
     create,
     getAllDecks,
     createCard,
+    getCards,
     // deleteDeck,
 };
 
