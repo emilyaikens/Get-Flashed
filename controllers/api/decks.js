@@ -33,11 +33,20 @@ async function deleteDeck(req, res) {
     res.json("Deleted Deck")
 };
 
+// async function deleteCard(req, res) {
+//     const deck = await Deck.findById(req.params.id);
+//     //deck.cards.findById(req.body._id);
+//     console.log(deck.cards);
+//     //console.log(req.body._id)
+//     //console.log(req.params.id)
+// }
+
 module.exports = {
     create,
     getAllDecks,
     createCard,
     getCards,
     deleteDeck,
+    deleteCard,
 };
 

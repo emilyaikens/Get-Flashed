@@ -13,5 +13,7 @@ router.post('/cards', ensureLoggedIn, decksCtrl.createCard);
 router.get('/:id', ensureLoggedIn, decksCtrl.getCards);
 //DELETE /api/decks/id
 router.delete('/:id', ensureLoggedIn, decksCtrl.deleteDeck);
+//DELETE /api/decks/card/id
+//router.delete('/card/:id', ensureLoggedIn, decksCtrl.deleteCard)
 
 module.exports = router;

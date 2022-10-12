@@ -22,7 +22,8 @@ export function deleteDeck(id) {
     return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
 }
 
-export function deleteCard(id) {
-    return sendRequest(`${BASE_URL}/card/${id}`, 'DELETE');
-}
+//export function deleteCard(card) {
+    //console.log(card.deckId);
+    //return sendRequest(`${BASE_URL}/card/${card.deckId}`, 'DELETE', card);
+//}
 
