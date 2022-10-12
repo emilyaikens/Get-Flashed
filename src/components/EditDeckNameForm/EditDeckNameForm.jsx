@@ -2,7 +2,7 @@ import { useState } from "react";
 import * as deckAPI from '../../utilities/decks-api';
 import { useNavigate } from 'react-router-dom';
 
-export default function NewDeckForm({setDeckName, deckName}) {
+export default function NewDeckForm({setDeckName, deckName, id}) {
     const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
@@ -19,9 +19,8 @@ export default function NewDeckForm({setDeckName, deckName}) {
     const handleSubmit = async (evt) => {
         evt.preventDefault();
         try {
-            alert('button')
-            //const newDeck = await deckAPI.createDeck(formData); //save deck to database
-            //setDeckName(newDeck.name);
+            const newDeckName = await deckAPI.editDeckName(formData, id); 
+            setDeckName(newDeckName.name);
             //navigate(`/managedeck/${newDeck._id}`);
         } catch {
             console.log('create deck failed');
@@ -36,10 +35,10 @@ export default function NewDeckForm({setDeckName, deckName}) {
                     type="text"
                     name="name"
                     value={formData.name}
+                    placeholder={deckName}
                     onChange={handleChange}
                 />
-                {/* add checkbox for public later */}
-                <button type="Submit">Update</button>
+                <button type="Submit">Update Deck Name</button>
             </form>
         </>
     )

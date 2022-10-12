@@ -33,6 +33,13 @@ async function deleteDeck(req, res) {
     res.json("Deleted Deck")
 };
 
+async function editDeckName(req, res) {
+    const deck = await Deck.findById(req.params.id);
+    deck.name = req.body.name;
+    await deck.save();
+    res.json(deck)
+}
+
 // async function deleteCard(req, res) {
 //     const deck = await Deck.findById(req.params.id);
 //     //deck.cards.findById(req.body._id);
@@ -47,6 +54,7 @@ module.exports = {
     createCard,
     getCards,
     deleteDeck,
-    deleteCard,
+    editDeckName,
+    //deleteCard,
 };
 

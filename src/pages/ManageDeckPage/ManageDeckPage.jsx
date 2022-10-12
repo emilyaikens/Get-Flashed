@@ -49,8 +49,10 @@ export default function ManageDeckPage({deckName, setDeckName, cards, setCards, 
             </Link>
             <h1>Manage Deck Page</h1>
             <h2>{deckName}</h2>
-            <EditDeckNameForm deckName={deckName} setDeckName={setDeckName} />
+            <EditDeckNameForm id={id} deckName={deckName} setDeckName={setDeckName} />
+            <br/>
             <NewCardForm setAddCard={setAddCard}/>
+            <br/>
             <div>{theCards}</div>
             <button onClick={() => handleDelete(id)} >Delete Deck</button>
         </>
