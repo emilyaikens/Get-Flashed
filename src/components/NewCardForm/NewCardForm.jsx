@@ -32,7 +32,7 @@ export default function NewCardForm({setAddCard}) {
                 answer: '',
                 deckId: id
             });
-            setAddCard([1]);
+            setAddCard([1]); //updates usestate so that new card renders
         } catch {
             console.log('create card failed');
         }

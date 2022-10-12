@@ -19,6 +19,10 @@ export function getCards(id) {
 }
 
 export function deleteDeck(id) {
-    return sendRequest(`${BASE_URL}/${id}`, 'DELETE' );
+    return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
+}
+
+export function deleteCard(id) {
+    return sendRequest(`${BASE_URL}/card/${id}`, 'DELETE');
 }
 

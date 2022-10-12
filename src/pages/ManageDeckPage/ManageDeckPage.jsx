@@ -38,7 +38,7 @@ export default function ManageDeckPage({deckName, cards, setCards, decks, setDec
     };
 
     let theCards= cards.map((card, index) => {
-        return <CardList card={card} index={index} key={card._id} />
+        return <CardList card={card} index={index} key={card._id} setAddCard={setAddCard}/>
     })
 
     return (

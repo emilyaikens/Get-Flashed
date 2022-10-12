@@ -1,15 +1,33 @@
+import { deleteCard } from '../../utilities/decks-api';
 
-export default function CardList({card, index}) {
+export default function CardList({card, setAddCard}) {
 
-    function handleEdit(evt) {
-        evt.preventDefault();
-        alert("edit button")
+    function handleEdit(id) {
+        //edit function will go here
+        console.log(id)
     };
 
-    function handleDelete(evt) {
-        evt.preventDefault();
-        alert("delete button")
+    function handleDelete(id) {
+        try{
+            deleteCard(id);
+            setAddCard([0]); //should refresh list
+        } catch {
+            console.log('delete card failed')
+        }
     };
+
+    // function handleDelete(id) {
+    //     try {
+    //         deleteDeck(id);
+    //         const updateDecks = decks.filter(function (decks) {
+    //             return decks._id !== id;
+    //         });
+    //         setDecks(updateDecks);
+    //         navigate('/');
+    //     } catch {
+    //         console.log('delete deck failed');
+    //     }
+    // };
 
     return (
         <>
@@ -20,8 +38,8 @@ export default function CardList({card, index}) {
             <div>{card.answer}</div>
         </div>
         <div>
-            <button onClick={handleEdit}>edit</button>
-            <button onClick={handleDelete}>delete</button>
+            <button onClick={evt => {evt.preventDefault(); handleEdit(card._id)}}>edit</button>
+            <button onClick={evt => {evt.preventDefault(); handleDelete(card._id)}}>delete</button>
         </div>
         <br/>
         </>
