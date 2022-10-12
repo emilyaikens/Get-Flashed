@@ -1,33 +1,41 @@
 import { useParams } from "react-router-dom";
-import { useState } from 'react';
 import { useEffect } from 'react';
 import { getCards } from '../../utilities/decks-api';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Card from '../../components/Card/Card';
 
 //button onclick, redirect to the ManageDeckPage route WITH ID
 
-export default function DeckDetailsPage() {
+export default function DeckDetailsPage({setDeckName, deckName, cards, setCards}) {
+
+    const [cardIndex, setCardIndex] = useState(0);
 
     let id = useParams().id;
-
-    const [cards, setCards] = useState([]);
 
     useEffect(function () {
         async function findCards() {
             const myCards = await getCards(id);
             setCards(myCards);
         }
-        findCards();
+        findCards()
     }, []);
+
+    let theCards= cards.map((card, index) => {
+        return <Card card={card} index={index} key={card._id} />
+    })
 
     return (
         <>
-        <h1>Deck Details Page</h1>
-        <button>Edit Deck</button>
-        <Card />
-        <button>Back</button>
-        <button>Flip</button>
-        <button>Next</button>
+            <h1>Deck Details Page</h1>
+            <Link to={`/managedeck/${id}`}>
+                <button onClick={()=>setDeckName(deckName)}>Edit Deck</button>
+            </Link>
+            <div>
+                {theCards[cardIndex]}
+            </div>
+            <button>Back</button>
+            <button>Next</button>
         </>
     )
 }

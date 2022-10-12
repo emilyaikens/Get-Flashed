@@ -13,6 +13,7 @@ function App() {
     // set the user by calling getUser function
     const [user, setUser] = useState(getUser());
     const [deckName, setDeckName] = useState([]);
+    const [cards, setCards] = useState([]);
 
     return (
         < main className="App">
@@ -21,9 +22,9 @@ function App() {
                     <NavBar user={user} setUser={setUser}/>
                     <Routes>
                         <Route path="/deck/new" element={<NewDeckPage setDeckName={setDeckName} />}/>
-                        <Route path="/" element={<DeckIndexPage />}/>
-                        <Route path='/deckdetails/:id' element={< DeckDetailsPage/>} />
-                        <Route path='/managedeck/:id' element={< ManageDeckPage deckName={deckName} />} />
+                        <Route path="/" element={<DeckIndexPage setDeckName={setDeckName}/>}/>
+                        <Route path='/deckdetails/:id' element={< DeckDetailsPage setDeckName={setDeckName} deckName={deckName} cards={cards} setCards={setCards} />} />
+                        <Route path='/managedeck/:id' element={< ManageDeckPage deckName={deckName} cards={cards} setCards={setCards} />} />
                     </Routes>
                 </>
                 :

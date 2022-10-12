@@ -4,7 +4,7 @@ import { getAllDecks } from '../../utilities/decks-api';
 import { Link } from 'react-router-dom';
 import DeckList from '../../components/DeckList/DeckList';
 
-export default function DeckIndexPage() {
+export default function DeckIndexPage({setDeckName}) {
 
     const [decks, setDecks] = useState([]);
 
@@ -29,7 +29,7 @@ export default function DeckIndexPage() {
                 <button>New Deck</button>
             </Link>
             <br/>
-            <DeckList decks={decks}/>
+            <DeckList decks={decks} setDeckName={setDeckName} />
         </>
     );
 }
