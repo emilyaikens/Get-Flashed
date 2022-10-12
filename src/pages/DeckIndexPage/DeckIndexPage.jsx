@@ -1,12 +1,10 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import { useEffect } from 'react';
 import { getAllDecks } from '../../utilities/decks-api';
 import { Link } from 'react-router-dom';
 import DeckList from '../../components/DeckList/DeckList';
 
-export default function DeckIndexPage({setDeckName}) {
-
-    const [decks, setDecks] = useState([]);
+export default function DeckIndexPage({setDeckName, decks, setDecks}) {
 
     useEffect(function () {
         async function getDecks() {
