@@ -9,7 +9,14 @@ import Card from '../../components/Card/Card';
 
 export default function DeckDetailsPage({setDeckName, deckName, cards, setCards}) {
 
-    const [cardIndex, setCardIndex] = useState(0);
+    const [cardIndex, setCardIndex] = useState(2);
+
+    function handleBack(evt) {
+        evt.preventDefault();
+        if (cardIndex > 0) {
+            setCardIndex(cardIndex - 1)
+        };
+    };
 
     let id = useParams().id;
 
@@ -34,7 +41,7 @@ export default function DeckDetailsPage({setDeckName, deckName, cards, setCards}
             <div>
                 {theCards[cardIndex]}
             </div>
-            <button>Back</button>
+            <button onClick={handleBack}>Back</button>
             <button>Next</button>
         </>
     )
