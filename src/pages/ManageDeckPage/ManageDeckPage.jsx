@@ -7,8 +7,9 @@ import { getCards } from '../../utilities/decks-api';
 import { deleteDeck } from '../../utilities/decks-api';
 import CardList from '../../components/CardList/CardList';
 import NewCardForm from '../../components/NewCardForm/NewCardForm';
+import EditDeckNameForm from '../../components/EditDeckNameForm/EditDeckNameForm'
 
-export default function ManageDeckPage({deckName, cards, setCards, decks, setDecks}) {
+export default function ManageDeckPage({deckName, setDeckName, cards, setCards, decks, setDecks}) {
 
     const [addCard, setAddCard] = useState([]);
 
@@ -48,6 +49,7 @@ export default function ManageDeckPage({deckName, cards, setCards, decks, setDec
             </Link>
             <h1>Manage Deck Page</h1>
             <h2>{deckName}</h2>
+            <EditDeckNameForm deckName={deckName} setDeckName={setDeckName} />
             <NewCardForm setAddCard={setAddCard}/>
             <div>{theCards}</div>
             <button onClick={() => handleDelete(id)} >Delete Deck</button>

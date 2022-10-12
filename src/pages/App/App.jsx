@@ -25,7 +25,7 @@ function App() {
                         <Route path="/deck/new" element={<NewDeckPage setDeckName={setDeckName} />}/>
                         <Route path="/" element={<DeckIndexPage setDeckName={setDeckName} decks={decks} setDecks={setDecks}/>}/>
                         <Route path='/deckdetails/:id' element={< DeckDetailsPage setDeckName={setDeckName} deckName={deckName} cards={cards} setCards={setCards} />} />
-                        <Route path='/managedeck/:id' element={< ManageDeckPage deckName={deckName} cards={cards} setCards={setCards} decks={decks} setDecks={setDecks} />} />
+                        <Route path='/managedeck/:id' element={< ManageDeckPage deckName={deckName} setDeckName={setDeckName} cards={cards} setCards={setCards} decks={decks} setDecks={setDecks} />} />
                     </Routes>
                 </>
                 :
