@@ -19,8 +19,9 @@ export default function ManageDeckPage({deckName, cards, setCards, decks, setDec
             setCards(myCards);
         }
         findCards()
-    }, [cards]);
-
+    }, []);
+    //[cards]
+    
     function handleDelete(id) {
         try {
             deleteDeck(id);
