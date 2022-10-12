@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import NewCardForm from '../../components/NewCardForm/NewCardForm';
 import { useEffect } from 'react';
 import { getCards } from '../../utilities/decks-api';
+import { deleteDeck } from '../../utilities/decks-api';
 import CardList from '../../components/CardList/CardList';
 
 export default function ManageDeckPage({deckName, cards, setCards}) {
@@ -17,6 +18,17 @@ export default function ManageDeckPage({deckName, cards, setCards}) {
         findCards()
     }, [cards]);
 
+    function handleDelete(id) {
+        evt.preventDefault();
+        try {
+            alert('delete deck')
+            deleteDeck(id);
+            navigate('/');
+        } catch {
+            console.log('delete deck failed');
+        }
+    };
+
     let theCards= cards.map((card, index) => {
         return <CardList card={card} index={index} key={card._id} />
     })
@@ -30,7 +42,7 @@ export default function ManageDeckPage({deckName, cards, setCards}) {
             <h2>{deckName}</h2>
             <NewCardForm />
             <div>{theCards}</div>
-            <button>Delete Deck</button>
+            <button onClick={handleDelete} >Delete Deck</button>
         </>
     )
 }
