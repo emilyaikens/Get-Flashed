@@ -26,19 +26,18 @@ async function getCards(req, res) {
     res.json(findCards);
 };
 
-// async function deleteDeck(req, res) {
-//     await Deck.findOneAndDelete({
-//         _id: req.params.id,
-//         "deck.user": req.user._id
-//     });
-//     res.json("Deleted Deck")
-// };
+async function deleteDeck(req, res) {
+    await Deck.findOneAndDelete({
+        _id: req.params.id
+    });
+    res.json("Deleted Deck")
+};
 
 module.exports = {
     create,
     getAllDecks,
     createCard,
     getCards,
-    // deleteDeck,
+    deleteDeck,
 };
 
