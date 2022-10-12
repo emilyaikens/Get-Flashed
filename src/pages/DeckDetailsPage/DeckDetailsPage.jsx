@@ -9,12 +9,19 @@ import Card from '../../components/Card/Card';
 
 export default function DeckDetailsPage({setDeckName, deckName, cards, setCards}) {
 
-    const [cardIndex, setCardIndex] = useState(2);
+    const [cardIndex, setCardIndex] = useState(0);
 
     function handleBack(evt) {
         evt.preventDefault();
         if (cardIndex > 0) {
             setCardIndex(cardIndex - 1)
+        };
+    };
+
+    function handleNext(evt) {
+        evt.preventDefault();
+        if (cardIndex < (cards.length - 1)) {
+            setCardIndex(cardIndex + 1)
         };
     };
 
@@ -42,7 +49,7 @@ export default function DeckDetailsPage({setDeckName, deckName, cards, setCards}
                 {theCards[cardIndex]}
             </div>
             <button onClick={handleBack}>Back</button>
-            <button>Next</button>
+            <button onClick={handleNext}>Next</button>
         </>
     )
 }
