@@ -36,7 +36,7 @@ export default function DeckDetailsPage({setDeckName, deckName, cards, setCards}
     }, []);
 
     let theCards= cards.map((card, index) => {
-        return <Card card={card} index={index} key={card._id} />
+        return <Card card={card} key={card._id} />
     })
 
     return (
