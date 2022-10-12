@@ -39,7 +39,7 @@ export default function ManageDeckPage({deckName, setDeckName, cards, setCards, 
     };
 
     let theCards= cards.map((card, index) => {
-        return <CardList card={card} index={index} key={card._id} setAddCard={setAddCard}/>
+        return <CardList card={card} index={index} key={card._id} cards={cards} setCards={setCards} setAddCard={setAddCard}/>
     })
 
     return (
@@ -54,7 +54,7 @@ export default function ManageDeckPage({deckName, setDeckName, cards, setCards, 
             <NewCardForm setAddCard={setAddCard}/>
             <br/>
             <div>{theCards}</div>
-            <button onClick={() => handleDelete(id)} >Delete Deck</button>
+            <button onClick={evt => {evt.preventDefault(); handleDelete(id)}} >Delete Deck</button>
         </>
     )
 }

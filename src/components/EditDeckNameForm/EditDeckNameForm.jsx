@@ -21,7 +21,6 @@ export default function NewDeckForm({setDeckName, deckName, id}) {
         try {
             const newDeckName = await deckAPI.editDeckName(formData, id); 
             setDeckName(newDeckName.name);
-            //navigate(`/managedeck/${newDeck._id}`);
         } catch {
             console.log('create deck failed');
         }

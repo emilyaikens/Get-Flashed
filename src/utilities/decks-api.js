@@ -26,8 +26,7 @@ export function editDeckName(formData, id) {
     return sendRequest(`${BASE_URL}/${id}`, 'PUT', formData)
 };
 
-//export function deleteCard(card) {
-    //console.log(card.deckId);
-    //return sendRequest(`${BASE_URL}/card/${card.deckId}`, 'DELETE', card);
-//}
+export function deleteCard(card) {
+    return sendRequest(`${BASE_URL}/card/${card.deckId}`, 'DELETE', card);
+}
 
