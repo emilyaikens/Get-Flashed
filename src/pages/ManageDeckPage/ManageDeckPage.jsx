@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { getCards } from '../../utilities/decks-api';
@@ -8,6 +9,8 @@ import CardList from '../../components/CardList/CardList';
 import NewCardForm from '../../components/NewCardForm/NewCardForm';
 
 export default function ManageDeckPage({deckName, cards, setCards, decks, setDecks}) {
+
+    const [addCard, setAddCard] = useState([]);
 
     const navigate = useNavigate();
 
@@ -19,8 +22,7 @@ export default function ManageDeckPage({deckName, cards, setCards, decks, setDec
             setCards(myCards);
         }
         findCards()
-    }, []);
-    //[cards]
+    }, [addCard]);
     
     function handleDelete(id) {
         try {
@@ -46,7 +48,7 @@ export default function ManageDeckPage({deckName, cards, setCards, decks, setDec
             </Link>
             <h1>Manage Deck Page</h1>
             <h2>{deckName}</h2>
-            <NewCardForm />
+            <NewCardForm setAddCard={setAddCard}/>
             <div>{theCards}</div>
             <button onClick={() => handleDelete(id)} >Delete Deck</button>
         </>

@@ -3,9 +3,7 @@ import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import * as deckAPI from '../../utilities/decks-api';
 
-export default function NewCardForm() {
-
-    //const navigate = useNavigate();
+export default function NewCardForm({setAddCard}) {
 
     let id = useParams().id;
 
@@ -34,6 +32,7 @@ export default function NewCardForm() {
                 answer: '',
                 deckId: id
             });
+            setAddCard([1]);
         } catch {
             console.log('create card failed');
         }
