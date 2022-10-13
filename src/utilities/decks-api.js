@@ -7,7 +7,7 @@ export function createDeck(deckData) {
 };
 
 export function getMyDecks() {
-    return sendRequest(BASE_URL)
+    return sendRequest(BASE_URL);
 };
 
 export function deleteDeck(id) {
@@ -15,9 +15,13 @@ export function deleteDeck(id) {
 }
 
 export function editDeckName(formData, id) {
-    return sendRequest(`${BASE_URL}/${id}`, 'PUT', formData)
+    return sendRequest(`${BASE_URL}/${id}`, 'PUT', formData);
 };
 
 export function getAllDecks() {
     return sendRequest(`${BASE_URL}/all-decks`);
+}
+
+export function findOne(id) {
+    return sendRequest(`${BASE_URL}/${id}`);
 }

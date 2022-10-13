@@ -13,5 +13,7 @@ router.delete('/:id', ensureLoggedIn, decksCtrl.deleteDeck);
 router.put('/:id', ensureLoggedIn, decksCtrl.editDeckName);
 //GET /api/decks/all-decks
 router.get('/all-decks', ensureLoggedIn, decksCtrl.getAllDecks);
+//GET /api/deck/id
+router.get('/:id', ensureLoggedIn, decksCtrl.findOne);
 
 module.exports = router;

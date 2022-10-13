@@ -6,7 +6,7 @@ import { getCards } from '../../utilities/cards-api';
 import { findOne } from '../../utilities/decks-api';
 import Card from '../../components/Card/Card';
 
-export default function DeckDetailsPage({setDeckName, deckName, cards, setCards}) {
+export default function DeckDetailsPage({setDeckName, deckName, cards, setCards, user}) {
 
     let id = useParams().id;
 
@@ -29,8 +29,8 @@ export default function DeckDetailsPage({setDeckName, deckName, cards, setCards}
 
     useEffect(function () {
         async function findDeck() {
-            const myCards = await findOne(id);
-            setCards(myCards);
+            const oneDeck = await findOne(id);
+            setThisDeck(oneDeck)
         }
         findDeck()
     }, [])
@@ -50,9 +50,13 @@ export default function DeckDetailsPage({setDeckName, deckName, cards, setCards}
     return (
         <>
             <h1>Deck Details Page</h1>
-            <Link to={`/managedeck/${id}`}>
-                <button onClick={()=>setDeckName(deckName)}>Edit Deck</button>
-            </Link>
+            {thisDeck.user === user._id ? 
+                <Link to={`/managedeck/${id}`}>
+                    <button onClick={()=>setDeckName(deckName)}>Edit Deck</button>
+                </Link> 
+                : 
+                <div></div>
+                }
             <div>
                 {theCards[cardIndex]}
             </div>

@@ -24,13 +24,17 @@ async function editDeckName(req, res) {
     deck.name = req.body.name;
     await deck.save();
     res.json(deck);
-}
+};
 
 async function getAllDecks(req, res) {
     const decks = await Deck.find();
     res.json(decks);
-    //console.log("hi")
-}
+};
+
+async function findOne(req, res) {
+    const deck = await Deck.findById(req.params.id);
+    res.json(deck);
+};
 
 module.exports = {
     create,
@@ -38,5 +42,6 @@ module.exports = {
     deleteDeck,
     editDeckName,
     getAllDecks,
+    findOne,
 };
 
