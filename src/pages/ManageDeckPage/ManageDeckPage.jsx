@@ -10,7 +10,7 @@ import CardList from '../../components/CardList/CardList';
 import NewCardForm from '../../components/NewCardForm/NewCardForm';
 import EditDeckNameForm from '../../components/EditDeckNameForm/EditDeckNameForm'
 
-export default function ManageDeckPage({deckName, setDeckName, cards, setCards}) {
+export default function ManageDeckPage({deckName, setDeckName, cards, setCards, user}) {
 
     const [addCard, setAddCard] = useState([]);
     const [owner, setOwner] = useState([]);
@@ -27,14 +27,14 @@ export default function ManageDeckPage({deckName, setDeckName, cards, setCards})
         findCards()
     }, [addCard]);
 
-    // useEffect(function () {
-    //     async function findOwner() {
-    //         const deckUser = await deckOwner(id);
-    //         setOwner(deckUser);
-    //     }
-    //     findOwner()
-    // }, []);
-    
+    useEffect(function () {
+        async function findOwner() {
+            const deckUser = await deckOwner(id);
+            setOwner(deckUser);
+        }
+        findOwner()
+    }, []);
+
     function handleDelete(id) {
         try {
             deleteDeck(id);
@@ -50,6 +50,8 @@ export default function ManageDeckPage({deckName, setDeckName, cards, setCards})
 
     return (
         <>
+        {owner === user._id ?
+        <>
             <Link to={`/deckdetails/${id}`}>
                 <button>Done</button>
             </Link>
@@ -62,5 +64,9 @@ export default function ManageDeckPage({deckName, setDeckName, cards, setCards})
             <div>{theCards}</div>
             <button onClick={evt => {evt.preventDefault(); handleDelete(id)}} >Delete Deck</button>
         </>
+        :
+        <div>No trespassing image</div>
+    }
+    </>
     )
 }

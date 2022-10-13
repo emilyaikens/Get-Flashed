@@ -36,6 +36,11 @@ async function findOne(req, res) {
     res.json(deck);
 };
 
+async function findOwner(req, res) {
+    const deck = await Deck.findById(req.params.id);
+    res.json(deck.user)
+}
+
 module.exports = {
     create,
     getMyDecks,
@@ -43,5 +48,6 @@ module.exports = {
     editDeckName,
     getAllDecks,
     findOne,
+    findOwner,
 };
 
