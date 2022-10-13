@@ -8,7 +8,7 @@ async function create(req, res) {
 };
 
 async function getMyDecks(req, res) {
-    const decks = await Deck.find({user: req.user._id})
+    const decks = await Deck.find({user: req.user._id});
     res.json(decks);
 };
 
@@ -16,18 +16,20 @@ async function deleteDeck(req, res) {
     await Deck.findOneAndDelete({
         _id: req.params.id
     });
-    res.json("Deleted Deck")
+    res.json("Deleted Deck");
 };
 
 async function editDeckName(req, res) {
     const deck = await Deck.findById(req.params.id);
     deck.name = req.body.name;
     await deck.save();
-    res.json(deck)
+    res.json(deck);
 }
 
 async function getAllDecks(req, res) {
-    console.log("hi")
+    const decks = await Deck.find();
+    res.json(decks);
+    //console.log("hi")
 }
 
 module.exports = {
