@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { getAllDecks } from '../../utilities/decks-api';
-import NotMyDeck from '../../components/NotMyDeck/NotMyDeck'
+import NotMyDeck from '../../components/NotMyDeck/NotMyDeck';
+import SearchBar from '../../components/SearchBar/SearchBar';
 
 export default function BrowseAllDecks() {
 
-    const [allDecks, setAllDecks] = useState([])
+    const [allDecks, setAllDecks] = useState([]);
+    const [search, setSearch] = useState(false);
 
     useEffect(function () {
         async function showAllDecks() {
@@ -30,7 +32,13 @@ export default function BrowseAllDecks() {
     return (
         <>
             <h1>Browse All Decks Page</h1>
-            {browseDecks}
+            <SearchBar />
+            {!search ? 
+            <div>{browseDecks}</div>
+            :
+            <div>search happened</div>
+            }
+            
         </>
     )
 }
