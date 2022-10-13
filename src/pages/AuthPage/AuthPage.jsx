@@ -10,22 +10,39 @@ export default function AuthPage({setUser}) {
 
     return (
         <main>
-            <button onClick={() => {setShowSignUp(!showSignUp); setShowLanding(!showLanding)}}>Sign Up</button>
-            <button onClick={() => {setShowLogIn(!showLogIn); setShowLanding(!showLanding)}}>Log In</button>
+            <img src="https://i.imgur.com/OHi2rSk.png" />
+            <h3>A questionably themed flashcard app</h3>
+            <button onClick={() => {setShowSignUp(!showSignUp); 
+                                    {showLanding ? setShowLanding(!showLanding): setShowLanding(showLanding)}; 
+                                    {!showLogIn ? setShowLogIn(!showLogIn): setShowLogIn(showLogIn)}}}
+                                    >Sign Up</button>
+            <button onClick={() => {setShowLogIn(!showLogIn); 
+                                    setShowLanding(!showLanding);
+                                    {!showSignUp ? setShowSignUp(!showSignUp): setShowSignUp(showSignUp)}}}
+                                    >Log In</button>
+            <br/>
             {showSignUp ?
                 <div></div>
                 :
+                <>
+                <br/>
                 <SignUpForm setUser={setUser}/>
+                </>
             }
             {showLogIn ?
                 <div></div>
                 :
+                <>
+                <br/>
                 <LoginForm setUser={setUser}/>
+                </>
             }
             {showLanding ?
                 <div></div>
                 :
-                <img src="https://i.imgur.com/h9DRnp1.png" />
+                <>
+                    <img className="cowboy" src="https://i.imgur.com/h9DRnp1.png" />
+                </>
             }
             {/* <button onClick={evt => {evt.preventDefault(); handleDelete(card)}}>delete</button> */}
             
