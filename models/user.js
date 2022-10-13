@@ -4,7 +4,6 @@ const Schema = mongoose.Schema;
 
 const SALT_ROUNDS = 6;
 
-
 const userSchema = new Schema({
     name: {
         type: String,
@@ -33,6 +32,7 @@ const userSchema = new Schema({
     }
 });
 
+//saves from password being changed by man-in-the-middle attacks
 userSchema.pre("save", function (next) {
     console.log("calling before create method");
     const user = this;
