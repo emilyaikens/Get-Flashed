@@ -20,7 +20,7 @@ export default function ManageDeckPage({deckName, setDeckName, cards, setCards, 
     useEffect(function () {
         async function findCards() {
             const myCards = await getCards(id);
-            setCards(myCards);
+            setCards(myCards.reverse());
         }
         findCards()
     }, [addCard]);

@@ -11,18 +11,15 @@ export default function NavBar({user, setUser}) {
 
     return (
         <nav>
-            {user ?
             <>
             <Link to="/">My Decks</Link>
             &nbsp; | &nbsp;
             <Link to="/deck/new">Create Deck</Link>
             &nbsp; | &nbsp;
-            {/* <span>Welcome, {user.name}</span> */}
-            &nbsp;&nbsp; <Link to={""} onClick={handleLogOut}>Logout</Link>
+            <Link to="/browse">Browse All Decks</Link>
+            &nbsp; | &nbsp;
+            <Link to={""} onClick={handleLogOut}>Logout</Link>
             </>
-            : 
-            <Link to="/auth">Login or Sign Up</Link>
-            }
         </nav>
     )
 }
