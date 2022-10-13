@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { searchDecks } from '../../utilities/decks-api'
 
-
-export default function SearchBar({ setAllDecks }) {
+export default function SearchBar({ setAllDecks, allDecks }) {
 
     const [formData, setFormData] = useState({ search: '' });
 
@@ -23,7 +22,6 @@ export default function SearchBar({ setAllDecks }) {
             console.log('search failed');
         }
     };
-
 
     return (
         <>

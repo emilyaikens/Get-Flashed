@@ -34,7 +34,7 @@ export default function BrowseAllDecks() {
     return (
         <>
             <h1>Browse All Decks Page</h1>
-            <SearchBar setAllDecks={setAllDecks}/>
+            <SearchBar allDecks={allDecks} setAllDecks={setAllDecks}/>
             <div>{browseDecks}</div>
             <div>{noDeck}</div>
         </>
