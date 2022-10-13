@@ -32,17 +32,4 @@ export default function NavBar({user, setUser}) {
             </Container> 
         </Navbar>
     )
-    // return (
-    //     <>
-    //     <nav>
-    //                     <Link to="/">My Decks</Link>
-    //                     &nbsp; | &nbsp;
-    //                     <Link to="/deck/new">Create Deck</Link>
-    //                     &nbsp; | &nbsp;
-    //                     <Link to="/browse">Browse All Decks</Link>
-    //                     &nbsp; | &nbsp;
-    //                     <Link to={""} onClick={handleLogOut}>Logout</Link>
-    //     </nav>
-    //     </>
-    // )
 }
