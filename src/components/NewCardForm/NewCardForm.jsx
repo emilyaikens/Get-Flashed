@@ -22,7 +22,7 @@ export default function NewCardForm({setAddCard}) {
         });
     };
 
-    const handleSubmit = async (evt) => {
+    async function handleSubmit(evt) {
         evt.preventDefault();
         try {
             const newCard = await createCard(formData);

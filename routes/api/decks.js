@@ -17,5 +17,7 @@ router.get('/all-decks', ensureLoggedIn, decksCtrl.getAllDecks);
 router.get('/:id', ensureLoggedIn, decksCtrl.findOne);
 //GET /api/decks/owner/id
 router.get('/owner/:id', ensureLoggedIn, decksCtrl.findOwner);
+//GET /api/decks/search
+router.get('/search/:id', ensureLoggedIn, decksCtrl.search);
 
 module.exports = router;
