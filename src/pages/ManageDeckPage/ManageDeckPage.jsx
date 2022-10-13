@@ -3,15 +3,17 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
-import { getCards } from '../../utilities/decks-api';
+import { getCards } from '../../utilities/cards-api';
 import { deleteDeck } from '../../utilities/decks-api';
+import { deckOwner } from '../../utilities/decks-api'
 import CardList from '../../components/CardList/CardList';
 import NewCardForm from '../../components/NewCardForm/NewCardForm';
 import EditDeckNameForm from '../../components/EditDeckNameForm/EditDeckNameForm'
 
-export default function ManageDeckPage({deckName, setDeckName, cards, setCards, decks, setDecks}) {
+export default function ManageDeckPage({deckName, setDeckName, cards, setCards, user}) {
 
     const [addCard, setAddCard] = useState([]);
+    const [owner, setOwner] = useState([]);
 
     const navigate = useNavigate();
 
@@ -20,18 +22,22 @@ export default function ManageDeckPage({deckName, setDeckName, cards, setCards, 
     useEffect(function () {
         async function findCards() {
             const myCards = await getCards(id);
-            setCards(myCards);
+            setCards(myCards.reverse());
         }
         findCards()
     }, [addCard]);
-    
+
+    useEffect(function () {
+        async function findOwner() {
+            const deckUser = await deckOwner(id);
+            setOwner(deckUser);
+        }
+        findOwner()
+    }, []);
+
     function handleDelete(id) {
         try {
             deleteDeck(id);
-            const updateDecks = decks.filter(function (decks) {
-                return decks._id !== id;
-            });
-            setDecks(updateDecks);
             navigate('/');
         } catch {
             console.log('delete deck failed');
@@ -43,6 +49,8 @@ export default function ManageDeckPage({deckName, setDeckName, cards, setCards, 
     })
 
     return (
+        <>
+        {owner === user._id ?
         <>
             <Link to={`/deckdetails/${id}`}>
                 <button>Done</button>
@@ -56,5 +64,12 @@ export default function ManageDeckPage({deckName, setDeckName, cards, setCards, 
             <div>{theCards}</div>
             <button onClick={evt => {evt.preventDefault(); handleDelete(id)}} >Delete Deck</button>
         </>
+        :
+        <>
+        <div>No trespassing image goes here</div>
+        <div>You can only edit your own decks</div>
+        </>
+    }
+    </>
     )
 }

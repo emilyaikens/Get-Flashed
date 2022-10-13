@@ -8,6 +8,7 @@ import NewDeckPage from '../NewDeckPage/NewDeckPage';
 import DeckIndexPage from '../DeckIndexPage/DeckIndexPage';
 import DeckDetailsPage from '../DeckDetailsPage/DeckDetailsPage';
 import ManageDeckPage from '../ManageDeckPage/ManageDeckPage';
+import BrowseAllDecksPage from '../BrowseAllDecksPage/BrowseAllDecksPage';
 
 function App() {
     // set the user by calling getUser function
@@ -24,8 +25,9 @@ function App() {
                     <Routes>
                         <Route path="/deck/new" element={<NewDeckPage setDeckName={setDeckName} />}/>
                         <Route path="/" element={<DeckIndexPage setDeckName={setDeckName} decks={decks} setDecks={setDecks}/>}/>
-                        <Route path='/deckdetails/:id' element={< DeckDetailsPage setDeckName={setDeckName} deckName={deckName} cards={cards} setCards={setCards} />} />
-                        <Route path='/managedeck/:id' element={< ManageDeckPage deckName={deckName} setDeckName={setDeckName} cards={cards} setCards={setCards} decks={decks} setDecks={setDecks} />} />
+                        <Route path='/deckdetails/:id' element={< DeckDetailsPage user={user} setDeckName={setDeckName} deckName={deckName} cards={cards} setCards={setCards} />} />
+                        <Route path='/managedeck/:id' element={< ManageDeckPage deckName={deckName} setDeckName={setDeckName} cards={cards} setCards={setCards} user={user}/>} />
+                        <Route path="/browse" element={<BrowseAllDecksPage />}/>
                     </Routes>
                 </>
                 :

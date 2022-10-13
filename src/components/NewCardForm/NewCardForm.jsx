@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import * as deckAPI from '../../utilities/decks-api';
+import { createCard } from '../../utilities/cards-api';
 
 export default function NewCardForm({setAddCard}) {
 
@@ -25,7 +25,7 @@ export default function NewCardForm({setAddCard}) {
     const handleSubmit = async (evt) => {
         evt.preventDefault();
         try {
-            const newCard = await deckAPI.createCard(formData);
+            const newCard = await createCard(formData);
             setCards({...setCards, newCard});
             setFormData({
                 question: '',
