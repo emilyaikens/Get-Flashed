@@ -29,7 +29,7 @@ A MERN stack flashcard app with a questionably appropriate theme.
 
 :construction_worker_woman: :construction: Oct 7 2022: this app is under construction. Should be ready to go on Oct 17, 2022. :construction: :construction_worker_woman:
 
-Get started by clicking link below. You will need to sign up in order to create your own flachcards.
+Get started by clicking link below. You will need to sign up in order to use this app.
 
 [Link To App](https://project-4-flashcards.herokuapp.com/)
 
