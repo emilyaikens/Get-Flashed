@@ -5,13 +5,15 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { getCards } from '../../utilities/cards-api';
 import { deleteDeck } from '../../utilities/decks-api';
+import { deckOwner } from '../../utilities/decks-api'
 import CardList from '../../components/CardList/CardList';
 import NewCardForm from '../../components/NewCardForm/NewCardForm';
 import EditDeckNameForm from '../../components/EditDeckNameForm/EditDeckNameForm'
 
-export default function ManageDeckPage({deckName, setDeckName, cards, setCards, decks, setDecks}) {
+export default function ManageDeckPage({deckName, setDeckName, cards, setCards}) {
 
     const [addCard, setAddCard] = useState([]);
+    const [owner, setOwner] = useState([]);
 
     const navigate = useNavigate();
 
@@ -24,14 +26,18 @@ export default function ManageDeckPage({deckName, setDeckName, cards, setCards, 
         }
         findCards()
     }, [addCard]);
+
+    // useEffect(function () {
+    //     async function findOwner() {
+    //         const deckUser = await deckOwner(id);
+    //         setOwner(deckUser);
+    //     }
+    //     findOwner()
+    // }, []);
     
     function handleDelete(id) {
         try {
             deleteDeck(id);
-            const updateDecks = decks.filter(function (decks) {
-                return decks._id !== id;
-            });
-            setDecks(updateDecks);
             navigate('/');
         } catch {
             console.log('delete deck failed');
