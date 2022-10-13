@@ -20,7 +20,7 @@ export default function DeckIndexPage({setDeckName, decks, setDecks}) {
         };
 
     return (
-        <>
+        <div>
             <h1>Deck Index Page</h1>
             <div>{noDecks}</div>
             <Link to="/deck/new">
@@ -28,6 +28,6 @@ export default function DeckIndexPage({setDeckName, decks, setDecks}) {
             </Link>
             <br/>
             <DeckList decks={decks} setDeckName={setDeckName} />
-        </>
+        </div>
     );
 }
