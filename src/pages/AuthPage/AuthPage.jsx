@@ -1,6 +1,7 @@
 import {useState} from "react";
 import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import LoginForm from '../../components/LoginForm/LoginForm';
+import './AuthPage.css'
 
 export default function AuthPage({setUser}) {
 
@@ -10,7 +11,7 @@ export default function AuthPage({setUser}) {
 
     return (
         <main>
-            <img src="https://i.imgur.com/OHi2rSk.png" />
+            <img className="title" src="https://i.imgur.com/OHi2rSk.png" />
             <h3>A questionably themed flashcard app</h3>
             <button onClick={() => {setShowSignUp(!showSignUp); 
                                     {showLanding ? setShowLanding(!showLanding): setShowLanding(showLanding)}; 

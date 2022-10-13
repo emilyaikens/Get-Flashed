@@ -1,0 +1,15 @@
+body {
+    background-image: url("https://i.imgur.com/Jt3myKG.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.title {
+    width: 100%;
+    max-width: 800px;
+}
+
+.cowboy {
+    width: 100%;
+    max-width: 700px;
+}
