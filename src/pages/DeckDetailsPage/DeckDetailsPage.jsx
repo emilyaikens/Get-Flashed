@@ -1,15 +1,17 @@
 import { useParams } from "react-router-dom";
-import { useEffect } from 'react';
-import { getCards } from '../../utilities/cards-api';
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { getCards } from '../../utilities/cards-api';
+import { findOne } from '../../utilities/decks-api';
 import Card from '../../components/Card/Card';
-
-//button onclick, redirect to the ManageDeckPage route WITH ID
 
 export default function DeckDetailsPage({setDeckName, deckName, cards, setCards}) {
 
+    let id = useParams().id;
+
     const [cardIndex, setCardIndex] = useState(0);
+    const [thisDeck, setThisDeck] = useState("");
 
     function handleBack(evt) {
         evt.preventDefault();
@@ -25,7 +27,13 @@ export default function DeckDetailsPage({setDeckName, deckName, cards, setCards}
         };
     };
 
-    let id = useParams().id;
+    useEffect(function () {
+        async function findDeck() {
+            const myCards = await findOne(id);
+            setCards(myCards);
+        }
+        findDeck()
+    }, [])
 
     useEffect(function () {
         async function findCards() {
