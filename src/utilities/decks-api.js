@@ -27,5 +27,10 @@ export function findOne(id) {
 }
 
 export function deckOwner(id) {
-    return sendRequest(`${BASE_URL}/owner/${id}`)
+    return sendRequest(`${BASE_URL}/owner/${id}`);
+}
+
+export function searchDecks(input) {
+    //console.log(input)
+    return sendRequest(`${BASE_URL}/search/${input}`);
 }

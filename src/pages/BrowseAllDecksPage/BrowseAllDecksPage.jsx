@@ -7,7 +7,6 @@ import SearchBar from '../../components/SearchBar/SearchBar';
 export default function BrowseAllDecks() {
 
     const [allDecks, setAllDecks] = useState([]);
-    const [search, setSearch] = useState(false);
 
     useEffect(function () {
         async function showAllDecks() {
@@ -18,8 +17,11 @@ export default function BrowseAllDecks() {
     }, []);
 
     let browseDecks = "";
+    let noDeck = ""
 
-    console.log(allDecks);
+    if (allDecks.length === 0) {
+        noDeck = "Sorry, there are no public decks that match your search"
+    }
 
     if (allDecks.length > 9) {
         browseDecks = allDecks.slice([0], [9]).map((value, index) => 
@@ -32,13 +34,9 @@ export default function BrowseAllDecks() {
     return (
         <>
             <h1>Browse All Decks Page</h1>
-            <SearchBar setSearch={setSearch} />
-            {!search ? 
+            <SearchBar setAllDecks={setAllDecks}/>
             <div>{browseDecks}</div>
-            :
-            <div>search happened</div>
-            }
-            
+            <div>{noDeck}</div>
         </>
     )
 }

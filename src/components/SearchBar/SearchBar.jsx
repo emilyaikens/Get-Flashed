@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { searchDecks } from '../../utilities/decks-api'
 
 
-export default function SearchBar({setSearch}) {
+export default function SearchBar({ setAllDecks }) {
 
     const [formData, setFormData] = useState({ search: '' });
 
@@ -16,10 +16,11 @@ export default function SearchBar({setSearch}) {
     async function handleSubmit(evt) {
         evt.preventDefault();
         try {
-            const decks = await searchDecks(formData);
-            setSearch(decks);
+            const decks = await searchDecks(formData.search);
+            setAllDecks(decks);
+            setFormData({search: ''})
         } catch {
-            console.log('create deck failed');
+            console.log('search failed');
         }
     };
 
