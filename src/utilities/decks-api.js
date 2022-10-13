@@ -30,3 +30,6 @@ export function deleteCard(card) {
     return sendRequest(`${BASE_URL}/card/${card.deckId}`, 'DELETE', card);
 }
 
+export function getAllDecks() {
+    return sendRequest(BASE_URL);
+}
