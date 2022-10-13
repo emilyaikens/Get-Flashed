@@ -5,22 +5,30 @@ import LoginForm from '../../components/LoginForm/LoginForm';
 export default function AuthPage({setUser}) {
 
     const [showSignUp, setShowSignUp] = useState(true);
-
-    const authMessage = showSignUp ? 'Already have an account?' : 'No account yet?';
+    const [showLogIn, setShowLogIn] = useState(true);
+    const [showLanding, setShowLanding] = useState(false);
 
     return (
         <main>
+            <button onClick={() => {setShowSignUp(!showSignUp); setShowLanding(!showLanding)}}>Sign Up</button>
+            <button onClick={() => {setShowLogIn(!showLogIn); setShowLanding(!showLanding)}}>Log In</button>
             {showSignUp ?
-                <div>hi</div>
+                <div></div>
                 :
-                <>
                 <SignUpForm setUser={setUser}/>
-                <LoginForm setUser={setUser}/>
-                </>
             }
-            <div>{authMessage}</div>
-            <button onClick={() => setShowSignUp(!showSignUp)}>Log In</button>
-            <button onClick={() => setShowSignUp(!showSignUp)}>Sign Up</button>
+            {showLogIn ?
+                <div></div>
+                :
+                <LoginForm setUser={setUser}/>
+            }
+            {showLanding ?
+                <div></div>
+                :
+                <img src="https://i.imgur.com/h9DRnp1.png" />
+            }
+            {/* <button onClick={evt => {evt.preventDefault(); handleDelete(card)}}>delete</button> */}
+            
         </main>
     );
 }
