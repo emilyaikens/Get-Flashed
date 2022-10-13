@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
-import { getCards } from '../../utilities/decks-api';
+import { getCards } from '../../utilities/cards-api';
 import { deleteDeck } from '../../utilities/decks-api';
 import CardList from '../../components/CardList/CardList';
 import NewCardForm from '../../components/NewCardForm/NewCardForm';

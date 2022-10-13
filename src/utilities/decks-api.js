@@ -10,14 +10,6 @@ export function getMyDecks() {
     return sendRequest(BASE_URL)
 };
 
-export function createCard(cardData) {
-    return sendRequest(`${BASE_URL}/cards`, 'POST', cardData);
-};
-
-export function getCards(id) {
-    return sendRequest(`${BASE_URL}/${id}`);
-}
-
 export function deleteDeck(id) {
     return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
 }
@@ -26,10 +18,6 @@ export function editDeckName(formData, id) {
     return sendRequest(`${BASE_URL}/${id}`, 'PUT', formData)
 };
 
-export function deleteCard(card) {
-    return sendRequest(`${BASE_URL}/card/${card.deckId}`, 'DELETE', card);
-}
-
 export function getAllDecks() {
-    return sendRequest(BASE_URL);
+    return sendRequest(`${BASE_URL}/all-decks`);
 }

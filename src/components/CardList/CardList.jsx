@@ -1,4 +1,4 @@
-import { deleteCard } from '../../utilities/decks-api';
+import { deleteCard } from '../../utilities/cards-api';
 
 export default function CardList({card, setAddCard, cards, setCards}) {
 

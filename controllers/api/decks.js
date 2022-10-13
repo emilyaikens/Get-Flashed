@@ -7,23 +7,9 @@ async function create(req, res) {
     res.json(newDeck);
 };
 
-async function getAllDecks(req, res) {
+async function getMyDecks(req, res) {
     const decks = await Deck.find({user: req.user._id})
     res.json(decks);
-};
-
-async function createCard(req, res) {
-    //find Deck based on ID and push this card to that deck's cards array
-    const deck = await Deck.findById(req.body.deckId);
-    deck.cards.push(req.body);
-    await deck.save();
-    res.json(deck);
-};
-
-async function getCards(req, res) {
-    const deck = await Deck.findById(req.params.id);
-    const findCards = deck.cards;
-    res.json(findCards);
 };
 
 async function deleteDeck(req, res) {
@@ -40,22 +26,15 @@ async function editDeckName(req, res) {
     res.json(deck)
 }
 
-async function deleteCard(req, res) {
-    const deck = await Deck.findById(req.params.id).then(function(t) {
-        const card = t.cards.id(req.body._id);
-        card.remove();
-        t.save();
-    })
-    res.json("Deleted Card");
+async function getAllDecks(req, res) {
+    console.log("hi")
 }
 
 module.exports = {
     create,
-    getAllDecks,
-    createCard,
-    getCards,
+    getMyDecks,
     deleteDeck,
     editDeckName,
-    deleteCard,
+    getAllDecks,
 };
 
