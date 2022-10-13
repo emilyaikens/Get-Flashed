@@ -46,8 +46,8 @@ export default function NewDeckForm({setDeckName}) {
                     checked={formData.share}
                     onChange={handleChange}
                 >
-                    <option value={"public"}>Public</option>
                     <option value={"private"}>Private</option>
+                    <option value={"public"}>Public</option>
                 </select>
                 <button type="Submit">Create</button>
             </form>
