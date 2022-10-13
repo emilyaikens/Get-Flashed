@@ -107,7 +107,7 @@ label {
   align-items: center;
 }
 
-input {
+input, select {
   padding: 1vmin;
   font-size: 2vmin;
   border: .1vmin solid var(--tan-3);

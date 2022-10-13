@@ -3,20 +3,22 @@ import * as deckAPI from '../../utilities/decks-api';
 import { useNavigate } from 'react-router-dom';
 
 export default function NewDeckForm({setDeckName}) {
+
     const navigate = useNavigate();
 
-    const [formData, setFormData] = useState({
-        name: ''
+    const [formData, setFormData] = useState({ 
+        name: '',
+        share: "private",
     });
 
-    const handleChange = (evt) => {
+    function handleChange(evt) {
         setFormData({
         ...formData,
         [evt.target.name]: evt.target.value,
         });
     };
 
-    const handleSubmit = async (evt) => {
+    async function handleSubmit(evt) {
         evt.preventDefault();
         try {
             const newDeck = await deckAPI.createDeck(formData); //save deck to database
@@ -37,7 +39,16 @@ export default function NewDeckForm({setDeckName}) {
                     value={formData.name}
                     onChange={handleChange}
                 />
-                {/* add checkbox for public later */}
+                <label>Deck privacy setttings:</label>
+                <select
+                    type="text"
+                    name="share"
+                    checked={formData.share}
+                    onChange={handleChange}
+                >
+                    <option value={"private"}>Private</option>
+                    <option value={"public"}>Public</option>
+                </select>
                 <button type="Submit">Create</button>
             </form>
         </>

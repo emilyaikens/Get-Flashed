@@ -27,7 +27,7 @@ async function editDeckName(req, res) {
 };
 
 async function getAllDecks(req, res) {
-    const decks = await Deck.find();
+    const decks = await Deck.find({share: "public"});
     res.json(decks);
 };
 

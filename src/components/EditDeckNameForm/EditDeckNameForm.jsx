@@ -1,9 +1,7 @@
 import { useState } from "react";
 import * as deckAPI from '../../utilities/decks-api';
-import { useNavigate } from 'react-router-dom';
 
 export default function NewDeckForm({setDeckName, deckName, id}) {
-    const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
         name: ''

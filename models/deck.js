@@ -32,11 +32,10 @@ const deckSchema = new Schema({
         type: String,
         required: true
     },
-    // public: {
-    //     type: Boolean,
-    //     required: true,
-    //     default: false,
-    // },
+    share: {
+        type: String,
+        required: true,
+    },
     cards: [cardSchema],
     }, {
         timestamps: true,
