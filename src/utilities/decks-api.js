@@ -6,7 +6,7 @@ export function createDeck(deckData) {
     return sendRequest(BASE_URL, 'POST', deckData);
 };
 
-export function getAllDecks() {
+export function getMyDecks() {
     return sendRequest(BASE_URL)
 };
 
