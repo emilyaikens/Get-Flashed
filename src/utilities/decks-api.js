@@ -25,3 +25,7 @@ export function getAllDecks() {
 export function findOne(id) {
     return sendRequest(`${BASE_URL}/${id}`);
 }
+
+export function deckOwner(id) {
+    return sendRequest(`${BASE_URL}/owner/${id}`)
+}
