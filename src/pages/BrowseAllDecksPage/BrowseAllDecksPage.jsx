@@ -17,6 +17,8 @@ export default function BrowseAllDecks() {
 
     let browseDecks = "";
 
+    console.log(allDecks);
+
     if (allDecks.length > 9) {
         browseDecks = allDecks.slice([0], [9]).map((value, index) => 
             <NotMyDeck deck={value} key={value._id} index={index}/>)
