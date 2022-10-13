@@ -44,9 +44,7 @@ export default function AuthPage({setUser}) {
                 <>
                     <img className="cowboy" src="https://i.imgur.com/h9DRnp1.png" />
                 </>
-            }
-            {/* <button onClick={evt => {evt.preventDefault(); handleDelete(card)}}>delete</button> */}
-            
+            }            
         </main>
     );
 }
