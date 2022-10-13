@@ -126,13 +126,13 @@ button,
 a.button {
   margin: 1vmin;
   padding: 1vmin;
-  color: var(--white);
+  color: black;
   background-color: orange;
   font-size: 2vmin;
   font-weight: bold;
   text-decoration: none;
   text-align: center;
-  border: .1vmin solid var(--tan-2);
+  border: .1vmin solid black;
   border-radius: .5vmin;
   outline: none;
   cursor: pointer;

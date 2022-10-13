@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
+import './Deck.css';
 
 export default function Deck ({deck, setDeckName}) {
 
     return (
         <>
             <Link to={`/deckdetails/${deck._id}`}>
-                <div onClick={() => setDeckName(deck.name)}>{deck.name}</div>
+                <button className="deck" onClick={() => setDeckName(deck.name)}>{deck.name}</button>
             </Link>
             <br/>
         </>
