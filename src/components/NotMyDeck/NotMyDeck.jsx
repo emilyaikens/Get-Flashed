@@ -10,5 +10,3 @@ export default function NotMyDeck({deck}) {
         </>
     )
 }
-
-//onClick={() => setDeckName(deck.name)}

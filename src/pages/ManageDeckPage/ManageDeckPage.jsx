@@ -65,7 +65,10 @@ export default function ManageDeckPage({deckName, setDeckName, cards, setCards, 
             <button onClick={evt => {evt.preventDefault(); handleDelete(id)}} >Delete Deck</button>
         </>
         :
-        <div>No trespassing image</div>
+        <>
+        <div>No trespassing image goes here</div>
+        <div>You can only edit your own decks</div>
+        </>
     }
     </>
     )
