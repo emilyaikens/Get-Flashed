@@ -4,7 +4,6 @@ export default function NewDeckPage({setDeckName}) {
 
   return (
     <>
-    <h1>New Deck Page</h1>
     < NewDeckForm setDeckName={setDeckName}/>
     </>
   );

@@ -57,7 +57,7 @@ export default function NewDeckForm({setDeckName}) {
                     </Form.Select>
                 </Form.Group>
                 <br/>
-                <button type="Submit">Create</button>
+                <button className="form-button" type="Submit">Create</button>
             </Form>
         </div>
         </>
