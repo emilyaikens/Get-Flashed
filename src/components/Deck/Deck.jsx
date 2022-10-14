@@ -8,13 +8,13 @@ export default function Deck ({deck, index, setDeckName}) {
     let cardIndex = index
     if (index > 4 && index < 9) {
         cardIndex = index - 5
-    } else if (index > 9 && index < 14) {
+    } else if (index > 8 && index < 14) {
         cardIndex = index - 10
-    } else if (index > 14 && index < 19) {
+    } else if (index > 13 && index < 19) {
         cardIndex = index - 15
-    } else {
+    } else if (index > 18) {
         cardIndex = Math.floor(Math.random() * 4);
-    }
+    };
 
     return (
         <>

@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { getMyDecks } from '../../utilities/decks-api';
 import { Link } from 'react-router-dom';
 import DeckList from '../../components/DeckList/DeckList';
+import './DeckIndexPage.css';
 
 export default function DeckIndexPage({setDeckName, decks, setDecks}) {
 
@@ -28,8 +29,10 @@ export default function DeckIndexPage({setDeckName, decks, setDecks}) {
             <Link to="/deck/new">
                 <button className="form-button">New Deck</button>
             </Link>
-            <div><br/></div><br/>
+            <div><br/></div>
+            <br/>
             <DeckList decks={decks} setDeckName={setDeckName} />
+            <img className="index-cowboy" src="https://i.imgur.com/h9DRnp1.png" />
         </div>
     );
 }
