@@ -1,4 +1,5 @@
 import { deleteCard } from '../../utilities/cards-api';
+import './CardList.css';
 
 export default function CardList({card, setAddCard, cards, setCards}) {
 
@@ -18,13 +19,21 @@ export default function CardList({card, setAddCard, cards, setCards}) {
 
     return (
         <>
-        <div>
-            <div>Question: {card.question}</div>
-            <div>Answer: {card.answer}</div>
-        </div>
-        <div>
-            {/* <button onClick={evt => {evt.preventDefault(); handleEdit(card)}}>edit</button> */}
-            <button onClick={evt => {evt.preventDefault(); handleDelete(card)}}>delete</button>
+        <div className="card-container">
+            <div>
+                <div className="inner-container">
+                    <div style={{fontWeight: "bold"}}>Question:</div>
+                    <div>{card.question}</div>
+                    <br/>
+                    <div style={{fontWeight: "bold"}}>Answer: </div>
+                    <div>{card.answer}</div>
+                    <br/>
+                </div>
+                <div>
+                    {/* <button onClick={evt => {evt.preventDefault(); handleEdit(card)}}>edit</button> */}
+                    <button className="delete-button" onClick={evt => {evt.preventDefault(); handleDelete(card)}}>Delete</button>
+                </div>
+            </div>
         </div>
         <br/>
         </>
