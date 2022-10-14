@@ -1,6 +1,12 @@
 .deck {
-    background-color: white;
+    background-color: #c4e3d4;
     color: black;
-    width: 200px;
-    height: 100px;
+    border-radius: 10px;
+    border: solid var(--dark-green) 2px;
+    width: 150px;
+    height: 200px;
+    margin: 5px;
+    font-size: 120%;
+    letter-spacing: 1px;
+    padding: 20px;
 }

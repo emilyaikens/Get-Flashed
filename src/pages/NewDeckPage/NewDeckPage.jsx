@@ -4,7 +4,8 @@ export default function NewDeckPage({setDeckName}) {
 
   return (
     <>
-    < NewDeckForm setDeckName={setDeckName}/>
+      <div className="topper"></div>
+      < NewDeckForm setDeckName={setDeckName}/>
     </>
   );
 }
