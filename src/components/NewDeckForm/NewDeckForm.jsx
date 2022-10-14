@@ -1,6 +1,8 @@
 import { useState } from "react";
 import * as deckAPI from '../../utilities/decks-api';
 import { useNavigate } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 export default function NewDeckForm({setDeckName}) {
 
@@ -31,26 +33,33 @@ export default function NewDeckForm({setDeckName}) {
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
-                <label>Deck Name</label>
-                <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                />
-                <label>Deck privacy setttings:</label>
-                <select
-                    type="text"
-                    name="share"
-                    checked={formData.share}
-                    onChange={handleChange}
-                >
-                    <option value={"private"}>Private</option>
-                    <option value={"public"}>Public</option>
-                </select>
-                <button type="Submit">Create</button>
-            </form>
+        <div className="form-container">
+            <Form onSubmit={handleSubmit}>
+                <Form.Group className="mb-3">
+                    <Form.Label>Deck Name</Form.Label>
+                    <Form.Control
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                    />
+                </Form.Group>
+                <Form.Group className="mb-3">
+                    <Form.Label>Deck Privacy:</Form.Label>
+                    <Form.Select
+                        type="text"
+                        name="share"
+                        checked={formData.share}
+                        onChange={handleChange}
+                    >
+                        <option value={"private"}>Private</option>
+                        <option value={"public"}>Public</option>
+                    </Form.Select>
+                </Form.Group>
+                <br/>
+                <Button type="Submit">Create</Button>
+            </Form>
+        </div>
         </>
     )
 }
