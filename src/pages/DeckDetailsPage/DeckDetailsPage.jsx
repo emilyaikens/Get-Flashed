@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { getCards } from '../../utilities/cards-api';
 import { findOne } from '../../utilities/decks-api';
 import Card from '../../components/Card/Card';
+import './DeckDetailsPage.css';
 
 export default function DeckDetailsPage({setDeckName, deckName, cards, setCards, user}) {
 
@@ -49,19 +50,21 @@ export default function DeckDetailsPage({setDeckName, deckName, cards, setCards,
 
     return (
         <>
-            <h1>Deck Details Page</h1>
+            <div className="topper"></div>
             {thisDeck.user === user._id ? 
                 <Link to={`/managedeck/${id}`}>
-                    <button onClick={()=>setDeckName(deckName)}>Edit Deck</button>
+                    <button className="form-button" onClick={()=>setDeckName(deckName)}>Edit Deck</button>
                 </Link> 
                 : 
                 <div></div>
                 }
+            <div><br/></div>
             <div>
                 {theCards[cardIndex]}
             </div>
-            <button onClick={handleBack}>Back</button>
-            <button onClick={handleNext}>Next</button>
+            <br/>
+            <button className="scroll-button" onClick={handleBack}>Back</button>
+            <button className="scroll-button" onClick={handleNext}>Next</button>
         </>
     )
 }

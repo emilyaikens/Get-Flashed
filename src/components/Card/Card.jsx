@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import "./Card.css";
 
 export default function CardList({card}) {
 
@@ -11,9 +12,9 @@ export default function CardList({card}) {
     
         return (
             <>
-            {flip ? card.answer : card.question}
-            <br/>
-            <button onClick={handleFlip}>Flip</button>
+                <div className="card" >{flip ? card.answer : card.question}</div>
+                <br/>
+                <button className="flip-button" onClick={handleFlip}>Flip</button>
             </>
         )
     }

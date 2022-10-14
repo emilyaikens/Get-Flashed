@@ -1,0 +1,22 @@
+.card {
+    color: black;
+    border-radius: 10px;
+    border: solid var(--dark-green) 2px;
+    width: 250px;
+    height: 300px;
+    margin: 0 auto;
+    letter-spacing: 1px;
+    padding: 20px;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.flip-button {
+    letter-spacing: 1px;
+    background-color: var(--deck-green-1);
+    color: black;
+    border: solid 2px var(--dark-green);
+    border-radius: 5px;
+    padding: 5px 10px 5px 10px;
+    margin: 0px 10px 0px 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
