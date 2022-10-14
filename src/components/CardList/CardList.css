@@ -1,5 +1,5 @@
 .card-container {
-    background-color: var(--yellow);
+    background-color: var(--tan-2);
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
@@ -8,6 +8,7 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .delete-button{
+    letter-spacing: 1px;
     background-color: var(--red);
     color: white;
     border: none;

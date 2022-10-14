@@ -10,6 +10,7 @@
 }
 .App {
   text-align: center;
+  letter-spacing: 1px;
 }
 .form-container{
   background-color: rgba(235, 205, 162, 0.7);
@@ -20,6 +21,7 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .form-button{
+  letter-spacing: 1px;
   background-color: var(--dark-green);
   color: white;
   border: none;
@@ -30,4 +32,6 @@
 .form-button:hover{
   background-color: var(--light-green);
 }
-/* var(--text-dark); */
+.topper{
+  padding: 40px
+}

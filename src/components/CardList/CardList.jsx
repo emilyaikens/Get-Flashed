@@ -21,14 +21,12 @@ export default function CardList({card, setAddCard, cards, setCards}) {
         <>
         <div className="card-container">
             <div>
-                <div className="inner-container">
-                    <div style={{fontWeight: "bold"}}>Question:</div>
-                    <div>{card.question}</div>
-                    <br/>
-                    <div style={{fontWeight: "bold"}}>Answer: </div>
-                    <div>{card.answer}</div>
-                    <br/>
-                </div>
+                <div style={{fontWeight: "bold"}}>Question:</div>
+                <div>{card.question}</div>
+                <br/>
+                <div style={{fontWeight: "bold"}}>Answer: </div>
+                <div>{card.answer}</div>
+                <br/>
                 <div>
                     {/* <button onClick={evt => {evt.preventDefault(); handleEdit(card)}}>edit</button> */}
                     <button className="delete-button" onClick={evt => {evt.preventDefault(); handleDelete(card)}}>Delete</button>

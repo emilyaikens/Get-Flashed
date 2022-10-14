@@ -21,12 +21,14 @@ export default function DeckIndexPage({setDeckName, decks, setDecks}) {
 
     return (
         <div>
-            <h1>Deck Index Page</h1>
+            <div className="topper"></div>
+            <h1>My Decks</h1>
             <div>{noDecks}</div>
-            <Link to="/deck/new">
-                <button>New Deck</button>
-            </Link>
             <br/>
+            <Link to="/deck/new">
+                <button className="form-button">New Deck</button>
+            </Link>
+            <div><br/></div><br/>
             <DeckList decks={decks} setDeckName={setDeckName} />
         </div>
     );
