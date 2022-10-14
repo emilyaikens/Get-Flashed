@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-import { useNavigate } from 'react-router-dom';
 import { createCard } from '../../utilities/cards-api';
+import Form from 'react-bootstrap/Form';
 
 export default function NewCardForm({setAddCard}) {
 
@@ -10,7 +10,7 @@ export default function NewCardForm({setAddCard}) {
     const [formData, setFormData] = useState({
         question: '',
         answer: '',
-        deckId: id, //sets this to the current deckid
+        deckId: id,
     });
 
     const [cards, setCards] = useState([]);
@@ -32,7 +32,7 @@ export default function NewCardForm({setAddCard}) {
                 answer: '',
                 deckId: id
             });
-            setAddCard([1]); //updates usestate so that new card renders
+            setAddCard([1]); //updates usestate so that new card renders on page
         } catch {
             console.log('create card failed');
         }
@@ -40,23 +40,26 @@ export default function NewCardForm({setAddCard}) {
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
-                <label>Question:</label>
-                <input
+        <div className="form-container">
+            <Form onSubmit={handleSubmit}>
+                <Form.Label>Question:</Form.Label>
+                <Form.Control
                     type="text"
                     name="question"
                     value={formData.question}
                     onChange={handleChange}
                 />
-                <label>Answer:</label>
-                <input
+                <Form.Label>Answer:</Form.Label>
+                <Form.Control
                     type="text"
                     name="answer"
                     value={formData.answer}
                     onChange={handleChange}
                 />
-                <button type='submit'>Add Card</button>
-            </form>
+                <br/>
+                <button className="form-button" type='submit'>Add Card</button>
+            </Form>
+            </div>
         </>
     )
 }

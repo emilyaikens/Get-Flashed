@@ -1,7 +1,6 @@
 import { useState } from "react";
 import * as deckAPI from '../../utilities/decks-api';
 import { useNavigate } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 export default function NewDeckForm({setDeckName}) {
