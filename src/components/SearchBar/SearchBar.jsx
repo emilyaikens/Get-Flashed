@@ -30,21 +30,20 @@ export default function SearchBar({ setAllDecks }) {
 
     return (
         <>
-            <div className="search-container">
+            <div >
                 <Form onSubmit={handleSubmit}>
-                    <Row>
-                        <Col xs="auto">
+                    {/* <Row> */}
+                        <div className="search-container">
                             <Form.Control
                                 onChange={handleChange}
                                 name="search"
                                 type="text"
                                 placeholder="search decks here"
                             />
-                        </Col>
-                        <Col xs="auto">
+                       
                             <Button className="form-button" type="submit">Search</Button>
-                        </Col>
-                    </Row>
+                            </div>
+                    {/* </Row> */}
                 </Form>
             </div>
             <br/>
