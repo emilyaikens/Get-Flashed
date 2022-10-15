@@ -15,10 +15,14 @@ export default function DeckIndexPage({setDeckName, decks, setDecks}) {
         getDecks();
     }, []);
 
-    let noDecks = "You have no decks yet";
-        if (decks.length > 0) {
-            noDecks = null;
-        };
+    let noDecks = <div>
+                    <div>"You have no decks yet";</div>
+                    <img className="index-cowboy" src="https://i.imgur.com/h9DRnp1.png" />
+                </div>
+
+    if (decks.length > 0) {
+        noDecks = null;
+    };
 
     return (
         <>
@@ -32,7 +36,6 @@ export default function DeckIndexPage({setDeckName, decks, setDecks}) {
             <div><br/></div>
             <br/>
             <DeckList decks={decks} setDeckName={setDeckName} />
-            <img className="index-cowboy" src="https://i.imgur.com/h9DRnp1.png" />
         </>
     );
 }
