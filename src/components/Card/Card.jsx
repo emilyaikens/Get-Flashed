@@ -9,10 +9,18 @@ export default function CardList({card}) {
         evt.preventDefault();
         setFlip(!flip);
     }
+
+    const cardBack = "card-back"
+    const cardFront = "card-front"
+    const testing = "flipped"
     
         return (
             <>
-                <div className="card" >{flip ? card.answer : card.question}</div>
+                {flip ?
+                <div className="card">{card.answer}</div>
+                :
+                <div className="card">{card.question}</div>
+                }
                 <br/>
                 <button className="flip-button" onClick={handleFlip}>Flip</button>
             </>
