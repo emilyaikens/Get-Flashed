@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import * as usersService from '../../utilities/users-service';
+import Form from 'react-bootstrap/Form';
 
 export default function LoginForm({setUser}) {
     // initial state, username and password is set to empty string
@@ -34,14 +35,25 @@ export default function LoginForm({setUser}) {
     return (
         <div>
             <div className="form-container">
-                <form autoComplete="off" onSubmit={handleSubmit}>
-                    <label>Email</label>
-                    <input type="text" name="email" value={credentials.email} onChange={handleChange} required/>
-                    <label>Password</label>
-                    <input type="password" name="password" value={credentials.password} onChange={handleChange}
-                        required/>
+                <Form autoComplete="off" onSubmit={handleSubmit}>
+                    <Form.Group>
+                        <Form.Label>Email</Form.Label>
+                        <Form.Control type="text" 
+                                        name="email" 
+                                        value={credentials.email} 
+                                        onChange={handleChange} 
+                                        required/>
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control type="password" 
+                                        name="password" 
+                                        value={credentials.password} 
+                                        onChange={handleChange}
+                                        required/>
+                    </Form.Group>
                     <button type="submit">LOG IN</button>
-                </form>
+                </Form>
             </div>
             <p className="error-message">&nbsp;{error}</p>
         </div>
