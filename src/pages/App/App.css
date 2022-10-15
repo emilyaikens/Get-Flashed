@@ -1,6 +1,7 @@
 :root {
   --light-green: #6d9a7c;
   --dark-green: #4e7d7d;
+  --darkest-green: #145460;
   --deck-green-1: #8bc0a6;
   --deck-green-2: #c4e3d4;
   --deck-yellow: #f7dcb5 ;
@@ -25,7 +26,7 @@
   letter-spacing: 1px;
   background-color: var(--dark-green);
   color: white;
-  border: none;
+  border: solid 2px var(--darkest-green);
   border-radius: 5px;
   padding: 5px 10px 5px 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
