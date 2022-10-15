@@ -3,11 +3,6 @@ import './CardList.css';
 
 export default function CardList({card, setAddCard, cards, setCards}) {
 
-    // function handleEdit(id) {
-    //     //edit function will go here
-    //     console.log(id)
-    // };
-
     const handleDelete = async (thisCard) => {
         try {
             await deleteCard(thisCard);
@@ -28,7 +23,6 @@ export default function CardList({card, setAddCard, cards, setCards}) {
                 <div>{card.answer}</div>
                 <br/>
                 <div>
-                    {/* <button onClick={evt => {evt.preventDefault(); handleEdit(card)}}>edit</button> */}
                     <button className="delete-button" onClick={evt => {evt.preventDefault(); handleDelete(card)}}>Delete</button>
                 </div>
             </div>

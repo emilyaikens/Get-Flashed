@@ -1,9 +1,9 @@
 .card-container {
-    background-color: var(--tan-2);
+    background-color: var(--deck-yellow);
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    border: solid black 1px;
+    border: solid var(--darkest-green) 2px;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

@@ -54,7 +54,7 @@ export default function ManageDeckPage({deckName, setDeckName, cards, setCards, 
         <>
         <div className="topper"></div>
             <Link to={`/deckdetails/${id}`}>
-                <button className="form-button">Done</button>
+                <button className="form-button">Back to Deck</button>
             </Link>
             <div>
                 <br/>
