@@ -1,23 +1,41 @@
+:root {
+  --light-green: #6d9a7c;
+  --dark-green: #4e7d7d;
+  --darkest-green: #145460;
+  --deck-green-1: #8bc0a6;
+  --deck-green-2: #c4e3d4;
+  --deck-yellow: #f7dcb5 ;
+  --deck-orange: #f5caac;
+  --deck-red: #f2a098;
+  --yellow: #ebcda2;
+  --red: #da7873;
+}
 .App {
   text-align: center;
+  letter-spacing: 1px;
 }
 .form-container{
-  background-color: white;
+  background-color: rgba(235, 205, 162, 0.7);
   max-width: 400px;
   margin: 0 auto;
-  margin-top: 40px;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-button{
-  background-color: green;
+.form-button{
+  letter-spacing: 1px;
+  background-color: var(--dark-green);
   color: white;
-  border: none;
+  border: solid 2px var(--darkest-green);
   border-radius: 5px;
   padding: 5px 10px 5px 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-left: 10px;
+  margin-right: 10px;
 }
-button:hover{
-  background-color: darkgreen;
+.form-button:hover{
+  background-color: var(--light-green);
+}
+.topper{
+  padding: 40px
 }

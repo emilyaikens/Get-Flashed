@@ -52,17 +52,22 @@ export default function ManageDeckPage({deckName, setDeckName, cards, setCards, 
         <>
         {owner === user._id ?
         <>
+        <div className="topper"></div>
             <Link to={`/deckdetails/${id}`}>
-                <button>Done</button>
+                <button className="form-button">Done</button>
             </Link>
-            <h1>Manage Deck Page</h1>
-            <h2>{deckName}</h2>
+            <div>
+                <br/>
+            </div>
             <EditDeckNameForm id={id} deckName={deckName} setDeckName={setDeckName} />
             <br/>
             <NewCardForm setAddCard={setAddCard}/>
             <br/>
             <div>{theCards}</div>
-            <button onClick={evt => {evt.preventDefault(); handleDelete(id)}} >Delete Deck</button>
+            <hr/>
+            <div>DANGER ZONE!</div>
+            <br/>
+            <button className="delete-button" onClick={evt => {evt.preventDefault(); handleDelete(id)}} >Delete Deck</button>
         </>
         :
         <>
@@ -70,6 +75,7 @@ export default function ManageDeckPage({deckName, setDeckName, cards, setCards, 
         <div>You can only edit your own decks</div>
         </>
     }
+    <div className="topper"></div>
     </>
     )
 }

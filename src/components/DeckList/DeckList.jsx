@@ -1,4 +1,5 @@
 import Deck from '../Deck/Deck';
+import './DeckList.css';
 
 export default function DeckList({decks, setDeckName}) {
 
@@ -7,7 +8,9 @@ export default function DeckList({decks, setDeckName}) {
 
     return (
         <>
-            {myDecks}
+            <div className="deck-container">
+                {myDecks}
+            </div>
         </>
     )
 }

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import "./Card.css";
 
 export default function CardList({card}) {
 
@@ -8,12 +9,20 @@ export default function CardList({card}) {
         evt.preventDefault();
         setFlip(!flip);
     }
+
+    const cardBack = "card-back"
+    const cardFront = "card-front"
+    const testing = "flipped"
     
         return (
             <>
-            {flip ? card.answer : card.question}
-            <br/>
-            <button onClick={handleFlip}>Flip</button>
+                {flip ?
+                <div className="card">{card.answer}</div>
+                :
+                <div className="card">{card.question}</div>
+                }
+                <br/>
+                <button className="flip-button" onClick={handleFlip}>Flip</button>
             </>
         )
     }

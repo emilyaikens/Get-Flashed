@@ -1,5 +1,6 @@
 import { useState } from "react";
 import * as deckAPI from '../../utilities/decks-api';
+import Form from 'react-bootstrap/Form';
 
 export default function NewDeckForm({setDeckName, deckName, id}) {
 
@@ -26,17 +27,20 @@ export default function NewDeckForm({setDeckName, deckName, id}) {
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
-                <label>Deck Name</label>
-                <input
+        <div className="form-container">
+            <Form onSubmit={handleSubmit}>
+                <Form.Label>Deck Name</Form.Label>
+                <Form.Control
                     type="text"
                     name="name"
                     value={formData.name}
                     placeholder={deckName}
                     onChange={handleChange}
                 />
-                <button type="Submit">Update Deck Name</button>
-            </form>
+                <br/>
+                <button className="form-button" type="Submit">Update Deck Name</button>
+            </Form>
+        </div>
         </>
     )
 }

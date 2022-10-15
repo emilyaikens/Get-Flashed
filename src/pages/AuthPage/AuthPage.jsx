@@ -13,11 +13,12 @@ export default function AuthPage({setUser}) {
         <main>
             <img className="title" src="https://i.imgur.com/OHi2rSk.png" />
             <h3>A questionably themed flashcard app</h3>
-            <button onClick={() => {setShowSignUp(!showSignUp); 
+            <br/>
+            <button className="form-button" onClick={() => {setShowSignUp(!showSignUp); 
                                     {showLanding ? setShowLanding(!showLanding): setShowLanding(showLanding)}; 
                                     {!showLogIn ? setShowLogIn(!showLogIn): setShowLogIn(showLogIn)}}}
                                     >Sign Up</button>
-            <button onClick={() => {setShowLogIn(!showLogIn); 
+            <button className="form-button" onClick={() => {setShowLogIn(!showLogIn); 
                                     setShowLanding(!showLanding);
                                     {!showSignUp ? setShowSignUp(!showSignUp): setShowSignUp(showSignUp)}}}
                                     >Log In</button>

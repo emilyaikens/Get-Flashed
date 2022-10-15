@@ -1,7 +1,6 @@
 import { useState } from "react";
 import * as deckAPI from '../../utilities/decks-api';
 import { useNavigate } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 export default function NewDeckForm({setDeckName}) {
@@ -57,7 +56,7 @@ export default function NewDeckForm({setDeckName}) {
                     </Form.Select>
                 </Form.Group>
                 <br/>
-                <button type="Submit">Create</button>
+                <button className="form-button" type="Submit">Create</button>
             </Form>
         </div>
         </>
