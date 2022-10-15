@@ -27,7 +27,7 @@ export default function DeckIndexPage({setDeckName, decks, setDecks}) {
     return (
         <>
             <div className="topper"></div>
-            <h1>My Decks</h1>
+            <h1 style={{fontFamily:'Peralta'}}>My Decks</h1>
             <div>{noDecks}</div>
             <br/>
             <Link to="/deck/new">

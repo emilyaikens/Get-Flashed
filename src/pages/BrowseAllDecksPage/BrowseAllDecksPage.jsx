@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { getAllDecks } from '../../utilities/decks-api';
 import NotMyDeck from '../../components/NotMyDeck/NotMyDeck';
 import SearchBar from '../../components/SearchBar/SearchBar';
+import './BrowseAllDecksPage';
 
 export default function BrowseAllDecks() {
 
