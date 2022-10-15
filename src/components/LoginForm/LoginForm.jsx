@@ -52,7 +52,8 @@ export default function LoginForm({setUser}) {
                                         onChange={handleChange}
                                         required/>
                     </Form.Group>
-                    <button type="submit">LOG IN</button>
+                    <br/>
+                    <button className="form-button" type="submit">LOG IN</button>
                 </Form>
             </div>
             <p className="error-message">&nbsp;{error}</p>
