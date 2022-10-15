@@ -21,7 +21,7 @@ export default function DeckIndexPage({setDeckName, decks, setDecks}) {
         };
 
     return (
-        <div>
+        <>
             <div className="topper"></div>
             <h1>My Decks</h1>
             <div>{noDecks}</div>
@@ -33,6 +33,6 @@ export default function DeckIndexPage({setDeckName, decks, setDecks}) {
             <br/>
             <DeckList decks={decks} setDeckName={setDeckName} />
             <img className="index-cowboy" src="https://i.imgur.com/h9DRnp1.png" />
-        </div>
+        </>
     );
 }
