@@ -70,7 +70,7 @@ export default function DeckDetailsPage({setDeckName, deckName, cards, setCards,
             </>
             :
             <>
-                <div>there are no cards in this deck yet</div>
+                <div style={{fontWeight:"bold"}}>there are no cards in this deck yet</div>
                 <img className="cowboy" src="https://i.imgur.com/h9DRnp1.png" />
             </>
             }
