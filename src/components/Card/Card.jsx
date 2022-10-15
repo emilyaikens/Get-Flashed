@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ReactCardFlip from "react-card-flip";
 import "./Card.css";
 
 export default function CardList({card}) {
@@ -16,11 +17,10 @@ export default function CardList({card}) {
     
         return (
             <>
-                {flip ?
-                <div className="card">{card.answer}</div>
-                :
-                <div className="card">{card.question}</div>
-                }
+                <ReactCardFlip isFlipped={flip} flipDirection="horizontal">
+                    <div className="card">{card.question}</div>
+                    <div className="card">{card.answer}</div>
+                </ReactCardFlip>
                 <br/>
                 <button className="flip-button" onClick={handleFlip}>Flip</button>
             </>
