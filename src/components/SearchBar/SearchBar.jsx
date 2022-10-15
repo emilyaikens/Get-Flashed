@@ -1,7 +1,12 @@
 import { useState } from 'react';
-import { searchDecks } from '../../utilities/decks-api'
+import { searchDecks } from '../../utilities/decks-api';
+import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
+import './SearchBar.css';
 
-export default function SearchBar({ setAllDecks, allDecks }) {
+export default function SearchBar({ setAllDecks }) {
 
     const [formData, setFormData] = useState({ search: '' });
 
@@ -25,16 +30,25 @@ export default function SearchBar({ setAllDecks, allDecks }) {
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
-                <label>Browse Decks</label>
-                <input 
-                    onChange={handleChange}
-                    name="search"
-                    type="text"
-                    placeholder="search decks here"
-                />
-                <button type="submit">Search</button>
-            </form>
+            <div className="search-container">
+                <Form onSubmit={handleSubmit}>
+                    <Row>
+                        <Col xs="auto">
+                            <Form.Control
+                                onChange={handleChange}
+                                name="search"
+                                type="text"
+                                placeholder="search decks here"
+                            />
+                        </Col>
+                        <Col xs="auto">
+                            <Button className="form-button" type="submit">Search</Button>
+                        </Col>
+                    </Row>
+                </Form>
+            </div>
+            <br/>
+            <br/>
         </>
     )
 }

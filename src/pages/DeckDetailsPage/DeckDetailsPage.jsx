@@ -51,20 +51,29 @@ export default function DeckDetailsPage({setDeckName, deckName, cards, setCards,
     return (
         <>
             <div className="topper"></div>
-            {thisDeck.user === user._id ? 
-                <Link to={`/managedeck/${id}`}>
-                    <button className="form-button" onClick={()=>setDeckName(deckName)}>Edit Deck</button>
-                </Link> 
-                : 
-                <div></div>
-                }
-            <div><br/></div>
-            <div>
-                {theCards[cardIndex]}
-            </div>
-            <br/>
-            <button className="scroll-button" onClick={handleBack}>Back</button>
-            <button className="scroll-button" onClick={handleNext}>Next</button>
+            {cards.length > 0 ? 
+            <>
+                {thisDeck.user === user._id ? 
+                    <Link to={`/managedeck/${id}`}>
+                        <button className="form-button" onClick={()=>setDeckName(deckName)}>Edit Deck</button>
+                    </Link> 
+                    : 
+                    <div></div>
+                    }
+                <div><br/></div>
+                <div>
+                    {theCards[cardIndex]}
+                </div>
+                <br/>
+                <button className="scroll-button" onClick={handleBack}>Back</button>
+                <button className="scroll-button" onClick={handleNext}>Next</button>
+            </>
+            :
+            <>
+                <div style={{fontWeight:"bold"}}>there are no cards in this deck yet</div>
+                <img className="cowboy" src="https://i.imgur.com/h9DRnp1.png" />
+            </>
+            }
         </>
     )
 }

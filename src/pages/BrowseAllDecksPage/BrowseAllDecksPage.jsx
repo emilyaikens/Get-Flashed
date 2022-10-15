@@ -20,7 +20,10 @@ export default function BrowseAllDecks() {
     let noDeck = ""
 
     if (allDecks.length === 0) {
-        noDeck = "Sorry, there are no public decks that match your search"
+        noDeck = <div>
+                    <img className="index-cowboy" src="https://i.imgur.com/h9DRnp1.png" />
+                    <div>"Sorry, there are no public decks that match your search"</div>
+                </div>
     }
 
     if (allDecks.length > 9) {
@@ -33,7 +36,7 @@ export default function BrowseAllDecks() {
 
     return (
         <>
-            <h1>Browse All Decks Page</h1>
+            <div className="topper"></div>
             <SearchBar allDecks={allDecks} setAllDecks={setAllDecks}/>
             <div>{browseDecks}</div>
             <div>{noDeck}</div>
