@@ -1,50 +1,58 @@
 const Deck = require('../../models/deck');
 
-async function create(req, res) {
-    req.body.user = req.user._id;
-    let newDeck = new Deck(req.body);
-    await newDeck.save();
-    res.json(newDeck);
-};
+//create new deck using user id and form body
+    async function create(req, res) {
+        req.body.user = req.user._id;
+        let newDeck = new Deck(req.body);
+        await newDeck.save();
+        res.json(newDeck);
+    };
 
-async function getMyDecks(req, res) {
-    const decks = await Deck.find({user: req.user._id});
-    res.json(decks);
-};
+//find decks by id
+    async function getMyDecks(req, res) {
+        const decks = await Deck.find({user: req.user._id});
+        res.json(decks);
+    };
 
-async function deleteDeck(req, res) {
-    await Deck.findOneAndDelete({
-        _id: req.params.id
-    });
-    res.json("Deleted Deck");
-};
+//find deck by id and delete    
+    async function deleteDeck(req, res) {
+        await Deck.findOneAndDelete({
+            _id: req.params.id
+        });
+        res.json("Deleted Deck");
+    };
 
-async function editDeckName(req, res) {
-    const deck = await Deck.findById(req.params.id);
-    deck.name = req.body.name;
-    await deck.save();
-    res.json(deck);
-};
+//find deck by id, assign new name, and save
+    async function editDeckName(req, res) {
+        const deck = await Deck.findById(req.params.id);
+        deck.name = req.body.name;
+        await deck.save();
+        res.json(deck);
+    };
 
-async function getAllDecks(req, res) {
-    const decks = await Deck.find({share: "public"});
-    res.json(decks);
-};
+//find decks that are public
+    async function getAllDecks(req, res) {
+        const decks = await Deck.find({share: "public"});
+        res.json(decks);
+    };
 
-async function findOne(req, res) {
-    const deck = await Deck.findById(req.params.id);
-    res.json(deck);
-};
+//find deck by id    
+    async function findOne(req, res) {
+        const deck = await Deck.findById(req.params.id);
+        res.json(deck);
+    };
 
-async function findOwner(req, res) {
-    const deck = await Deck.findById(req.params.id);
-    res.json(deck.user)
-};
+//find deck by id and return owner    
+    async function findOwner(req, res) {
+        const deck = await Deck.findById(req.params.id);
+        res.json(deck.user)
+    };
 
-async function search(req, res) {
-    const deck = await Deck.find({name: req.params.id});
-    res.json(deck);
-};
+//find deck by name (from search bar)    
+    async function search(req, res) {
+        const deck = await Deck.find({name: req.params.id});
+        res.json(deck);
+    };
 
 module.exports = {
     create,
