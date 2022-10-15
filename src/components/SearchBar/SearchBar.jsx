@@ -6,7 +6,7 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import './SearchBar.css';
 
-export default function SearchBar({ setAllDecks, allDecks }) {
+export default function SearchBar({ setAllDecks }) {
 
     const [formData, setFormData] = useState({ search: '' });
 
@@ -30,11 +30,11 @@ export default function SearchBar({ setAllDecks, allDecks }) {
 
     return (
         <>
-            <div>
+            <div className="search-container">
                 <Form onSubmit={handleSubmit}>
                     <Row>
                         <Col xs="auto">
-                            <Form.Control 
+                            <Form.Control
                                 onChange={handleChange}
                                 name="search"
                                 type="text"
