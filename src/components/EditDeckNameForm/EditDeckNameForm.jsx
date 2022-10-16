@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 
 export default function NewDeckForm({setDeckName, deckName, id}) {
 
-    //useState keeps track of form data
+    //useState keeps track of form inputs
 
     const [formData, setFormData] = useState({
         name: ''
