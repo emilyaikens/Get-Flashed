@@ -5,7 +5,7 @@ export default function CardList({card, setAddCard}) {
 
     //handleDelete deletes individual card and updates visible cards via dependency array in pages/ManageDeckPage
 
-    const handleDelete = async (thisCard) => {
+    async function handleDelete(thisCard) {
         try {
             await deleteCard(thisCard);
             setAddCard([1]); //used to refresh card list
