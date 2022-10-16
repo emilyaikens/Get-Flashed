@@ -31,7 +31,7 @@ A MERN stack flashcard app with a questionably appropriate theme.
 
 Get started by clicking link below. You will need to sign up in order to use this app.
 
-[Link To App](https://project-4-flashcards.herokuapp.com/)
+:arrow_right: [Link To App](https://project-4-flashcards.herokuapp.com/) :arrow_left:
 
 ## App Screenshots
 
@@ -44,6 +44,23 @@ Get started by clicking link below. You will need to sign up in order to use thi
 * For our project we were encouraged to set up the front and back end in the same app to reduce the chances of cors errors. This seems to be somewhat unsual in the "real world", as it does not allow the front end to be tailored to different devices. Our particualr configuration meant that advice from StackOverflow and the dev community at large was tailored towards a different setup. This was often a hinderance, but in the end, I learned a lot about both ways to configure a MERN app and feel like I have a better understanding of this stack as a result.
 
 ## Planning Charts
+
+<details>
+    <summary>ERD</summary>
+    <img src="https://i.imgur.com/hnOgkcX.png" />
+</details>
+<details>
+    <summary>React Structure</summary>
+    <img src="https://i.imgur.com/yG41c4j.png" />
+</details>
+<details>
+    <summary>Wireframe</summary>
+    <img src="https://i.imgur.com/1k857Pc.png" />
+</details>
+<details>
+    <summary>MERN Infrastructure</summary>
+    <img src="https://i.imgur.com/fGPreSn.png" />
+</details>
 
 ## Planning Links
 
@@ -61,6 +78,6 @@ Get started by clicking link below. You will need to sign up in order to use thi
 
 ## Credits
 
-* All graphic design by yours truly, Emily Aikens. 
+* All graphic design and planning charts created by yours truly, Emily Aikens. 
 * Geeks for Geeks article by tejaswaniagrawal23 ["Design a Flip Card Effect using ReactJS"](https://www.geeksforgeeks.org/design-a-flip-card-effect-using-reactjs/) inspired my card-flipping code. 
 * Thank you to all of my incredible instructors and classmates at General Assembly for your encouragement, support and instruction.
