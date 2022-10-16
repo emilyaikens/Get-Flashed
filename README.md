@@ -25,9 +25,9 @@ A MERN stack flashcard app with a questionably appropriate theme.
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 ![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
 
-## Getting Started
+![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
 
-:construction_worker_woman: :construction: Oct 7 2022: this app is under construction. Should be ready to go on Oct 17, 2022. :construction: :construction_worker_woman:
+## Getting Started
 
 Get started by clicking link below. You will need to sign up in order to use this app.
 
@@ -37,7 +37,11 @@ Get started by clicking link below. You will need to sign up in order to use thi
 
 ![Home Page](https://i.imgur.com/qKWVI3h.png)
 
-## Project Hurdles
+## Project Hurdles and Wins
+
+* The largest hurdle for me was figuring out the flow of data between front-end and back-end. As always, my whiteboard was my best friend during this project! The creation of flow-charts helped me immensly. The beginning was quite slow because I console logged just about everything; I wanted to have a very clear idea of what was happening every stop of the way. After completing a few pathways, I began to understand the flow of the MERN stack. From there, everything was much more efficient. As per usual, the largest hurdle for me was also the largest win. Gaining an understanding of the MERN stack was incredibly rewarding because I had to work so hard at it. I look forward to understanding it in greater depth. 
+
+* For our project we were encouraged to set up the front and back end in the same app to reduce the chances of cors errors. This seems to be somewhat unsual in the "real world", as it does not allow the front end to be tailored to different devices. Our particualr configuration meant that advice from StackOverflow and the dev community at large was tailored towards a different setup. This was often a hinderance, but in the end, I learned a lot about both ways to configure a MERN app and feel like I have a better understanding of this stack as a result.
 
 ## Planning Charts
 
@@ -51,7 +55,12 @@ Get started by clicking link below. You will need to sign up in order to use thi
 
 ## Icebox
 
+* Create admin user account so that decks and cards from all users can be managed
+* Allow users to choose the color of the cards in their deck
+* Make public decks visible to everyone, not just registered users
+
 ## Credits
 
-Graphics by yours truly, Emily Aikens. 
-Thank you to all of my incredible instructors and classmates at General Assembly for your encouragement, support and instruction.
+* All graphic design by yours truly, Emily Aikens. 
+* Geeks for Geeks article by tejaswaniagrawal23 ["Design a Flip Card Effect using ReactJS"](https://www.geeksforgeeks.org/design-a-flip-card-effect-using-reactjs/) inspired my card-flipping code. 
+* Thank you to all of my incredible instructors and classmates at General Assembly for your encouragement, support and instruction.
