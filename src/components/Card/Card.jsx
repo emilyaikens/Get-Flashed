@@ -12,7 +12,10 @@ export default function CardList({card}) {
     
         return (
             <>
-            <div className="card">{flip ? card.answer : card.question}</div>
+            <div className={`card ${flip ? "flip" : ""}`}>
+                <div className="front">{card.question}</div>
+                <div className="back">{card.answer}</div>
+            </div>
             <br/>
             <button className="flip-button" onClick={handleFlip}>Flip</button>
             </>

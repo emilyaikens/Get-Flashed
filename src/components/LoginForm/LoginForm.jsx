@@ -44,6 +44,7 @@ export default function LoginForm({setUser}) {
                                         onChange={handleChange} 
                                         required/>
                     </Form.Group>
+                    <br/>
                     <Form.Group>
                         <Form.Label>Password</Form.Label>
                         <Form.Control type="password" 

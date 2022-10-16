@@ -19,6 +19,8 @@ export default function ManageDeckPage({deckName, setDeckName, cards, setCards, 
 
     let id = useParams().id;
 
+console.log(cards)
+
     useEffect(function () {
         async function findCards() {
             const myCards = await getCards(id);
