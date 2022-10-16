@@ -26,6 +26,7 @@ A MERN stack flashcard app with a questionably appropriate theme.
 ![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
 
 ![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
+![Trello](https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white)
 
 ## Getting Started
 
@@ -66,7 +67,7 @@ Get started by clicking link below. You will need to sign up in order to use thi
 
 * [Wireframe](https://miro.com/welcomeonboard/NXJFNDJFUW1lcGt2M3IwdEFsWE9wd3BObHRYREdoUkxUWEU1aE9TSlpUTjVlcTFnNGxrYkxTb1ZhVkFoSllsenwzNDU4NzY0NTM1MTIyNTIxNDU4fDI=?share_link_id=724065956399)
 * [Node Stucture](https://miro.com/welcomeonboard/YnR3ZVZaVEl1TFJ1RDlRZjFyN0JMMmN4Y1F6ZGJ6U0lKUVBWemJsZlI3cDZwTkh1bkxXRHZhaldtdDVhT1JRd3wzNDU4NzY0NTM1MTIyNTIxNDU4fDI=?share_link_id=117209561511)
-* [User Stories](https://trello.com/invite/b/HA1qu3Vl/919001ab6f853873e4bc4f6ff3bdb1cf/flash-cards)
+* [User Stories (Trello Board)](https://trello.com/invite/b/HA1qu3Vl/919001ab6f853873e4bc4f6ff3bdb1cf/flash-cards)
 * [ERD](https://lucid.app/lucidchart/fcf35611-398b-4579-8971-844640e3b2c6/edit?viewport_loc=331%2C44%2C2538%2C1278%2C0_0&invitationId=inv_4faf9f55-d8e3-4847-bf63-3dcf33cc5af7#)
 * [Schedule](https://docs.google.com/document/d/15rQwSTU4ct8N-uArGpP3mbf4cgFasZAvbza889pW_wM/edit?usp=sharing)
 
