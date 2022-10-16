@@ -39,7 +39,7 @@ export default function AuthPage({setUser}) {
                 <LoginForm setUser={setUser}/>
                 </>
             }
-            {showLanding ?
+            {!showLogIn || !showSignUp ?
                 <div></div>
                 :
                 <>

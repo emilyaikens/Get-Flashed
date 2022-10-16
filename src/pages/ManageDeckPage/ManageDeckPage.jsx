@@ -19,6 +19,8 @@ export default function ManageDeckPage({deckName, setDeckName, cards, setCards, 
 
     let id = useParams().id;
 
+console.log(cards)
+
     useEffect(function () {
         async function findCards() {
             const myCards = await getCards(id);
@@ -50,9 +52,9 @@ export default function ManageDeckPage({deckName, setDeckName, cards, setCards, 
 
     return (
         <>
+        <div className="topper"></div>
         {owner === user._id ?
         <>
-        <div className="topper"></div>
             <Link to={`/deckdetails/${id}`}>
                 <button className="form-button">Back to Deck</button>
             </Link>
@@ -64,15 +66,15 @@ export default function ManageDeckPage({deckName, setDeckName, cards, setCards, 
             <NewCardForm setAddCard={setAddCard}/>
             <br/>
             <div>{theCards}</div>
-            <hr/>
-            <div>DANGER ZONE!</div>
+            <br/>
+            <h3>DANGER ZONE!</h3>
             <br/>
             <button className="delete-button" onClick={evt => {evt.preventDefault(); handleDelete(id)}} >Delete Deck</button>
         </>
         :
         <>
         <div>No trespassing image goes here</div>
-        <div>You can only edit your own decks</div>
+        <h4 style={{fontFamily:'Peralta'}}>You cannot edit other users decks</h4>
         </>
     }
     <div className="topper"></div>

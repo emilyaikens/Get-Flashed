@@ -49,6 +49,7 @@ export default function NewCardForm({setAddCard}) {
                     value={formData.question}
                     onChange={handleChange}
                 />
+                <br/>
                 <Form.Label>Answer:</Form.Label>
                 <Form.Control
                     type="text"

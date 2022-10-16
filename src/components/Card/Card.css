@@ -1,4 +1,8 @@
 .card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
     color: black;
     border-radius: 10px;
     border: solid var(--dark-green) 2px;
@@ -9,6 +13,25 @@
     padding: 20px;
     justify-content: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transform-style: preserve-3d;
+    transition: 150ms;
+    transform: perspective(1000px) rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0));
+}
+.card:hover {
+    --translate-y: -2px;
+    opacity: 1;
+}
+.card.flip {
+    --rotate-y: 180deg;
+}
+.card .front, 
+.card .back {
+    position: absolute;
+    padding: 1rem;
+    backface-visibility: hidden;
+}
+.card .back {
+    transform: rotateY(180deg);
 }
 .flip-button {
     letter-spacing: 1px;
@@ -20,6 +43,6 @@
     margin: 0px 10px 0px 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.flip-button {
+.flip-button:hover {
     background-color: var(--deck-green-2);
 }
