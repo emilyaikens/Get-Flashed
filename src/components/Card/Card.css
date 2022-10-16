@@ -23,6 +23,7 @@
 }
 .card.flip {
     --rotate-y: 180deg;
+    background-color: var(--deck-green-2);
 }
 .card .front, 
 .card .back {
@@ -32,6 +33,10 @@
 }
 .card .back {
     transform: rotateY(180deg);
+    background-color: var(--deck-green-2);
+}
+.card .front {
+    color: var(--dark-green);
 }
 .flip-button {
     letter-spacing: 1px;
@@ -45,4 +50,9 @@
 }
 .flip-button:hover {
     background-color: var(--deck-green-2);
+}
+.color-button {
+    padding: 8px;
+    border-radius: 10px;
+    border: solid black 1px;
 }

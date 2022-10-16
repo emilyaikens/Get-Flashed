@@ -15,20 +15,17 @@ export default function DeckIndexPage({setDeckName, decks, setDecks}) {
         getDecks();
     }, []);
 
-    let noDecks = <div>
-                    <div>"You have no decks yet"</div>
-                    <img className="index-cowboy" src="https://i.imgur.com/h9DRnp1.png" />
-                </div>
-
-    if (decks.length > 0) {
-        noDecks = null;
-    };
-
     return (
         <>
-            <div className="topper"></div>
+        <div className="topper"></div>
+        {decks.length > 0 ?
             <h1 style={{fontFamily:'Peralta'}}>My Decks</h1>
-            <div>{noDecks}</div>
+        :
+        <>
+            <h4 style={{fontFamily:'Peralta'}}>You have no decks yet</h4>
+            <img className="index-cowboy" src="https://i.imgur.com/h9DRnp1.png" />
+        </>
+        }
             <br/>
             <Link to="/deck/new">
                 <button className="form-button">New Deck</button>

@@ -9,7 +9,7 @@ export default function CardList({card}) {
         evt.preventDefault();
         setFlip(!flip);
     }
-    
+
         return (
             <>
             <div className={`card ${flip ? "flip" : ""}`}>

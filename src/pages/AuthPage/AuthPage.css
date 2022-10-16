@@ -5,12 +5,10 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
-
 .title {
     width: 100%;
     max-width: 800px;
 }
-
 .cowboy {
     margin: 0 auto;
     max-width: 700px;

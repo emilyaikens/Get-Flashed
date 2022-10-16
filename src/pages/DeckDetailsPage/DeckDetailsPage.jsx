@@ -13,6 +13,7 @@ export default function DeckDetailsPage({setDeckName, deckName, cards, setCards,
 
     const [cardIndex, setCardIndex] = useState(0);
     const [thisDeck, setThisDeck] = useState("");
+    const [color, setColor] = useState("white");
 
     function handleBack(evt) {
         evt.preventDefault();
@@ -45,7 +46,7 @@ export default function DeckDetailsPage({setDeckName, deckName, cards, setCards,
     }, []);
 
     let theCards= cards.map((card, index) => {
-        return <Card card={card} key={card._id} />
+        return <Card card={card} key={card._id}/>
     })
 
     return (
@@ -70,7 +71,7 @@ export default function DeckDetailsPage({setDeckName, deckName, cards, setCards,
             </>
             :
             <>
-                <h3 style={{fontWeight:"bold", fontFamily:'Peralta'}}>there are no cards in this deck yet</h3>
+                <h3 style={{fontFamily:'Peralta'}}>there are no cards in this deck yet</h3>
                 <br/>
                 <Link to={`/managedeck/${id}`}>
                     <button className="form-button" onClick={()=>setDeckName(deckName)}>Add Cards</button>
