@@ -26,7 +26,7 @@ export default function NewCardForm({setAddCard}) {
         });
     };
 
-    //on form submit, send payload to back end and save to database
+    //on form submit, send payload to back end and save card to database
     //then reset formdata use state so that form "clears"
 
     async function handleSubmit(evt) {
