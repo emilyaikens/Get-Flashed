@@ -1,10 +1,16 @@
+import { useState } from 'react';
 import { useEffect } from 'react';
 import { getMyDecks } from '../../utilities/decks-api';
 import { Link } from 'react-router-dom';
 import DeckList from '../../components/DeckList/DeckList';
+import NewDeckForm from '../../components/NewDeckForm/NewDeckForm';
 import './DeckIndexPage.css';
 
 export default function DeckIndexPage({setDeckName, decks, setDecks}) {
+
+    //useState seeform toggles with newDeck button
+
+    const [seeForm, setSeeForm] = useState(false);
 
     //find all decks belonging to this user and update setDecks use state
 
@@ -31,13 +37,22 @@ export default function DeckIndexPage({setDeckName, decks, setDecks}) {
             <img className="index-cowboy" src="https://i.imgur.com/h9DRnp1.png" />
         </>
         }
-            <br/>
-            <Link to="/deck/new">
-                <button className="form-button">New Deck</button>
-            </Link>
-            <div><br/></div>
-            <br/>
-            <DeckList decks={decks} setDeckName={setDeckName} />
+            {seeForm ? 
+            <>
+                <div><br/></div>
+                <button className="form-button" onClick={() => {setSeeForm(!seeForm)}}>Back</button>
+                <div><br/></div>
+                <NewDeckForm setDeckName={setDeckName}/>
+            </>
+            :
+            <>
+                <br/>
+                <button className="form-button" onClick={() => {setSeeForm(!seeForm)}}>New Deck</button>
+                <div><br/></div>
+                <br/>
+                <DeckList decks={decks} setDeckName={setDeckName} />
+            </>
+            }
         </>
     );
 }
