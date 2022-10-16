@@ -5,12 +5,18 @@ import Form from 'react-bootstrap/Form';
 
 export default function NewDeckForm({setDeckName}) {
 
+    //assign navigate variable using useNavigate from react-router-dom
+
     const navigate = useNavigate();
+
+    //this use state keeps track of form inputs
 
     const [formData, setFormData] = useState({ 
         name: '',
         share: "private",
     });
+
+    //handleChange updates use state as user types in form    
 
     function handleChange(evt) {
         setFormData({
@@ -19,12 +25,16 @@ export default function NewDeckForm({setDeckName}) {
         });
     };
 
+    //on form submit, send payload to back end and save to database
+    //then update deck name use state (app.js) so it can be used
+    //in managedeckpage
+
     async function handleSubmit(evt) {
         evt.preventDefault();
         try {
-            const newDeck = await deckAPI.createDeck(formData); //save deck to database
+            const newDeck = await deckAPI.createDeck(formData);
             setDeckName(newDeck.name);
-            navigate(`/managedeck/${newDeck._id}`);
+            navigate(`/managedeck/${newDeck._id}`); //sends user to ManageDeckPage
         } catch {
             console.log('create deck failed');
         }
