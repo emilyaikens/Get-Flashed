@@ -1,8 +1,8 @@
 .scroll-button {
     letter-spacing: 1px;
-    background-color: var(--red);
+    background-color: var(--deck-green-2);
     color: black;
-    border: solid 2px var(--dark-green);
+    border: solid 2px var(--light-green);
     border-radius: 5px;
     padding: 5px 10px 5px 10px;
     margin: 0px 10px 0px 10px;
