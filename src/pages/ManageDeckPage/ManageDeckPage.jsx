@@ -94,7 +94,7 @@ export default function ManageDeckPage({deckName, setDeckName, cards, setCards, 
         </>
         :
         <>
-        <div>No trespassing image goes here</div>
+        <img src="https://i.imgur.com/HfQZAp6.png" />
         <h4 style={{fontFamily:'Peralta'}}>You cannot edit other users decks</h4>
         </>
     }
