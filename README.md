@@ -81,4 +81,5 @@ Get started by clicking link below. You will need to sign up in order to use thi
 
 * All graphic design and planning charts created by yours truly, Emily Aikens. 
 * Geeks for Geeks article by tejaswaniagrawal23 ["Design a Flip Card Effect using ReactJS"](https://www.geeksforgeeks.org/design-a-flip-card-effect-using-reactjs/) inspired my card-flipping code. 
+* Shout-out to gel pens
 * Thank you to all of my incredible instructors and classmates at General Assembly for your encouragement, support and instruction.
