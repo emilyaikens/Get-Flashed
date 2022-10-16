@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { getMyDecks } from '../../utilities/decks-api';
-import { Link } from 'react-router-dom';
 import DeckList from '../../components/DeckList/DeckList';
 import NewDeckForm from '../../components/NewDeckForm/NewDeckForm';
 import './DeckIndexPage.css';
 
 export default function DeckIndexPage({setDeckName, decks, setDecks}) {
 
-    //useState seeform toggles with newDeck button
+    //when true, the NewDeckForm is visible, when false, it is not. 
+    //buttons on click will toggle state between true and false
 
     const [seeForm, setSeeForm] = useState(false);
 
@@ -25,6 +25,8 @@ export default function DeckIndexPage({setDeckName, decks, setDecks}) {
     //logic below:
     //if above function returns decks, show them. Otherwise, render message
     //"you have no decks yet" and the cowboy image
+    // New Deck and Back buttons will toggle the seeForm use state between true (form visible)
+    //and false (form not visible)
 
     return (
         <>
