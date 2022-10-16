@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { searchDecks } from '../../utilities/decks-api';
 import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import './SearchBar.css';
 
@@ -32,18 +30,15 @@ export default function SearchBar({ setAllDecks }) {
         <>
             <div >
                 <Form onSubmit={handleSubmit}>
-                    {/* <Row> */}
                         <div className="search-container">
                             <Form.Control
                                 onChange={handleChange}
                                 name="search"
                                 type="text"
-                                placeholder="search decks here"
+                                placeholder="search public decks here"
                             />
-                       
                             <Button className="form-button" type="submit">Search</Button>
                             </div>
-                    {/* </Row> */}
                 </Form>
             </div>
             <br/>

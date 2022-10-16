@@ -12,7 +12,7 @@ export default function AuthPage({setUser}) {
     return (
         <main>
             <img className="title" src="https://i.imgur.com/OHi2rSk.png" />
-            <h3>A questionably themed flashcard app</h3>
+            <h5 style={{fontFamily:'Peralta', margin: 20}}>A questionably themed flashcard app</h5>
             <br/>
             <button className="form-button" onClick={() => {setShowSignUp(!showSignUp); 
                                     {showLanding ? setShowLanding(!showLanding): setShowLanding(showLanding)}; 

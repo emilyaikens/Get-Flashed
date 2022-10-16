@@ -20,13 +20,6 @@ export default function BrowseAllDecks() {
     let browseDecks = "";
     let noDeck = ""
 
-    if (allDecks.length === 0) {
-        noDeck = <div>
-                    <img className="index-cowboy" src="https://i.imgur.com/h9DRnp1.png" />
-                    <div>"Sorry, there are no public decks that match your search"</div>
-                </div>
-    }
-
     if (allDecks.length > 9) {
         browseDecks = allDecks.slice([0], [9]).map((value, index) => 
             <NotMyDeck deck={value} key={value._id} index={index}/>)
@@ -37,10 +30,19 @@ export default function BrowseAllDecks() {
 
     return (
         <>
-            <div className="topper"></div>
-            <SearchBar allDecks={allDecks} setAllDecks={setAllDecks}/>
-            <div>{browseDecks}</div>
-            <div>{noDeck}</div>
+        <div className="topper"></div>
+        {allDecks.length > 0 ?
+            <>
+                <SearchBar allDecks={allDecks} setAllDecks={setAllDecks}/>
+                <div>{browseDecks}</div>
+                <div>{noDeck}</div>
+            </>
+        :
+        <>
+            <h3 style={{fontFamily:'Peralta'}}>"Sorry, there are no public decks that match your search"</h3>
+            <img className="cowboy" src="https://i.imgur.com/h9DRnp1.png" />
+        </>
+        }
         </>
     )
 }
