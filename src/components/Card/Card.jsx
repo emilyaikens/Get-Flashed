@@ -10,10 +10,6 @@ export default function CardList({card}) {
         evt.preventDefault();
         setFlip(!flip);
     }
-
-    const cardBack = "card-back"
-    const cardFront = "card-front"
-    const testing = "flipped"
     
         return (
             <>
