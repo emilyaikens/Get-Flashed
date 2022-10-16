@@ -52,9 +52,9 @@ console.log(cards)
 
     return (
         <>
+        <div className="topper"></div>
         {owner === user._id ?
         <>
-        <div className="topper"></div>
             <Link to={`/deckdetails/${id}`}>
                 <button className="form-button">Back to Deck</button>
             </Link>
@@ -74,7 +74,7 @@ console.log(cards)
         :
         <>
         <div>No trespassing image goes here</div>
-        <div>You can only edit your own decks</div>
+        <h4 style={{fontFamily:'Peralta'}}>You cannot edit other users decks</h4>
         </>
     }
     <div className="topper"></div>
