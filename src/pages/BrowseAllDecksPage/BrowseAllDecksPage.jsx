@@ -45,7 +45,7 @@ export default function BrowseAllDecks() {
         <div className="topper"></div>
         {allDecks.length > 0 ?
             <>
-                <SearchBar allDecks={allDecks} setAllDecks={setAllDecks}/>
+                <SearchBar setAllDecks={setAllDecks}/>
                 <div>{browseDecks}</div>
                 <div>{noDeck}</div>
             </>
