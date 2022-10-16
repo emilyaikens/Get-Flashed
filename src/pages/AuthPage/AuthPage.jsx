@@ -50,7 +50,7 @@ export default function AuthPage({setUser}) {
                 <div></div>
                 :
                 <>
-                    <img className="cowboy" src="https://i.imgur.com/h9DRnp1.png" />
+                    <img className="cowboy" src="https://i.imgur.com/g7A8rGD.png" />
                 </>
             }            
         </main>

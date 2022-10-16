@@ -98,7 +98,7 @@ export default function DeckDetailsPage({setDeckName, deckName, cards, setCards,
                     <button className="form-button" onClick={()=>setDeckName(deckName)}>Add Cards</button>
                 </Link> 
                 <br/>
-                <img className="cowboy" src="https://i.imgur.com/h9DRnp1.png" />
+                <img className="cowboy" src="https://i.imgur.com/g7A8rGD.png" />
             </>
             }
         </>
