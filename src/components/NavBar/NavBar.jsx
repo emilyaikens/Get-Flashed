@@ -12,9 +12,9 @@ export default function NavBar({user, setUser}) {
     }
 
     return (
-        <Navbar bg="light" expand="lg" fixed="top">
+        <Navbar bg="" expand="lg" fixed="top">
             <Container>
-                <Navbar.Brand href="/">Get Flashed</Navbar.Brand>
+                <Navbar.Brand style={{fontFamily:'Peralta'}} href="/">Get Flashed</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">

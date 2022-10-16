@@ -16,7 +16,7 @@ export default function DeckIndexPage({setDeckName, decks, setDecks}) {
     }, []);
 
     let noDecks = <div>
-                    <div>"You have no decks yet"</div>
+                    <div>You have no decks yet</div>
                     <img className="index-cowboy" src="https://i.imgur.com/h9DRnp1.png" />
                 </div>
 

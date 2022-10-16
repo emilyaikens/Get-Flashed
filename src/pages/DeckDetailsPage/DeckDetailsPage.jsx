@@ -71,7 +71,7 @@ export default function DeckDetailsPage({setDeckName, deckName, cards, setCards,
             </>
             :
             <>
-                <h3 style={{fontWeight:"bold", fontFamily:'Peralta'}}>there are no cards in this deck yet</h3>
+                <h3 style={{fontFamily:'Peralta'}}>there are no cards in this deck yet</h3>
                 <br/>
                 <Link to={`/managedeck/${id}`}>
                     <button className="form-button" onClick={()=>setDeckName(deckName)}>Add Cards</button>
