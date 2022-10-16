@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 
 export default function NotMyDeck({deck, index}) {
 
+    //colors array and logic below are used to set color of each deck
+
     const colors = ['#8bc0a6', '#c4e3d4', '#f7dcb5', '#f5caac', '#f2a098'];
 
     let cardIndex = index
@@ -14,6 +16,8 @@ export default function NotMyDeck({deck, index}) {
     } else if (index > 18) {
         cardIndex = Math.floor(Math.random() * 4);
     };
+
+    //each deck is a button that links to DeckDetailsPage
 
     return (
         <>
