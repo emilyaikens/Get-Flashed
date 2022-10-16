@@ -27,7 +27,7 @@ export default function NewCardForm({setAddCard}) {
     };
 
     //on form submit, send payload to back end and save to database
-    // then reset formdata use state so that form "clears"
+    //then reset formdata use state so that form "clears"
 
     async function handleSubmit(evt) {
         evt.preventDefault();
@@ -38,7 +38,7 @@ export default function NewCardForm({setAddCard}) {
                 answer: '',
                 deckId: id
             });
-            setAddCard([1]); //updates dep array in ManageDeckPage so we can see new card
+            setAddCard([1]); //updates dep array in ManageDeckPage so user can see new card
         } catch {
             console.log('create card failed');
         }
