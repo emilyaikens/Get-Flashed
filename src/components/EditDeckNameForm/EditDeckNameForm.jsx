@@ -4,18 +4,25 @@ import Form from 'react-bootstrap/Form';
 
 export default function NewDeckForm({setDeckName, deckName, id}) {
 
+    //useState keeps track of form data
+
     const [formData, setFormData] = useState({
         name: ''
     });
 
-    const handleChange = (evt) => {
+    //handleChange updates formData useState with user input
+
+    function handleChange(evt) {
         setFormData({
         ...formData,
         [evt.target.name]: evt.target.value,
         });
     };
 
-    const handleSubmit = async (evt) => {
+    //handleSubmit sends user input (deck name) to backend, where deck name is updated in db
+    //new deck name is sent to front-end and is used to update setDeckName useState (from App.js)
+
+    async function handleSubmit(evt) {
         evt.preventDefault();
         try {
             const newDeckName = await deckAPI.editDeckName(formData, id); 

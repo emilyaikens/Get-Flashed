@@ -1,12 +1,14 @@
 import { deleteCard } from '../../utilities/cards-api';
 import './CardList.css';
 
-export default function CardList({card, setAddCard, cards, setCards}) {
+export default function CardList({card, setAddCard}) {
+
+    //handleDelete deletes individual card and updates visible cards via dependency array in pages/ManageDeckPage
 
     const handleDelete = async (thisCard) => {
         try {
             await deleteCard(thisCard);
-            setAddCard([1]); //should refresh list
+            setAddCard([1]); //used to refresh card list
         } catch {
             console.log('delete card failed')
         }
@@ -23,7 +25,8 @@ export default function CardList({card, setAddCard, cards, setCards}) {
                 <div>{card.answer}</div>
                 <br/>
                 <div>
-                    <button className="delete-button" onClick={evt => {evt.preventDefault(); handleDelete(card)}}>Delete</button>
+                    <button className="delete-button" 
+                            onClick={evt => {evt.preventDefault(); handleDelete(card)}}>Delete</button>
                 </div>
             </div>
         </div>

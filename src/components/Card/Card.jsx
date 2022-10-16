@@ -3,6 +3,8 @@ import "./Card.css";
 
 export default function CardList({card}) {
 
+    //flip useState and handleFlip function are used to "flip" card by changing className of card
+
     const [flip, setFlip] = useState(false);
 
     function handleFlip(evt) {
