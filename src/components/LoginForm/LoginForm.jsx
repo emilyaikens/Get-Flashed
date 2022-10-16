@@ -12,7 +12,7 @@ export default function LoginForm({setUser}) {
     });
     const [error, setError] = useState('');
 
-    // on change grab the data and update the state
+    //update the use state as user types in form
 
     function handleChange(evt) {
         setCredentials({...credentials, [evt.target.name]: evt.target.value});
