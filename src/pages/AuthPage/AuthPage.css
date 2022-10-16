@@ -9,6 +9,9 @@ body {
     width: 100%;
     max-width: 800px;
 }
+h5 {
+    color: var(--brown);
+}
 .cowboy {
     margin: 0 auto;
     max-width: 700px;

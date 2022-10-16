@@ -52,7 +52,7 @@ export default function BrowseAllDecks() {
         :
         <>
             <h3 style={{fontFamily:'Peralta'}}>"Sorry, there are no public decks that match your search"</h3>
-            <img className="cowboy" src="https://i.imgur.com/h9DRnp1.png" />
+            <img className="cowboy" src="https://i.imgur.com/g7A8rGD.png" />
         </>
         }
         </>
