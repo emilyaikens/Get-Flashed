@@ -9,11 +9,19 @@ import './DeckDetailsPage.css';
 
 export default function DeckDetailsPage({setDeckName, deckName, cards, setCards, user}) {
 
+    //grab id from url parameters
+
     let id = useParams().id;
 
+    //use state below: updated by handleBack and handleNext functions
+
     const [cardIndex, setCardIndex] = useState(0);
+
+    //use state below: updated by findDeck function, contains info from the deck whose id matches url param id
+
     const [thisDeck, setThisDeck] = useState("");
-    const [color, setColor] = useState("white");
+
+    //when user clicks "back" button, update cardIndex use state to be less one
 
     function handleBack(evt) {
         evt.preventDefault();
@@ -22,12 +30,16 @@ export default function DeckDetailsPage({setDeckName, deckName, cards, setCards,
         };
     };
 
+    //when user clicks "next" button, update cardIndex use state to be plus one
+
     function handleNext(evt) {
         evt.preventDefault();
         if (cardIndex < (cards.length - 1)) {
             setCardIndex(cardIndex + 1)
         };
     };
+
+    //find deck using the id grabbed from the url params
 
     useEffect(function () {
         async function findDeck() {
@@ -37,6 +49,8 @@ export default function DeckDetailsPage({setDeckName, deckName, cards, setCards,
         findDeck()
     }, [])
 
+    //find cards belonging to the current deck
+
     useEffect(function () {
         async function findCards() {
             const myCards = await getCards(id);
@@ -45,9 +59,16 @@ export default function DeckDetailsPage({setDeckName, deckName, cards, setCards,
         findCards()
     }, []);
 
+    //map cards returned by the function above to Card component
+
     let theCards= cards.map((card, index) => {
         return <Card card={card} key={card._id}/>
     })
+
+    //logic below:
+    //the Edit Deck button is only visible if the current user matches the user who created the current deck
+    //if there are no cards in the deck, show the message "there are no cards in this deck yet"
+    //**Note: the "flip" button visible on this page can be found in the Card component
 
     return (
         <>
