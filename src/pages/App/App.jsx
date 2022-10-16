@@ -1,4 +1,3 @@
-import './App.css';
 import {useState} from 'react';
 import {Routes, Route} from 'react-router-dom';
 import {getUser} from '../../utilities/users-service';
@@ -9,9 +8,10 @@ import DeckIndexPage from '../DeckIndexPage/DeckIndexPage';
 import DeckDetailsPage from '../DeckDetailsPage/DeckDetailsPage';
 import ManageDeckPage from '../ManageDeckPage/ManageDeckPage';
 import BrowseAllDecksPage from '../BrowseAllDecksPage/BrowseAllDecksPage';
+import './App.css';
 
 function App() {
-    // set the user by calling getUser function
+
     const [user, setUser] = useState(getUser());
     const [decks, setDecks] = useState([]);
     const [deckName, setDeckName] = useState([]);
@@ -35,6 +35,6 @@ function App() {
                 }
         </main>
     );
-}
+};
 
 export default App;

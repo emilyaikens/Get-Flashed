@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useEffect } from 'react';
 import { getMyDecks } from '../../utilities/decks-api';
 import { Link } from 'react-router-dom';
