@@ -66,8 +66,8 @@ console.log(cards)
             <NewCardForm setAddCard={setAddCard}/>
             <br/>
             <div>{theCards}</div>
-            <hr/>
-            <div>DANGER ZONE!</div>
+            <br/>
+            <h3>DANGER ZONE!</h3>
             <br/>
             <button className="delete-button" onClick={evt => {evt.preventDefault(); handleDelete(id)}} >Delete Deck</button>
         </>
