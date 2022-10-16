@@ -3,28 +3,30 @@ import * as usersService from '../../utilities/users-service';
 import Form from 'react-bootstrap/Form';
 
 export default function LoginForm({setUser}) {
-    // initial state, username and password is set to empty string
+
+    //useState keeps track of form inputs
+
     const [credentials, setCredentials] = useState({
         email: '',
         password: '',
     });
-    // error code is set to empty string
     const [error, setError] = useState('');
 
-    // on change grab the data and update the state
+    //update the use state as user types in form
+
     function handleChange(evt) {
         setCredentials({...credentials, [evt.target.name]: evt.target.value});
         setError('');
     }
 
     // on submit call the API endpoint and setUser state
+    // The promise returned by the signUp service method
+    // will resolve to the user object included in the
+    // payload of the JSON Web Token (JWT)
+
     async function handleSubmit(evt) {
-        // Prevent form from being submitted to the server
         evt.preventDefault();
         try {
-            // The promise returned by the signUp service method
-            // will resolve to the user object included in the
-            // payload of the JSON Web Token (JWT)
             const user = await usersService.login(credentials);
             setUser(user);
         } catch {

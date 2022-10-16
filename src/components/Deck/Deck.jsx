@@ -18,6 +18,8 @@ export default function Deck ({deck, index, setDeckName}) {
         cardIndex = Math.floor(Math.random() * 4);
     };
 
+    //each deck is a button that links to DeckDetailsPage
+
     return (
         <>
             <Link to={`/deckdetails/${deck._id}`}>

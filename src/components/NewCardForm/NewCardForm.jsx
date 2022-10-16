@@ -5,7 +5,11 @@ import Form from 'react-bootstrap/Form';
 
 export default function NewCardForm({setAddCard}) {
 
+    //grab id from the url parameters and assign to variable id
+
     let id = useParams().id;
+
+    //this use state keeps track of form inputs
 
     const [formData, setFormData] = useState({
         question: '',
@@ -13,7 +17,7 @@ export default function NewCardForm({setAddCard}) {
         deckId: id,
     });
 
-    const [cards, setCards] = useState([]);
+    //handleChange updates use state as user types in form
 
     const handleChange = (evt) => {
         setFormData({
@@ -22,17 +26,19 @@ export default function NewCardForm({setAddCard}) {
         });
     };
 
+    //on form submit, send payload to back end and save card to database
+    //then reset formdata use state so that form "clears"
+
     async function handleSubmit(evt) {
         evt.preventDefault();
         try {
             const newCard = await createCard(formData);
-            setCards({...setCards, newCard});
             setFormData({
                 question: '',
                 answer: '',
                 deckId: id
             });
-            setAddCard([1]); //updates usestate so that new card renders on page
+            setAddCard([1]); //updates dep array in ManageDeckPage so user can see new card
         } catch {
             console.log('create card failed');
         }
@@ -40,27 +46,27 @@ export default function NewCardForm({setAddCard}) {
 
     return (
         <>
-        <div className="form-container">
-            <Form onSubmit={handleSubmit}>
-                <Form.Label>Question:</Form.Label>
-                <Form.Control
-                    type="text"
-                    name="question"
-                    value={formData.question}
-                    onChange={handleChange}
-                />
-                <br/>
-                <Form.Label>Answer:</Form.Label>
-                <Form.Control
-                    type="text"
-                    name="answer"
-                    value={formData.answer}
-                    onChange={handleChange}
-                />
-                <br/>
-                <button className="form-button" type='submit'>Add Card</button>
-            </Form>
+            <div className="form-container">
+                <Form onSubmit={handleSubmit}>
+                    <Form.Label>Question:</Form.Label>
+                    <Form.Control
+                        type="text"
+                        name="question"
+                        value={formData.question}
+                        onChange={handleChange}
+                    />
+                    <br/>
+                    <Form.Label>Answer:</Form.Label>
+                    <Form.Control
+                        type="text"
+                        name="answer"
+                        value={formData.answer}
+                        onChange={handleChange}
+                    />
+                    <br/>
+                    <button className="form-button" type='submit'>Add Card</button>
+                </Form>
             </div>
         </>
     )
-}
+};

@@ -7,7 +7,11 @@ import './BrowseAllDecksPage';
 
 export default function BrowseAllDecks() {
 
+    //this use state keeps track of public decks
+
     const [allDecks, setAllDecks] = useState([]);
+
+    //this function fetches public decks from all users and updates use state above
 
     useEffect(function () {
         async function showAllDecks() {
@@ -17,10 +21,14 @@ export default function BrowseAllDecks() {
         showAllDecks();
     }, []);
 
+    //variables and logic below:
+    //if more than 10 decks are returned from the function above, only map the first 10
+    //otherwise, map all of them
+
     let browseDecks = "";
     let noDeck = ""
 
-    if (allDecks.length > 9) {
+    if (allDecks.length > 10) {
         browseDecks = allDecks.slice([0], [9]).map((value, index) => 
             <NotMyDeck deck={value} key={value._id} index={index}/>)
     } else {
@@ -28,12 +36,16 @@ export default function BrowseAllDecks() {
             <NotMyDeck deck={value} key={value._id} index={index}/>)
     };
 
+    //below: if there are no decks returned by the showAllDecks/getAllDecks functions
+    //then show the "sorry there are no decks..." message
+    //otherwise, show the decks that have been fetched from the database
+
     return (
         <>
         <div className="topper"></div>
         {allDecks.length > 0 ?
             <>
-                <SearchBar allDecks={allDecks} setAllDecks={setAllDecks}/>
+                <SearchBar setAllDecks={setAllDecks}/>
                 <div>{browseDecks}</div>
                 <div>{noDeck}</div>
             </>

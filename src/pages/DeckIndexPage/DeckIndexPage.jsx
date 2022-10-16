@@ -1,11 +1,18 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { getMyDecks } from '../../utilities/decks-api';
-import { Link } from 'react-router-dom';
 import DeckList from '../../components/DeckList/DeckList';
+import NewDeckForm from '../../components/NewDeckForm/NewDeckForm';
 import './DeckIndexPage.css';
 
 export default function DeckIndexPage({setDeckName, decks, setDecks}) {
+
+    //when true, the NewDeckForm is visible, when false, it is not. 
+    //buttons on click will toggle state between true and false
+
+    const [seeForm, setSeeForm] = useState(false);
+
+    //find all decks belonging to this user and update setDecks use state
 
     useEffect(function () {
         async function getDecks() {
@@ -14,6 +21,12 @@ export default function DeckIndexPage({setDeckName, decks, setDecks}) {
         }
         getDecks();
     }, []);
+
+    //logic below:
+    //if above function returns decks, show them. Otherwise, render message
+    //"you have no decks yet" and the cowboy image
+    // New Deck and Back buttons will toggle the seeForm use state between true (form visible)
+    //and false (form not visible)
 
     return (
         <>
@@ -26,13 +39,22 @@ export default function DeckIndexPage({setDeckName, decks, setDecks}) {
             <img className="index-cowboy" src="https://i.imgur.com/h9DRnp1.png" />
         </>
         }
-            <br/>
-            <Link to="/deck/new">
-                <button className="form-button">New Deck</button>
-            </Link>
-            <div><br/></div>
-            <br/>
-            <DeckList decks={decks} setDeckName={setDeckName} />
+            {seeForm ? 
+            <>
+                <div><br/></div>
+                <button className="form-button" onClick={() => {setSeeForm(!seeForm)}}>Back</button>
+                <div><br/></div>
+                <NewDeckForm setDeckName={setDeckName}/>
+            </>
+            :
+            <>
+                <br/>
+                <button className="form-button" onClick={() => {setSeeForm(!seeForm)}}>New Deck</button>
+                <div><br/></div>
+                <br/>
+                <DeckList decks={decks} setDeckName={setDeckName} />
+            </>
+            }
         </>
     );
 }
