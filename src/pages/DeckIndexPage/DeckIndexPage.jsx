@@ -6,6 +6,8 @@ import './DeckIndexPage.css';
 
 export default function DeckIndexPage({setDeckName, decks, setDecks}) {
 
+    //find all decks belonging to this user and update setDecks use state
+
     useEffect(function () {
         async function getDecks() {
             const myDecks = await getMyDecks();
@@ -13,6 +15,10 @@ export default function DeckIndexPage({setDeckName, decks, setDecks}) {
         }
         getDecks();
     }, []);
+
+    //logic below:
+    //if above function returns decks, show them. Otherwise, render message
+    //"you have no decks yet" and the cowboy image
 
     return (
         <>
