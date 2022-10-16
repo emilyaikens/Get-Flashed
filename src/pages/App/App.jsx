@@ -21,7 +21,7 @@ function App() {
         < main className="App">
             {user ?
                 <>
-                    <NavBar user={user} setUser={setUser}/>
+                    <NavBar setUser={setUser}/>
                     <Routes>
                         <Route path="/deck/new" element={<NewDeckPage setDeckName={setDeckName} />}/>
                         <Route path="/" element={<DeckIndexPage setDeckName={setDeckName} decks={decks} setDecks={setDecks}/>}/>

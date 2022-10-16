@@ -4,7 +4,9 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-export default function NavBar({user, setUser}) {
+export default function NavBar({setUser}) {
+
+//on click handle log out and setUser to null
 
     function handleLogOut(){
         userService.logOut();
