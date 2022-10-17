@@ -38,6 +38,31 @@ Get started by clicking link below. You will need to sign up in order to use thi
 
 ![Home Page](https://i.imgur.com/qKWVI3h.png)
 
+<details>
+    <summary>Create Deck</summary>
+    <img src="https://i.imgur.com/T3Yb1Oq.png" />
+</details>
+<details>
+    <summary>ERD</summary>
+    <img src="https://i.imgur.com/hnOgkcX.png" />
+</details>
+<details>
+    <summary>ERD</summary>
+    <img src="https://i.imgur.com/hnOgkcX.png" />
+</details>
+<details>
+    <summary>ERD</summary>
+    <img src="https://i.imgur.com/hnOgkcX.png" />
+</details>
+<details>
+    <summary>ERD</summary>
+    <img src="https://i.imgur.com/hnOgkcX.png" />
+</details>
+<details>
+    <summary>ERD</summary>
+    <img src="https://i.imgur.com/hnOgkcX.png" />
+</details>
+
 ## Project Hurdles and Wins
 
 * The largest hurdle for me was figuring out the flow of data between front-end and back-end. As always, my whiteboard was my best friend during this project! The creation of flow-charts helped me immensly. The beginning was quite slow because I console logged just about everything; I wanted to have a very clear idea of what was happening every stop of the way. After completing a few pathways, I began to understand the flow of the MERN stack. From there, everything was much more efficient. As per usual, the largest hurdle for me was also the largest win. Gaining an understanding of the MERN stack was incredibly rewarding because I had to work so hard at it. I look forward to understanding it in greater depth. 

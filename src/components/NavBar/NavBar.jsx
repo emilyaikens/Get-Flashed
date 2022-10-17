@@ -21,7 +21,6 @@ export default function NavBar({setUser}) {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link href="/">My Decks</Nav.Link>
-                        <Nav.Link href="/deck/new">Create Deck</Nav.Link>
                         <Nav.Link href="/browse">Browse All Decks</Nav.Link>
                         
                     </Nav>
