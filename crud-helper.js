@@ -2,12 +2,7 @@
 require('dotenv').config();
 require('./config/database');
 
-// Require the Mongoose models
-const User = require('./models/user');
-// const Item = require('./models/item');
-// const Category = require('./models/category');
-// const Order = require('./models/order');
+// Require the Mongoose models below
 
-// Local variables will come in handy for holding retrieved documents
-let user, item, category, order;
-let users, items, categories, orders;
+// Example:
+// const User = require('./models/user');
