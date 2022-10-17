@@ -36,7 +36,7 @@ export default function DeckIndexPage({setDeckName, decks, setDecks}) {
         :
         <>
             <h4 style={{fontFamily:'Peralta'}}>You have no decks yet</h4>
-            <img className="index-cowboy" src="https://i.imgur.com/g7A8rGD.png" />
+            <img className="index-cowboy" src="https://i.imgur.com/1HWrs7D.png" />
         </>
         }
             {seeForm ? 
