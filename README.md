@@ -32,7 +32,7 @@ A MERN stack flashcard app with a questionably appropriate theme.
 
 Get started by clicking link below. You will need to sign up in order to use this app.
 
-:arrow_right: [Link To App](https://project-4-flashcards.herokuapp.com/) :arrow_left:
+:point_right:  [Link To App](https://project-4-flashcards.herokuapp.com/)  :point_left:
 
 ## App Screenshots
 
