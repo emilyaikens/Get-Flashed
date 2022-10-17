@@ -74,6 +74,8 @@ Get started by clicking link below. You will need to sign up in order to use thi
 ## Icebox
 
 * Create admin user account so that decks and cards from all users can be managed
+* Edit card function
+* Edit whether a deck is private or public
 * Allow users to choose the color of the cards in their deck
 * Make public decks visible to everyone, not just registered users
 
