@@ -44,9 +44,7 @@ export default function BrowseAllDecks() {
         <div className="topper"></div>
         <SearchBar setAllDecks={setAllDecks}/>
         {allDecks.length > 0 ?
-            <>
-                <div>{browseDecks}</div>
-            </>
+            <div className="deck-container">{browseDecks}</div>
         :
         <>
             <h3 style={{fontFamily:'Peralta'}}>"Sorry, there are no public decks that match your search"</h3>
