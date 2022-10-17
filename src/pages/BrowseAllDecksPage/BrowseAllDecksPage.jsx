@@ -26,7 +26,6 @@ export default function BrowseAllDecks() {
     //otherwise, map all of them
 
     let browseDecks = "";
-    let noDeck = ""
 
     if (allDecks.length > 10) {
         browseDecks = allDecks.slice([0], [9]).map((value, index) => 
@@ -43,11 +42,10 @@ export default function BrowseAllDecks() {
     return (
         <>
         <div className="topper"></div>
+        <SearchBar setAllDecks={setAllDecks}/>
         {allDecks.length > 0 ?
             <>
-                <SearchBar setAllDecks={setAllDecks}/>
                 <div>{browseDecks}</div>
-                <div>{noDeck}</div>
             </>
         :
         <>
@@ -57,4 +55,4 @@ export default function BrowseAllDecks() {
         }
         </>
     )
-}
+};
