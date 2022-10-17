@@ -38,7 +38,7 @@ Get started by clicking link below. You will need to sign up in order to use thi
 
 Landing Page
 
-![Home Page](https://i.imgur.com/POPBghF.png)
+![Landing Page](https://i.imgur.com/6JxyPnC.png)
 
 <details>
     <summary>Sign Up Form</summary>
