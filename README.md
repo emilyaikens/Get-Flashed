@@ -36,31 +36,45 @@ Get started by clicking link below. You will need to sign up in order to use thi
 
 ## App Screenshots
 
-![Home Page](https://i.imgur.com/qKWVI3h.png)
+Landing Page
+
+![Home Page](https://i.imgur.com/POPBghF.png)
 
 <details>
-    <summary>New Deck Form</summary>
-    <img src="https://i.imgur.com/T3Yb1Oq.png" />
+    <summary>Sign Up Form</summary>
+    <img src="https://i.imgur.com/XKTcjLN.png" />
 </details>
 <details>
-    <summary>ERD</summary>
-    <img src="https://i.imgur.com/hnOgkcX.png" />
+    <summary>My Decks</summary>
+    <img src="https://i.imgur.com/BfIR6Nb.png" />
 </details>
 <details>
-    <summary>ERD</summary>
-    <img src="https://i.imgur.com/hnOgkcX.png" />
+    <summary>New Deck</summary>
+    <img src="https://i.imgur.com/uX1hFSy.png" />
 </details>
 <details>
-    <summary>ERD</summary>
-    <img src="https://i.imgur.com/hnOgkcX.png" />
+    <summary>Deck Details - Question</summary>
+    <img src="https://i.imgur.com/D337nh6.png" />
 </details>
 <details>
-    <summary>ERD</summary>
-    <img src="https://i.imgur.com/hnOgkcX.png" />
+    <summary>Deck Details - Answer</summary>
+    <img src="https://i.imgur.com/2Liux3t.png" />
 </details>
 <details>
-    <summary>ERD</summary>
-    <img src="https://i.imgur.com/hnOgkcX.png" />
+    <summary>Edit/Manage Deck</summary>
+    <img src="https://i.imgur.com/qVgugEK.png" />
+</details>
+<details>
+    <summary>"no cards yet" message</summary>
+    <img src="https://i.imgur.com/3vELc9c.png" />
+</details>
+<details>
+    <summary>Browse All Decks</summary>
+    <img src="https://i.imgur.com/U8mob4N.png" />
+</details>
+<details>
+    <summary>Hidden page, try to find it ;)</summary>
+    <img src="https://i.imgur.com/xJrXx1n.png" />
 </details>
 
 ## Project Hurdles and Wins
