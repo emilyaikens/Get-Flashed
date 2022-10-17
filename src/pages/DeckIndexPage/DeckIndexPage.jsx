@@ -32,7 +32,7 @@ export default function DeckIndexPage({setDeckName, decks, setDecks}) {
         <>
         <div className="topper"></div>
         {decks.length > 0 ?
-            <h1 style={{fontFamily:'Peralta'}}>My Decks</h1>
+            <></>
         :
         <>
             <h4 style={{fontFamily:'Peralta'}}>You have no decks yet</h4>
@@ -41,6 +41,7 @@ export default function DeckIndexPage({setDeckName, decks, setDecks}) {
         }
             {seeForm ? 
             <>
+                <h1 style={{fontFamily:'Peralta'}}>New Deck</h1>
                 <div><br/></div>
                 <button className="form-button" onClick={() => {setSeeForm(!seeForm)}}>Back</button>
                 <div><br/></div>
@@ -48,6 +49,7 @@ export default function DeckIndexPage({setDeckName, decks, setDecks}) {
             </>
             :
             <>
+                <h1 style={{fontFamily:'Peralta'}}>My Decks</h1>
                 <br/>
                 <button className="form-button" onClick={() => {setSeeForm(!seeForm)}}>New Deck</button>
                 <div><br/></div>

@@ -39,7 +39,7 @@ Get started by clicking link below. You will need to sign up in order to use thi
 ![Home Page](https://i.imgur.com/qKWVI3h.png)
 
 <details>
-    <summary>Create Deck</summary>
+    <summary>New Deck Form</summary>
     <img src="https://i.imgur.com/T3Yb1Oq.png" />
 </details>
 <details>
