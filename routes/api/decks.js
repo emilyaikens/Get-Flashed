@@ -3,8 +3,6 @@ const router = express.Router();
 const decksCtrl = require('../../controllers/api/decks');
 const ensureLoggedIn = require('../../config/ensureLoggedIn');
 
-//GET /api/decks/id
-router.get('/:id', ensureLoggedIn, decksCtrl.findOne);
 //POST /api/decks
 router.post('/', ensureLoggedIn, decksCtrl.create);
 //GET /api/decks
@@ -15,6 +13,8 @@ router.delete('/:id', ensureLoggedIn, decksCtrl.deleteDeck);
 router.put('/:id', ensureLoggedIn, decksCtrl.editDeckName);
 //GET /api/decks/all-decks
 router.get('/all-decks', ensureLoggedIn, decksCtrl.getAllDecks);
+//GET /api/decks/id
+router.get('/:id', ensureLoggedIn, decksCtrl.findOne);
 //GET /api/decks/owner/id
 router.get('/owner/:id', ensureLoggedIn, decksCtrl.findOwner);
 //GET /api/decks/search
