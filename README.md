@@ -116,11 +116,13 @@ Landing Page
 
 ## Icebox
 
+* Fix card-flip for phone users accessing app through safari
 * Create admin user account so that decks and cards from all users can be managed
 * Edit card function
 * Edit whether a deck is private or public
 * Allow users to choose the color of the cards in their deck
 * Make public decks visible to everyone, not just registered users
+* Rework search bar method so that decks can be searched from the front-end, not filtered directly from the db. 
 
 ## Credits
 
