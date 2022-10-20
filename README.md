@@ -83,6 +83,10 @@ Landing Page
 
 * For our project we were encouraged to set up the front and back end in the same app to reduce the chances of cors errors. This seems to be somewhat unsual in the "real world", as it does not allow the front end to be tailored to different devices. Our particualr configuration meant that advice from StackOverflow and the dev community at large was tailored towards a different setup. This was often a hinderance, but in the end, I learned a lot about both ways to configure a MERN app and feel like I have a better understanding of this stack as a result.
 
+* An incredible win for this project was the amount of collaboration that occured throughout the week. It was amazing to feel so supported intellectually and emotionally by my collegues, and to have the opportunity to give that back in return. 
+
+* Another great win was my successful time management for this project. I felt very satisfied that I was able to meet or exceed my personal deadlines daily. I made goals for myself that allowed me to complete my work on time and also maintaint a healthy work-life balance.
+
 ## Planning Charts
 
 <details>
