@@ -1,6 +1,6 @@
 .card {
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     align-items: center;
     justify-content: center;
     color: black;
@@ -39,9 +39,9 @@
     -webkit-backface-visibility: hidden;
     -o-backface-visibility: hidden;
 }
-.card .back {
-    transform: rotateY(180deg);
-    background-color: var(--deck-green-2);
+.back {
+    transform: rotateY(180deg) translateZ(1px);
+    -webkit-transform: rotateY(180deg) translateZ(1px);
 }
 .card .front {
     color: var(--dark-green);

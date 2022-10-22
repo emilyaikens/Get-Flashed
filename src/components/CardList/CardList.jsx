@@ -26,7 +26,7 @@ export default function CardList({card, setAddCard}) {
                 <br/>
                 <div>
                     <button className="delete-button" 
-                            onClick={evt => {evt.preventDefault(); handleDelete(card)}}>Delete</button>
+                        onClick={evt => {evt.preventDefault(); handleDelete(card)}}>Delete</button>
                 </div>
             </div>
         </div>
