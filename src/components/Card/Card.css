@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    position: relative;
     color: black;
     border-radius: 10px;
     border: solid var(--dark-green) 2px;
