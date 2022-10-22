@@ -16,6 +16,12 @@
     transform-style: preserve-3d;
     transition: 150ms;
     transform: perspective(1000px) rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0));
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: -webkit-transform 150ms;
+    -o-transform-style: preserve-3d;
+    -o-transition: -o-transform 150ms;
+    -moz-transform-style: preserve-3d;
+    -moz-transition: -moz-transform 150ms;
 }
 .card:hover {
     --translate-y: -2px;
@@ -30,6 +36,9 @@
     position: absolute;
     padding: 1rem;
     backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
 }
 .card .back {
     transform: rotateY(180deg);
