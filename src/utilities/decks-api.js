@@ -36,8 +36,3 @@ export function findOne(id) {
 export function deckOwner(id) {
     return sendRequest(`${BASE_URL}/owner/${id}`);
 }
-
-//called in SearchBar component. "input" from form
-export function searchDecks(input) {
-    return sendRequest(`${BASE_URL}/search/${input}`);
-}

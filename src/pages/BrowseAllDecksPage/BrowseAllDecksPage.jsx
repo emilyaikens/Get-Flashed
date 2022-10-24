@@ -7,19 +7,23 @@ import './BrowseAllDecksPage';
 
 export default function BrowseAllDecks() {
 
-    //this use state keeps track of public decks
+    //allDecks use state keeps track of public decks
 
     const [allDecks, setAllDecks] = useState([]);
+
+    // searchUpdate is set when formdata is entered in searchbar. Called in dep array in function below
+    
+    const [searchUpdate, setSearchUpdate] = useState([]);
 
     //this function fetches public decks from all users and updates use state above
 
     useEffect(function () {
         async function showAllDecks() {
-            const allDecks = await getAllDecks();
-            setAllDecks(allDecks);
+            const myDecks = await getAllDecks();
+            setAllDecks(myDecks);
         }
         showAllDecks();
-    }, []);
+    }, [searchUpdate]);
 
     //variables and logic below:
     //if more than 10 decks are returned from the function above, only map the first 10
@@ -42,7 +46,7 @@ export default function BrowseAllDecks() {
     return (
         <>
         <div className="topper"></div>
-        <SearchBar setAllDecks={setAllDecks}/>
+        <SearchBar allDecks={allDecks} setAllDecks={setAllDecks} setSearchUpdate={setSearchUpdate}/>
         {allDecks.length > 0 ?
             <div className="deck-container">{browseDecks}</div>
         :
