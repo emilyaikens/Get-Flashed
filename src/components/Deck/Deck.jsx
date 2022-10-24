@@ -6,6 +6,7 @@ export default function Deck ({deck, index, setDeckName}) {
     //colors array and logic below determine color of the deck
 
     const colors = ['#8bc0a6', '#c4e3d4', '#f7dcb5', '#f5caac', '#f2a098'];
+    const ends = [50, 16, 27, 38, 49];
 
     let cardIndex = index
     if (index > 4 && index < 9) {
@@ -17,6 +18,8 @@ export default function Deck ({deck, index, setDeckName}) {
     } else if (index > 18) {
         cardIndex = Math.floor(Math.random() * 4);
     };
+
+    let n = index.split();
 
     //each deck is a button that links to DeckDetailsPage
 

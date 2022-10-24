@@ -9,7 +9,7 @@ export default function SearchBar({ allDecks, setAllDecks, setSearchUpdate }) {
 
     const [formData, setFormData] = useState({ search: '' });
 
-    //update the use state as user types in form
+    //update the use state as user types in form. toLowerCase for search function
 
     function handleChange(evt) {
         setFormData({
@@ -19,20 +19,8 @@ export default function SearchBar({ allDecks, setAllDecks, setSearchUpdate }) {
         setSearchUpdate([1]); //updates dep array in BrowseAllDecks
     };
 
-    //on submit, send payload to back end and search decks based on payload from form
-    //and setalldecks (use state from BrowseAllDecks page). Reset formdata use state 
-    //so that the search bar "clears" after user submits query
-
-    // async function handleSubmit(evt) {
-    //     evt.preventDefault();
-    //     try {
-    //         const decks = await searchDecks(formData.search);
-    //         setAllDecks(decks);
-    //         setFormData({search: ''})
-    //     } catch {
-    //         console.log('search failed');
-    //     }
-    // };
+    //search within the decks fetched from db in BrowseAllDecks
+    //update setAllDecks to that search results are rendered
 
     function handleSubmit(evt) {
         evt.preventDefault();
@@ -40,11 +28,10 @@ export default function SearchBar({ allDecks, setAllDecks, setSearchUpdate }) {
             let results = allDecks.filter(function(d) {
                 let n = d.name.toLowerCase();
                 if (n.includes(formData.search)) {
-                    return d
+                    return d;
                 };
             })
             setAllDecks(results);
-            console.log(results);
         } catch {
             console.log('search failed');
         }
