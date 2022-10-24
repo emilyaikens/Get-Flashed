@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import './SearchBar.css';
 
-export default function SearchBar({ setAllDecks }) {
+export default function SearchBar({ allDecks, setAllDecks }) {
 
     //useState keeps track of form inputs
 

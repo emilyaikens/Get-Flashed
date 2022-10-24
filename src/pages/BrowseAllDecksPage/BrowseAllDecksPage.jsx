@@ -42,7 +42,7 @@ export default function BrowseAllDecks() {
     return (
         <>
         <div className="topper"></div>
-        <SearchBar setAllDecks={setAllDecks}/>
+        <SearchBar allDecks={allDecks} setAllDecks={setAllDecks}/>
         {allDecks.length > 0 ?
             <div className="deck-container">{browseDecks}</div>
         :
