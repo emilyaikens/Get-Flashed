@@ -48,12 +48,6 @@ const Deck = require('../../models/deck');
         res.json(deck.user)
     };
 
-//find deck by name (from search bar)    
-    async function search(req, res) {
-        const deck = await Deck.find({name: req.params.id});
-        res.json(deck);
-    };
-
 module.exports = {
     create,
     getMyDecks,

@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { searchDecks } from '../../utilities/decks-api';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import './SearchBar.css';
