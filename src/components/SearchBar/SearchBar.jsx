@@ -34,15 +34,30 @@ export default function SearchBar({ allDecks, setAllDecks }) {
     //     }
     // };
 
-    async function handleSubmit(evt) {
+    function handleSubmit(evt) {
         evt.preventDefault();
         try {
-            allDecks.forEach(function(d) {
+            let results = allDecks.filter(function(d) {
                 let n = d.name.toLowerCase();
-                console.log(n)
-                console.log(formData)
+                if (n.includes(formData.search)) {
+                    return d
+                };
+            })
+            setAllDecks(results);
+            console.log(results);
+            // allDecks.forEach(function(d) {
+            //     let n = d.name.toLowerCase();
+            //     if (n.includes(formData.search)) {
+            //         console.log(d + " is d");
+            //         console.log(allDecks + " all decks");
+            //         setAllDecks(d)
+            //     } else {
+            //         console.log("no matches")
+            //     }
+                // console.log("n " + n)
+                // console.log("formData " + formData.search)
                 
-            });
+            // });
             //const decks = await searchDecks(formData.search);
             // console.log(decks);
             // setAllDecks(decks);
