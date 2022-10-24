@@ -18,16 +18,16 @@ export default function AuthPage({setUser}) {
     return (
         <main>
             {/* header is image, not h1 */}
-            <img className="title" src="https://i.imgur.com/OHi2rSk.png" />
+            <img className="title" src="https://i.imgur.com/OHi2rSk.png" alt="get flashed"/>
             <h5 style={{fontFamily:'Peralta', margin: 20}}>A questionably themed flashcard app</h5>
             <br/>
             <button className="form-button" onClick={() => {setShowSignUp(!showSignUp); 
-                                    {showLanding ? setShowLanding(!showLanding): setShowLanding(showLanding)}; 
-                                    {!showLogIn ? setShowLogIn(!showLogIn): setShowLogIn(showLogIn)}}}
+                                    showLanding ? setShowLanding(!showLanding): setShowLanding(showLanding); 
+                                    !showLogIn ? setShowLogIn(!showLogIn): setShowLogIn(showLogIn)}}
                                     >Sign Up</button>
             <button className="form-button" onClick={() => {setShowLogIn(!showLogIn); 
                                     setShowLanding(!showLanding);
-                                    {!showSignUp ? setShowSignUp(!showSignUp): setShowSignUp(showSignUp)}}}
+                                    !showSignUp ? setShowSignUp(!showSignUp): setShowSignUp(showSignUp)}}
                                     >Log In</button>
             <br/>
             {showSignUp ?
@@ -50,7 +50,7 @@ export default function AuthPage({setUser}) {
                 <div></div>
                 :
                 <>
-                    <img className="cowboy" src="https://i.imgur.com/1HWrs7D.png" />
+                    <img className="cowboy" src="https://i.imgur.com/1HWrs7D.png" alt="cowboy"/>
                 </>
             }            
         </main>
