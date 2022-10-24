@@ -15,7 +15,7 @@ export default function SearchBar({ allDecks, setAllDecks }) {
     function handleChange(evt) {
         setFormData({
         ...formData,
-        [evt.target.name]: evt.target.value,
+        [evt.target.name.toLowerCase()]: evt.target.value.toLowerCase(),
         });
     };
 
@@ -23,12 +23,30 @@ export default function SearchBar({ allDecks, setAllDecks }) {
     //and setalldecks (use state from BrowseAllDecks page). Reset formdata use state 
     //so that the search bar "clears" after user submits query
 
+    // async function handleSubmit(evt) {
+    //     evt.preventDefault();
+    //     try {
+    //         const decks = await searchDecks(formData.search);
+    //         setAllDecks(decks);
+    //         setFormData({search: ''})
+    //     } catch {
+    //         console.log('search failed');
+    //     }
+    // };
+
     async function handleSubmit(evt) {
         evt.preventDefault();
         try {
-            const decks = await searchDecks(formData.search);
-            setAllDecks(decks);
-            setFormData({search: ''})
+            allDecks.forEach(function(d) {
+                let n = d.name.toLowerCase();
+                console.log(n)
+                console.log(formData)
+                
+            });
+            //const decks = await searchDecks(formData.search);
+            // console.log(decks);
+            // setAllDecks(decks);
+            // setFormData({search: ''})
         } catch {
             console.log('search failed');
         }
