@@ -27,4 +27,4 @@ export default function Deck ({deck, index, setDeckName}) {
             <br/>
         </>
     )
-}
+};
