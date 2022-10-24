@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import './SearchBar.css';
 
-export default function SearchBar({ allDecks, setAllDecks }) {
+export default function SearchBar({ allDecks, setAllDecks, setSearchUpdate }) {
 
     //useState keeps track of form inputs
 
@@ -17,6 +17,7 @@ export default function SearchBar({ allDecks, setAllDecks }) {
         ...formData,
         [evt.target.name.toLowerCase()]: evt.target.value.toLowerCase(),
         });
+        setSearchUpdate([1]); //updates dep array in BrowseAllDecks
     };
 
     //on submit, send payload to back end and search decks based on payload from form
@@ -45,23 +46,6 @@ export default function SearchBar({ allDecks, setAllDecks }) {
             })
             setAllDecks(results);
             console.log(results);
-            // allDecks.forEach(function(d) {
-            //     let n = d.name.toLowerCase();
-            //     if (n.includes(formData.search)) {
-            //         console.log(d + " is d");
-            //         console.log(allDecks + " all decks");
-            //         setAllDecks(d)
-            //     } else {
-            //         console.log("no matches")
-            //     }
-                // console.log("n " + n)
-                // console.log("formData " + formData.search)
-                
-            // });
-            //const decks = await searchDecks(formData.search);
-            // console.log(decks);
-            // setAllDecks(decks);
-            // setFormData({search: ''})
         } catch {
             console.log('search failed');
         }
