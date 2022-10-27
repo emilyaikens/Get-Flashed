@@ -10,11 +10,11 @@ export default function CardList({card}) {
     function handleFlip(evt) {
         evt.preventDefault();
         setFlip(!flip);
-    }
+    };
 
     //cardColor and handle functions below change the color of the cards
 
-    const [cardColor, setCardColor] = useState("white");
+    const [cardColor, setCardColor] = useState("");
 
     //const colors = ['#8bc0a6', '#c4e3d4', '#f7dcb5', '#f5caac', '#f2a098'];
 
