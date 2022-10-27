@@ -18,6 +18,9 @@ export default function DeckDetailsPage({setDeckName, deckName, cards, setCards,
 
     const [cardIndex, setCardIndex] = useState(0);
 
+    let n = cards.length;
+    console.log("hello");
+
     //use state below: updated by findDeck function, contains info from the deck whose id matches url param id
 
     const [thisDeck, setThisDeck] = useState("");
@@ -63,7 +66,7 @@ export default function DeckDetailsPage({setDeckName, deckName, cards, setCards,
 
     //map cards returned by the function above to Card component
 
-    let theCards= cards.map((card, index) => {
+    let theCards= cards.map((card) => {
         return <Card card={card} key={card._id}/>
     })
 
