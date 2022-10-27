@@ -55,7 +55,7 @@
     background-color: var(--deck-green-2);
 }
 .color-button {
-    padding: 8px;
-    border-radius: 10px;
-    border: solid black 1px;
+    margin: 2px;
+    border-radius: 50px;
+    border: solid var(--dark-green) 2px;
 }
