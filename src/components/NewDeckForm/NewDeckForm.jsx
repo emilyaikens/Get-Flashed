@@ -13,7 +13,7 @@ export default function NewDeckForm({setDeckName}) {
 
     const [formData, setFormData] = useState({ 
         name: '',
-        share: "private",
+        share: "private"
     });
 
     //handleChange updates use state as user types in form    
