@@ -8,7 +8,7 @@ import { deleteDeck } from '../../utilities/decks-api';
 import { deckOwner } from '../../utilities/decks-api'
 import CardList from '../../components/CardList/CardList';
 import NewCardForm from '../../components/NewCardForm/NewCardForm';
-import EditDeckNameForm from '../../components/EditDeckNameForm/EditDeckNameForm'
+import EditDeckForm from '../../components/EditDeckForm/EditDeckForm';
 
 export default function ManageDeckPage({deckName, setDeckName, cards, setCards, user}) {
 
@@ -82,7 +82,7 @@ export default function ManageDeckPage({deckName, setDeckName, cards, setCards, 
             <div>
                 <br/>
             </div>
-            <EditDeckNameForm id={id} deckName={deckName} setDeckName={setDeckName} />
+            <EditDeckForm id={id} deckName={deckName} setDeckName={setDeckName} />
             <br/>
             <NewCardForm setAddCard={setAddCard}/>
             <br/>
