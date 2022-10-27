@@ -10,7 +10,7 @@ router.get('/', ensureLoggedIn, decksCtrl.getMyDecks);
 //DELETE /api/decks/id
 router.delete('/:id', ensureLoggedIn, decksCtrl.deleteDeck);
 //PUT /api/decks
-router.put('/:id', ensureLoggedIn, decksCtrl.editDeckName);
+router.put('/:id', ensureLoggedIn, decksCtrl.editDeck);
 //GET /api/decks/all-decks
 router.get('/all-decks', ensureLoggedIn, decksCtrl.getAllDecks);
 //GET /api/decks/id
