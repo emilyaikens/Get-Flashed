@@ -118,7 +118,6 @@ Landing Page
 
 * Create admin user account so that decks and cards from all users can be managed
 * Give users the ability to edit a card's questions and answers 
-* Give users the ability to edit whether a deck is private or public
 * Allow users to choose the color of the cards in their deck
 * Make public decks visible to everyone, not just registered users
 
