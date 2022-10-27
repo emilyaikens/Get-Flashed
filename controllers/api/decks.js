@@ -56,6 +56,5 @@ module.exports = {
     getAllDecks,
     findOne,
     findOwner,
-    search,
 };
 

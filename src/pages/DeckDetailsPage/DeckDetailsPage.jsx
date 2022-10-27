@@ -13,13 +13,22 @@ export default function DeckDetailsPage({setDeckName, deckName, cards, setCards,
     
     let id = useParams().id;
 
-    //use state below: updated by handleBack and handleNext functions
+    //use state below determines which card is visible
+    //updated by handleBack and handleNext functions
 
     const [cardIndex, setCardIndex] = useState(0);
 
     //use state below: updated by findDeck function, contains info from the deck whose id matches url param id
 
     const [thisDeck, setThisDeck] = useState("");
+
+    //'shuffle' the cards in the deck using Fisher-Yates Algo
+
+    let n = cards.length;
+    for (let i = n-1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [cards[i], cards[j]] = [cards[j], cards[i]];
+    };
 
     //when user clicks "back" button, update cardIndex use state to be less one
 
@@ -40,6 +49,7 @@ export default function DeckDetailsPage({setDeckName, deckName, cards, setCards,
     };
 
     //find deck using the id grabbed from the url params
+    //used to confirm user id
 
     useEffect(function () {
         async function findDeck() {
@@ -61,7 +71,7 @@ export default function DeckDetailsPage({setDeckName, deckName, cards, setCards,
 
     //map cards returned by the function above to Card component
 
-    let theCards= cards.map((card, index) => {
+    let theCards= cards.map((card) => {
         return <Card card={card} key={card._id}/>
     })
 
