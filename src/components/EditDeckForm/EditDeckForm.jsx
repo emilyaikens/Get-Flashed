@@ -1,5 +1,5 @@
 import { useState } from "react";
-import * as deckAPI from '../../utilities/decks-api';
+import { editDeck } from '../../utilities/decks-api';
 import Form from 'react-bootstrap/Form';
 
 export default function NewDeckForm({setDeckName, deckName, id}) {
@@ -26,7 +26,7 @@ export default function NewDeckForm({setDeckName, deckName, id}) {
     async function handleSubmit(evt) {
         evt.preventDefault();
         try {
-            const newDeckName = await deckAPI.editDeckName(formData, id); 
+            const newDeckName = await editDeck(formData, id); 
             setDeckName(newDeckName.name);
         } catch {
             console.log('create deck failed');
