@@ -18,12 +18,17 @@ export default function DeckDetailsPage({setDeckName, deckName, cards, setCards,
 
     const [cardIndex, setCardIndex] = useState(0);
 
-    let n = cards.length;
-    console.log("hello");
-
     //use state below: updated by findDeck function, contains info from the deck whose id matches url param id
 
     const [thisDeck, setThisDeck] = useState("");
+
+    //'shuffle' the cards in the deck using Fisher-Yates Algo
+
+    let n = cards.length;
+    for (let i = n-1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [cards[i], cards[j]] = [cards[j], cards[i]];
+    };
 
     //when user clicks "back" button, update cardIndex use state to be less one
 
