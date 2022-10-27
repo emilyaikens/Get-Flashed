@@ -23,9 +23,10 @@ const Deck = require('../../models/deck');
     };
 
 //find deck by id, assign new name, and save
-    async function editDeckName(req, res) {
+    async function editDeck(req, res) {
         const deck = await Deck.findById(req.params.id);
         deck.name = req.body.name;
+        deck.share = req.body.share;
         await deck.save();
         res.json(deck);
     };
@@ -52,7 +53,7 @@ module.exports = {
     create,
     getMyDecks,
     deleteDeck,
-    editDeckName,
+    editDeck,
     getAllDecks,
     findOne,
     findOwner,

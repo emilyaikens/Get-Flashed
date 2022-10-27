@@ -124,7 +124,7 @@ Landing Page
 
 ## Credits
 
-* All graphic design and planning charts created by yours truly, Emily Aikens. 
-* Geeks for Geeks article by tejaswaniagrawal23 ["Design a Flip Card Effect using ReactJS"](https://www.geeksforgeeks.org/design-a-flip-card-effect-using-reactjs/) inspired my card-flipping code. 
-* Shout-out to gel pens
-* Thank you to all of my incredible instructors and classmates at General Assembly for your encouragement, support and instruction.
+* All digital art, graphic design and planning charts created by yours truly, Emily Aikens. 
+* A huge thanks to tejaswaniagrawal23's article ["Design a Flip Card Effect using ReactJS"](https://www.geeksforgeeks.org/design-a-flip-card-effect-using-reactjs/) that inspired my card-flipping code. 
+* Shout-out to gel pens.
+* Thank you to all of my incredible instructors and classmates at General Assembly for your encouragement, support and instruction. Special thanks to George Perry, Francis Gacad, and Payne Fulcher; the dream team.

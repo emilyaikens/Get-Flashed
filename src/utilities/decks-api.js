@@ -18,7 +18,7 @@ export function deleteDeck(id) {
 }
 
 //called in EditDeckNameForm component. "formData" from form, "id" is deck id from URL params
-export function editDeckName(formData, id) {
+export function editDeck(formData, id) {
     return sendRequest(`${BASE_URL}/${id}`, 'PUT', formData);
 };
 

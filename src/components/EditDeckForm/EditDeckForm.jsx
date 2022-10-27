@@ -1,22 +1,17 @@
 import { useState } from "react";
-import * as deckAPI from '../../utilities/decks-api';
-import { useNavigate } from 'react-router-dom';
+import { editDeck } from '../../utilities/decks-api';
 import Form from 'react-bootstrap/Form';
 
-export default function NewDeckForm({setDeckName}) {
+export default function NewDeckForm({setDeckName, deckName, id}) {
 
-    //assign navigate variable using useNavigate from react-router-dom
+    //useState keeps track of form inputs
 
-    const navigate = useNavigate();
-
-    //this use state keeps track of form inputs
-
-    const [formData, setFormData] = useState({ 
+    const [formData, setFormData] = useState({
         name: '',
         share: "private"
     });
 
-    //handleChange updates use state as user types in form    
+    //handleChange updates formData useState with user input
 
     function handleChange(evt) {
         setFormData({
@@ -25,16 +20,14 @@ export default function NewDeckForm({setDeckName}) {
         });
     };
 
-    //on form submit, send payload to back end and save to database
-    //then update deck name use state (app.js) so it can be used
-    //in managedeckpage
+    //handleSubmit sends user input (deck name) to backend, where deck name is updated in db
+    //new deck name is sent to front-end and is used to update setDeckName useState (from App.js)
 
     async function handleSubmit(evt) {
         evt.preventDefault();
         try {
-            const newDeck = await deckAPI.createDeck(formData);
-            setDeckName(newDeck.name);
-            navigate(`/managedeck/${newDeck._id}`); //sends user to ManageDeckPage
+            const newDeckName = await editDeck(formData, id); 
+            setDeckName(newDeckName.name);
         } catch {
             console.log('create deck failed');
         }
@@ -43,7 +36,7 @@ export default function NewDeckForm({setDeckName}) {
     return (
         <>
         <div className="form-container">
-            <Form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3">
                     <Form.Label>Deck Name</Form.Label>
                     <Form.Control
@@ -59,6 +52,7 @@ export default function NewDeckForm({setDeckName}) {
                         type="text"
                         name="share"
                         checked={formData.share}
+                        placeholder={deckName}
                         onChange={handleChange}
                     >
                         <option value={"private"}>Private</option>
@@ -66,7 +60,7 @@ export default function NewDeckForm({setDeckName}) {
                     </Form.Select>
                 </Form.Group>
                 <br/>
-                <button className="form-button" type="Submit">Create</button>
+                <button className="form-button" type="Submit">Update Deck</button>
             </Form>
         </div>
         </>
