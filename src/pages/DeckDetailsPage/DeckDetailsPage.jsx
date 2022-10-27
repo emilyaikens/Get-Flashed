@@ -22,14 +22,6 @@ export default function DeckDetailsPage({setDeckName, deckName, cards, setCards,
 
     const [thisDeck, setThisDeck] = useState("");
 
-    //'shuffle' the cards in the deck using Fisher-Yates Algo
-
-    let n = cards.length;
-    for (let i = n-1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        [cards[i], cards[j]] = [cards[j], cards[i]];
-    };
-
     //when user clicks "back" button, update cardIndex use state to be less one
 
     function handleBack(evt) {
@@ -60,10 +52,16 @@ export default function DeckDetailsPage({setDeckName, deckName, cards, setCards,
     }, [])
 
     //find cards belonging to the current deck
+    //'shuffle' the cards in the deck using Fisher-Yates Algorithm
 
     useEffect(function () {
         async function findCards() {
             const myCards = await getCards(id);
+            let n = myCards.length;
+            for (let i = n-1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [myCards[i], myCards[j]] = [myCards[j], myCards[i]];
+            };
             setCards(myCards);
         }
         findCards()

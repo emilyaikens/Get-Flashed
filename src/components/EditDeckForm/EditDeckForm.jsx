@@ -42,6 +42,7 @@ export default function NewDeckForm({setDeckName, deckName, id}) {
                     <Form.Control
                         type="text"
                         name="name"
+                        placeholder={deckName}
                         value={formData.name}
                         onChange={handleChange}
                     />
@@ -52,7 +53,6 @@ export default function NewDeckForm({setDeckName, deckName, id}) {
                         type="text"
                         name="share"
                         checked={formData.share}
-                        placeholder={deckName}
                         onChange={handleChange}
                     >
                         <option value={"private"}>Private</option>
