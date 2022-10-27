@@ -26,6 +26,7 @@ const Deck = require('../../models/deck');
     async function editDeck(req, res) {
         const deck = await Deck.findById(req.params.id);
         deck.name = req.body.name;
+        deck.share = req.body.share;
         await deck.save();
         res.json(deck);
     };
