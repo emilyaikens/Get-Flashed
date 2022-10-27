@@ -13,7 +13,8 @@ export default function DeckDetailsPage({setDeckName, deckName, cards, setCards,
     
     let id = useParams().id;
 
-    //use state below: updated by handleBack and handleNext functions
+    //use state below determines which card is visible
+    //updated by handleBack and handleNext functions
 
     const [cardIndex, setCardIndex] = useState(0);
 
@@ -40,6 +41,7 @@ export default function DeckDetailsPage({setDeckName, deckName, cards, setCards,
     };
 
     //find deck using the id grabbed from the url params
+    //used to confirm user id
 
     useEffect(function () {
         async function findDeck() {
