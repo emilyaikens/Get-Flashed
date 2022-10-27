@@ -121,7 +121,6 @@ Landing Page
 * Give users the ability to edit whether a deck is private or public
 * Allow users to choose the color of the cards in their deck
 * Make public decks visible to everyone, not just registered users
-* Randomize the order of cards in a deck
 
 ## Credits
 
