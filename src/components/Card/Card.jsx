@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import "./Card.css";
 
-export default function CardList({card}) {
+export default function CardList({card, cardColor, setCardColor}) {
 
     //flip useState and handleFlip function are used to "flip" card by changing className of card
 
@@ -11,10 +11,6 @@ export default function CardList({card}) {
         evt.preventDefault();
         setFlip(!flip);
     };
-
-    //cardColor and handle functions below change the color of the cards
-
-    const [cardColor, setCardColor] = useState("");
 
     //const colors = ['#8bc0a6', '#c4e3d4', '#f7dcb5', '#f5caac', '#f2a098'];
 

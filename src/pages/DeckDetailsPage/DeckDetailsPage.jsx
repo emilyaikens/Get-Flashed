@@ -22,6 +22,10 @@ export default function DeckDetailsPage({setDeckName, deckName, cards, setCards,
 
     const [thisDeck, setThisDeck] = useState("");
 
+        //cardColor and handle functions below change the color of the cards
+
+        const [cardColor, setCardColor] = useState("");
+
     //when user clicks "back" button, update cardIndex use state to be less one
 
     function handleBack(evt) {
@@ -70,7 +74,7 @@ export default function DeckDetailsPage({setDeckName, deckName, cards, setCards,
     //map cards returned by the function above to Card component
 
     let theCards= cards.map((card) => {
-        return <Card card={card} key={card._id}/>
+        return <Card card={card} key={card._id} cardColor={cardColor} setCardColor={setCardColor}/>
     })
 
     //logic below:
